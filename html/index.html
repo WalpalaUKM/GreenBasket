@@ -3,11 +3,50 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>GreenBasket - Fresh & Organic Groceries</title>
+
+    <!-- Google Fonts: Plus Jakarta Sans & Outfit -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome 6 Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              main: ["Plus Jakarta Sans", "system-ui", "sans-serif"],
+            },
+            maxWidth: { custom: "1360px" },
+          },
+        },
+      };
+    </script>
+    <!-- Custom styles (animations, pseudo-elements, JS toggles) -->
+    <link rel="stylesheet" href="css/tailwind-custom.css" />
   </head>
-  <body class="home-page">
-    <div class="shipping-promo-bar">
-      <span class="highlight-tag"
+  <body
+    class="font-[family-name:var(--font-main)] text-slate-800 bg-[#fbfbfd] leading-normal antialiased"
+  >
+    <!-- ==========================================
+       TOP ANNOUNCEMENT BAR: SHIPPING RULE PROMO
+       ========================================== -->
+    <div
+      class="bg-gradient-to-r from-green-900 to-green-800 text-white py-3 px-4 text-center text-[0.9rem] font-semibold"
+    >
+      <span
+        class="bg-yellow-200 text-yellow-800 py-[0.2rem] px-[0.55rem] rounded-full text-xs font-extrabold mr-2 uppercase"
         ><i class="fa-solid fa-truck-fast"></i> Islandwide Delivery</span
       >
       <span
@@ -17,15 +56,24 @@
       >
     </div>
 
-    <header class="site-header">
+    <!-- ==========================================
+       SITE HEADER & NAVIGATION
+       ========================================== -->
+    <header
+      class="site-header sticky top-0 z-[100] bg-white shadow-[0_2px_10px_rgba(0,0,0,0.03)]"
+    >
       <!-- 1. TOP HEADER SECTION (Exact Format) -->
-      <div class="header-top">
-        <div class="container-custom header-top-inner">
+      <div class="py-[0.85rem] bg-white border-b border-slate-100">
+        <div
+          class="w-full max-w-custom mx-auto px-5 flex items-center justify-between gap-6 max-md:flex-wrap max-md:gap-3"
+        >
           <!-- Left Group: Mobile Hamburger, Logo & Deliver To -->
-          <div class="header-left-group">
+          <div
+            class="flex items-center gap-9 shrink-0 max-[1180px]:gap-5 max-md:gap-[0.65rem]"
+          >
             <!-- Mobile Menu Trigger -->
             <button
-              class="mobile-toggle-btn"
+              class="hidden text-[1.35rem] text-slate-800 p-[0.4rem] cursor-pointer max-lg:flex"
               id="mobileToggleBtn"
               aria-label="Open Mobile Menu"
             >
@@ -35,21 +83,33 @@
             <!-- Transparent High-Res Brand Logo -->
             <a
               href="index.html"
-              class="brand-logo"
+              class="flex items-center no-underline"
               aria-label="GreenBasket Home"
             >
-              <img src="logo.png" alt="GreenBasket" class="brand-logo-img" />
+              <img
+                src="logo.png"
+                alt="GreenBasket"
+                class="h-12 max-h-[52px] w-auto max-w-[220px] object-contain bg-transparent block scale-[1.08] origin-left transition-transform duration-[250ms] ease-out hover:scale-[1.15] max-md:h-[38px] max-md:max-w-[100px]"
+              />
             </a>
 
             <!-- Deliver To Selector (Sri Lanka Cities) -->
-            <div class="delivery-selector-wrap" id="deliveryWrapper">
+            <div
+              class="delivery-selector-wrap relative max-lg:hidden"
+              id="deliveryWrapper"
+            >
               <div
-                class="delivery-box"
+                class="flex flex-col cursor-pointer py-[0.35rem] px-[0.6rem] rounded-[6px] transition-all duration-[250ms] hover:bg-slate-50"
                 id="deliveryBox"
                 title="Select Sri Lanka delivery location"
               >
-                <span class="delivery-label">Deliver to</span>
-                <div class="delivery-location">
+                <span
+                  class="text-xs text-slate-500 font-medium leading-none mb-1"
+                  >Deliver to</span
+                >
+                <div
+                  class="flex items-center gap-[0.35rem] text-sm font-bold text-slate-800"
+                >
                   <i class="fa-solid fa-location-dot loc-icon"></i>
                   <span id="deliveryLocationText">Colombo, Sri Lanka</span>
                   <i class="fa-solid fa-chevron-down chevron"></i>
@@ -57,63 +117,66 @@
               </div>
 
               <!-- Delivery Location Dropdown with Sri Lanka cities -->
-              <div class="delivery-dropdown">
-                <div class="delivery-dropdown-title">Choose Sri Lanka City</div>
-                <ul class="delivery-options-list">
+              <div
+                class="delivery-dropdown absolute top-[calc(100%+8px)] left-0 w-[250px] bg-white rounded-[10px] shadow-lg border border-slate-200 p-3 opacity-0 invisible translate-y-[10px] transition-all duration-[250ms] z-50"
+              >
+                <div
+                  class="text-xs font-bold uppercase text-slate-500 px-2 pt-1 pb-2 border-b border-slate-100"
+                >
+                  Choose Sri Lanka City
+                </div>
+                <ul class="mt-2 max-h-[190px] overflow-y-auto">
                   <li
-                    class="delivery-option-item selected"
+                    class="flex items-center justify-between py-2 px-[0.6rem] rounded-[6px] text-[0.85rem] font-medium text-slate-700 cursor-pointer transition-all duration-[250ms] hover:bg-green-100 hover:text-green-700 hover:font-semibold selected"
                     data-city="Colombo, Sri Lanka"
                   >
                     <span>Colombo, Sri Lanka</span>
                     <i class="fa-solid fa-check text-green-500"></i>
                   </li>
                   <li
-                    class="delivery-option-item"
+                    class="flex items-center justify-between py-2 px-[0.6rem] rounded-[6px] text-[0.85rem] font-medium text-slate-700 cursor-pointer transition-all duration-[250ms] hover:bg-green-100 hover:text-green-700 hover:font-semibold"
                     data-city="Matara City, Sri Lanka"
                   >
                     <span>Matara City, Sri Lanka</span>
                   </li>
-                  <li class="delivery-option-item" data-city="Galle, Sri Lanka">
+                  <li
+                    class="flex items-center justify-between py-2 px-[0.6rem] rounded-[6px] text-[0.85rem] font-medium text-slate-700 cursor-pointer transition-all duration-[250ms] hover:bg-green-100 hover:text-green-700 hover:font-semibold"
+                    data-city="Galle, Sri Lanka"
+                  >
                     <span>Galle, Sri Lanka</span>
                   </li>
-                  <li class="delivery-option-item" data-city="Kandy, Sri Lanka">
+                  <li
+                    class="flex items-center justify-between py-2 px-[0.6rem] rounded-[6px] text-[0.85rem] font-medium text-slate-700 cursor-pointer transition-all duration-[250ms] hover:bg-green-100 hover:text-green-700 hover:font-semibold"
+                    data-city="Kandy, Sri Lanka"
+                  >
                     <span>Kandy, Sri Lanka</span>
                   </li>
                   <li
-                    class="delivery-option-item"
+                    class="flex items-center justify-between py-2 px-[0.6rem] rounded-[6px] text-[0.85rem] font-medium text-slate-700 cursor-pointer transition-all duration-[250ms] hover:bg-green-100 hover:text-green-700 hover:font-semibold"
                     data-city="Negombo / Gampaha"
                   >
                     <span>Negombo / Gampaha</span>
                   </li>
                   <li
-                    class="delivery-option-item"
+                    class="flex items-center justify-between py-2 px-[0.6rem] rounded-[6px] text-[0.85rem] font-medium text-slate-700 cursor-pointer transition-all duration-[250ms] hover:bg-green-100 hover:text-green-700 hover:font-semibold"
                     data-city="Kalutara, Sri Lanka"
                   >
                     <span>Kalutara, Sri Lanka</span>
                   </li>
                   <li
-                    class="delivery-option-item"
+                    class="flex items-center justify-between py-2 px-[0.6rem] rounded-[6px] text-[0.85rem] font-medium text-slate-700 cursor-pointer transition-all duration-[250ms] hover:bg-green-100 hover:text-green-700 hover:font-semibold"
                     data-city="Kurunegala, Sri Lanka"
                   >
                     <span>Kurunegala, Sri Lanka</span>
                   </li>
                 </ul>
                 <div
-                  style="
-                    padding: 0.65rem 0.5rem 0.25rem;
-                    border-top: 1px solid #f1f5f9;
-                  "
+                  class="pt-[0.65rem] px-[0.5rem] pb-[0.25rem] border-t border-slate-100"
                 >
                   <button
                     type="button"
                     onclick="detectHeaderGPS()"
-                    class="btn-primary-green"
-                    style="
-                      width: 100%;
-                      font-size: 0.78rem;
-                      padding: 0.45rem;
-                      border-radius: 6px;
-                    "
+                    class="bg-green-500 text-white font-bold py-[0.45rem] px-[1.85rem] rounded-[6px] shadow-[0_10px_20px_-5px_rgba(34,197,94,0.4)] transition-all duration-[250ms] hover:bg-green-600 hover:-translate-y-0.5 w-full text-[0.78rem]"
                   >
                     <i class="fa-solid fa-location-crosshairs mr-1"></i> Detect
                     Sri Lanka GPS
@@ -124,46 +187,55 @@
           </div>
 
           <!-- Center Group: Search Bar -->
-          <div class="header-search-wrap">
-            <form class="search-form" action="shop.html" method="get">
+          <div
+            class="flex-1 max-w-[440px] relative max-lg:max-w-[320px] max-md:order-3 max-md:w-full max-md:max-w-full max-md:mt-[0.65rem]"
+          >
+            <form class="relative w-full" action="shop.html" method="get">
               <input
                 type="text"
                 name="q"
-                class="search-input"
+                class="w-full h-11 pr-11 pl-4 text-[0.9rem] text-slate-800 bg-white border border-gray-300 rounded-[6px] outline-none transition-all duration-[250ms] placeholder:text-gray-400 focus:border-orange-500 focus:ring-[3px] focus:ring-orange-500/15"
                 id="searchInput"
                 placeholder="What are you looking for?"
                 autocomplete="off"
               />
-              <button type="submit" class="search-btn" aria-label="Search">
+              <button
+                type="submit"
+                class="absolute right-[0.35rem] top-1/2 -translate-y-1/2 w-9 h-9 flex items-center justify-center text-gray-500 text-base rounded-[6px] transition-all duration-[250ms] hover:text-orange-500"
+                aria-label="Search"
+              >
                 <i class="fa-solid fa-magnifying-glass"></i>
               </button>
             </form>
 
             <!-- Quick Search Autocomplete Suggestions -->
-            <div class="search-suggestions" id="searchSuggestions">
+            <div
+              class="search-suggestions absolute top-[calc(100%+6px)] left-0 right-0 bg-white border border-slate-200 rounded-[10px] shadow-lg p-2 hidden z-50"
+              id="searchSuggestions"
+            >
               <div
-                class="suggestion-item"
+                class="flex items-center gap-[0.6rem] py-2 px-3 text-[0.85rem] text-slate-700 rounded-[6px] cursor-pointer hover:bg-slate-50 hover:text-orange-500"
                 onclick="window.location.href = 'shop.html?q=Avocado'"
               >
                 <i class="fa-solid fa-leaf text-green-500"></i> Fresh Organic
                 Avocados
               </div>
               <div
-                class="suggestion-item"
+                class="flex items-center gap-[0.6rem] py-2 px-3 text-[0.85rem] text-slate-700 rounded-[6px] cursor-pointer hover:bg-slate-50 hover:text-orange-500"
                 onclick="window.location.href = 'shop.html?q=Strawberry'"
               >
                 <i class="fa-solid fa-apple-whole text-red-500"></i> Sweet
                 Organic Strawberries
               </div>
               <div
-                class="suggestion-item"
+                class="flex items-center gap-[0.6rem] py-2 px-3 text-[0.85rem] text-slate-700 rounded-[6px] cursor-pointer hover:bg-slate-50 hover:text-orange-500"
                 onclick="window.location.href = 'shop.html?q=Milk'"
               >
                 <i class="fa-solid fa-bottle-droplet text-blue-500"></i> Pure
                 Farm Whole Milk
               </div>
               <div
-                class="suggestion-item"
+                class="flex items-center gap-[0.6rem] py-2 px-3 text-[0.85rem] text-slate-700 rounded-[6px] cursor-pointer hover:bg-slate-50 hover:text-orange-500"
                 onclick="window.location.href = 'shop.html?q=Eggs'"
               >
                 <i class="fa-solid fa-egg text-yellow-600"></i> Free-Range Brown
@@ -173,45 +245,67 @@
           </div>
 
           <!-- Right Group: Wishlist, Cart & User Profile -->
-          <div class="header-actions-group">
+          <div
+            class="flex items-center gap-7 shrink-0 max-[1180px]:gap-5 max-md:gap-[0.85rem]"
+          >
             <!-- Wishlist with Green Badge -->
             <a
               href="javascript:void(0)"
               onclick="openWishlistDrawer()"
-              class="action-wishlist"
+              class="relative flex items-center justify-center text-gray-900 text-[1.35rem] p-[0.35rem] rounded-full transition-all duration-[250ms] hover:text-red-500 hover:scale-[1.08] max-md:text-xl"
               title="View Wishlist"
               aria-label="Wishlist"
             >
               <i class="fa-regular fa-heart"></i>
-              <span class="badge-count">00</span>
+              <span
+                class="absolute -top-1 -right-2 bg-green-500 text-white text-[0.65rem] font-bold py-[0.15rem] px-[0.35rem] min-w-[18px] h-[18px] rounded-full flex items-center justify-center shadow-[0_1px_3px_rgba(34,197,94,0.4)]"
+                >00</span
+              >
             </a>
 
             <!-- Cart with Stacked "My Cart" and "Rs. 250" -->
-            <div class="action-cart-wrap">
-              <div class="action-cart" title="Shopping Cart">
-                <div class="cart-icon-box">
+            <div class="action-cart-wrap relative">
+              <div
+                class="flex items-center gap-[0.65rem] cursor-pointer py-[0.35rem] px-2 rounded-[6px] transition-all duration-[250ms] hover:bg-slate-50"
+                title="Shopping Cart"
+              >
+                <div
+                  class="relative text-[1.35rem] text-gray-900 flex items-center max-md:text-xl"
+                >
                   <i class="fa-solid fa-cart-shopping"></i>
                 </div>
-                <div class="cart-info">
-                  <span class="cart-label">My Cart</span>
-                  <span class="cart-amount">Rs. 0</span>
+                <div class="flex flex-col leading-[1.15] max-md:hidden">
+                  <span class="text-xs text-slate-500 font-medium"
+                    >My Cart</span
+                  >
+                  <span class="text-sm font-extrabold text-orange-500"
+                    >Rs. 0</span
+                  >
                 </div>
               </div>
             </div>
 
             <!-- User Profile -->
-            <div class="action-user-wrap">
-              <div class="action-user" title="Account Menu">
+            <div class="action-user-wrap relative">
+              <div
+                class="flex items-center gap-[0.65rem] cursor-pointer py-1 px-2 rounded-full transition-all duration-[250ms] hover:bg-slate-50"
+                title="Account Menu"
+              >
                 <img
                   src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&auto=format&fit=crop&q=80"
                   alt="Account"
-                  class="user-avatar-img"
+                  class="w-9 h-9 rounded-full object-cover border-[1.5px] border-gray-200 max-md:w-8 max-md:h-8"
                 />
-                <span class="user-name-text">Account</span>
+                <span
+                  class="text-sm font-bold text-gray-800 whitespace-nowrap max-lg:hidden"
+                  >Account</span
+                >
               </div>
 
               <!-- User Dropdown Menu -->
-              <div class="user-dropdown-menu">
+              <div
+                class="user-dropdown-menu absolute top-[calc(100%+10px)] right-0 w-[200px] bg-white rounded-[10px] shadow-lg border border-slate-200 p-2 opacity-0 invisible translate-y-[10px] transition-all duration-[250ms] z-50"
+              >
                 <!-- Populated by js/main.js -->
               </div>
             </div>
@@ -220,23 +314,32 @@
       </div>
 
       <!-- 2. BOTTOM NAVIGATION BAR SECTION -->
-      <nav class="header-bottom">
-        <div class="container-custom header-bottom-inner">
+      <nav
+        class="bg-white py-[0.45rem] border-b border-slate-200 max-lg:hidden"
+      >
+        <div
+          class="w-full max-w-custom mx-auto px-5 flex items-center justify-between gap-6"
+        >
           <!-- Left Side: All Categories & Main Links -->
-          <div class="bottom-left-group">
+          <div class="flex items-center gap-10 max-[1180px]:gap-6">
             <!-- "All Categories" Dropdown -->
-            <div class="categories-dropdown-wrap">
-              <button class="categories-trigger-btn" aria-haspopup="true">
+            <div class="categories-dropdown-wrap relative">
+              <button
+                class="flex items-center gap-[0.65rem] text-[0.95rem] font-bold text-gray-900 py-2 px-[0.4rem] cursor-pointer transition-all duration-[250ms]"
+                aria-haspopup="true"
+              >
                 <i class="fa-solid fa-layer-group cat-icon"></i>
                 <span>All Categories</span>
                 <i class="fa-solid fa-chevron-down chevron-icon"></i>
               </button>
 
               <!-- Categories Dropdown Menu (Keells Supermarket Aisles) -->
-              <div class="categories-menu">
+              <div
+                class="categories-menu absolute top-[calc(100%+8px)] left-0 w-[270px] bg-white rounded-[10px] shadow-lg border border-slate-200 py-[0.6rem] opacity-0 invisible translate-y-[10px] transition-all duration-[250ms] z-[60]"
+              >
                 <a
                   href="shop.html?cat=Fresh%20Vegetables"
-                  class="category-menu-item"
+                  class="flex items-center justify-between py-[0.65rem] px-5 text-[0.885rem] font-medium text-gray-700 transition-all duration-[250ms] hover:bg-orange-50 hover:text-orange-500 hover:pl-[1.45rem]"
                 >
                   <span class="cat-item-left"
                     ><i class="fa-solid fa-carrot"></i> Fresh Vegetables</span
@@ -247,7 +350,7 @@
                 </a>
                 <a
                   href="shop.html?cat=Fresh%20Fruits"
-                  class="category-menu-item"
+                  class="flex items-center justify-between py-[0.65rem] px-5 text-[0.885rem] font-medium text-gray-700 transition-all duration-[250ms] hover:bg-orange-50 hover:text-orange-500 hover:pl-[1.45rem]"
                 >
                   <span class="cat-item-left"
                     ><i class="fa-solid fa-apple-whole"></i> Fresh Fruits</span
@@ -258,7 +361,7 @@
                 </a>
                 <a
                   href="shop.html?cat=Dairy%20%26%20Breakfast"
-                  class="category-menu-item"
+                  class="flex items-center justify-between py-[0.65rem] px-5 text-[0.885rem] font-medium text-gray-700 transition-all duration-[250ms] hover:bg-orange-50 hover:text-orange-500 hover:pl-[1.45rem]"
                 >
                   <span class="cat-item-left"
                     ><i class="fa-solid fa-bottle-droplet"></i> Dairy &
@@ -270,7 +373,7 @@
                 </a>
                 <a
                   href="shop.html?cat=Rice%20%26%20Staples"
-                  class="category-menu-item"
+                  class="flex items-center justify-between py-[0.65rem] px-5 text-[0.885rem] font-medium text-gray-700 transition-all duration-[250ms] hover:bg-orange-50 hover:text-orange-500 hover:pl-[1.45rem]"
                 >
                   <span class="cat-item-left"
                     ><i class="fa-solid fa-wheat-awn"></i> Rice & Staples</span
@@ -281,7 +384,7 @@
                 </a>
                 <a
                   href="shop.html?cat=Spices%20%26%20Condiments"
-                  class="category-menu-item"
+                  class="flex items-center justify-between py-[0.65rem] px-5 text-[0.885rem] font-medium text-gray-700 transition-all duration-[250ms] hover:bg-orange-50 hover:text-orange-500 hover:pl-[1.45rem]"
                 >
                   <span class="cat-item-left"
                     ><i class="fa-solid fa-mortar-pestle"></i> Spices &
@@ -293,7 +396,7 @@
                 </a>
                 <a
                   href="shop.html?cat=Tea%20%26%20Biscuits"
-                  class="category-menu-item"
+                  class="flex items-center justify-between py-[0.65rem] px-5 text-[0.885rem] font-medium text-gray-700 transition-all duration-[250ms] hover:bg-orange-50 hover:text-orange-500 hover:pl-[1.45rem]"
                 >
                   <span class="cat-item-left"
                     ><i class="fa-solid fa-mug-hot"></i> Ceylon Tea &
@@ -305,7 +408,7 @@
                 </a>
                 <a
                   href="shop.html?cat=Bakery%20%26%20Snacks"
-                  class="category-menu-item"
+                  class="flex items-center justify-between py-[0.65rem] px-5 text-[0.885rem] font-medium text-gray-700 transition-all duration-[250ms] hover:bg-orange-50 hover:text-orange-500 hover:pl-[1.45rem]"
                 >
                   <span class="cat-item-left"
                     ><i class="fa-solid fa-bread-slice"></i> Bakery &
@@ -319,14 +422,46 @@
             </div>
 
             <!-- Main Nav Links -->
-            <ul class="main-nav-list">
-              <li><a href="index.html" class="nav-link active">Home</a></li>
-              <li><a href="about.html" class="nav-link">About</a></li>
-              <li><a href="shop.html" class="nav-link">Best Deals</a></li>
-              <li><a href="blogs.html" class="nav-link">Blogs</a></li>
-              <li><a href="contact.html" class="nav-link">Contact</a></li>
+            <ul class="flex items-center gap-8 max-[1180px]:gap-5">
               <li>
-                <a href="account.html?track=true" class="nav-link"
+                <a
+                  href="index.html"
+                  class="text-[0.925rem] font-medium text-gray-700 relative py-[0.45rem] inline-block transition-all duration-[250ms] hover:text-orange-500 hover:font-semibold active"
+                  >Home</a
+                >
+              </li>
+              <li>
+                <a
+                  href="about.html"
+                  class="text-[0.925rem] font-medium text-gray-700 relative py-[0.45rem] inline-block transition-all duration-[250ms] hover:text-orange-500 hover:font-semibold"
+                  >About</a
+                >
+              </li>
+              <li>
+                <a
+                  href="shop.html"
+                  class="text-[0.925rem] font-medium text-gray-700 relative py-[0.45rem] inline-block transition-all duration-[250ms] hover:text-orange-500 hover:font-semibold"
+                  >Best Deals</a
+                >
+              </li>
+              <li>
+                <a
+                  href="blogs.html"
+                  class="text-[0.925rem] font-medium text-gray-700 relative py-[0.45rem] inline-block transition-all duration-[250ms] hover:text-orange-500 hover:font-semibold"
+                  >Blogs</a
+                >
+              </li>
+              <li>
+                <a
+                  href="contact.html"
+                  class="text-[0.925rem] font-medium text-gray-700 relative py-[0.45rem] inline-block transition-all duration-[250ms] hover:text-orange-500 hover:font-semibold"
+                  >Contact</a
+                >
+              </li>
+              <li>
+                <a
+                  href="account.html?track=true"
+                  class="text-[0.925rem] font-medium text-gray-700 relative py-[0.45rem] inline-block transition-all duration-[250ms] hover:text-orange-500 hover:font-semibold"
                   ><i class="fa-solid fa-truck-fast mr-1 text-green-600"></i>
                   Track Order</a
                 >
@@ -335,11 +470,11 @@
           </div>
 
           <!-- Right Side: Phone Number Link -->
-          <div class="bottom-right-group">
+          <div class="flex items-center gap-7 max-[1180px]:gap-5">
             <!-- Phone Number Link -->
             <a
               href="tel:+94412224589"
-              class="nav-phone-contact"
+              class="flex items-center gap-[0.55rem] text-[0.95rem] font-bold text-gray-800 transition-all duration-[250ms] hover:text-orange-500"
               title="Call Us"
             >
               <i class="fa-solid fa-phone"></i>
@@ -350,24 +485,32 @@
       </nav>
     </header>
 
-    <div class="mobile-overlay" id="mobileOverlay"></div>
+    <!-- ==========================================
+       MOBILE OFF-CANVAS SLIDE-OVER DRAWER
+       ========================================== -->
+    <div
+      class="mobile-overlay fixed inset-0 bg-slate-900/55 backdrop-blur-[4px] z-[200] opacity-0 invisible transition-all duration-[250ms]"
+      id="mobileOverlay"
+    ></div>
 
     <aside
-      class="mobile-drawer"
+      class="mobile-drawer fixed top-0 left-0 bottom-0 w-80 max-w-[85vw] bg-white z-[210] -translate-x-full transition-transform duration-[350ms] ease-[cubic-bezier(0.16,1,0.3,1)] flex flex-col overflow-y-auto shadow-lg"
       id="mobileDrawer"
       aria-label="Mobile Navigation"
     >
-      <div class="mobile-drawer-header">
-        <div class="brand-logo">
+      <div
+        class="flex items-center justify-between p-5 border-b border-slate-200"
+      >
+        <div class="flex items-center no-underline">
           <img
             src="logo.png"
             alt="GreenBasket"
-            class="brand-logo-img"
+            class="h-12 max-h-[52px] w-auto max-w-[220px] object-contain bg-transparent block scale-[1.08] origin-left transition-transform duration-[250ms] ease-out hover:scale-[1.15] max-md:h-[38px] max-md:max-w-[100px]"
             style="height: 38px"
           />
         </div>
         <button
-          class="mobile-close-btn"
+          class="text-xl text-slate-500 w-9 h-9 flex items-center justify-center rounded-full hover:bg-slate-50 hover:text-slate-800"
           id="mobileCloseBtn"
           aria-label="Close menu"
         >
@@ -375,31 +518,37 @@
         </button>
       </div>
 
-      <div class="mobile-drawer-body">
+      <div class="p-5 flex flex-col gap-6">
         <!-- Mobile User Profile -->
-        <div class="mobile-user-profile">
+        <div class="flex items-center gap-3 p-3 bg-slate-50 rounded-[10px]">
           <img
             src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&auto=format&fit=crop&q=80"
             alt="Account"
-            class="user-avatar-img"
+            class="w-9 h-9 rounded-full object-cover border-[1.5px] border-gray-200 max-md:w-8 max-md:h-8"
           />
           <div>
             <div
-              class="user-name-text"
+              class="text-sm font-bold text-gray-800 whitespace-nowrap"
               style="font-weight: 700; font-size: 0.9rem"
             >
               Account
             </div>
-            <div style="font-size: 0.75rem; color: #16a34a; font-weight: 600">
+            <div class="text-[0.75rem] text-green-600 font-semibold">
               Sri Lanka Supermarket Member
             </div>
           </div>
         </div>
 
         <!-- Mobile Delivery Section -->
-        <div class="mobile-delivery-section">
-          <span class="delivery-label">Deliver to</span>
-          <div class="delivery-location">
+        <div
+          class="flex flex-col gap-1 p-3 border border-slate-200 rounded-[10px]"
+        >
+          <span class="text-xs text-slate-500 font-medium leading-none mb-1"
+            >Deliver to</span
+          >
+          <div
+            class="flex items-center gap-[0.35rem] text-sm font-bold text-slate-800"
+          >
             <i class="fa-solid fa-location-dot loc-icon"></i>
             <span class="delivery-location-text" id="mobileDeliveryLocationText"
               >Colombo, Sri Lanka</span
@@ -408,37 +557,58 @@
         </div>
 
         <!-- Mobile Navigation Links -->
-        <nav class="mobile-nav-links">
-          <a href="index.html" class="mobile-nav-item active">
+        <nav class="flex flex-col gap-2">
+          <a
+            href="index.html"
+            class="flex items-center justify-between py-[0.65rem] px-2 text-[0.95rem] font-semibold text-slate-800 rounded-[6px] transition-all duration-[250ms] hover:text-orange-500 hover:bg-orange-50 hover:pl-3 active"
+          >
             <span>Home</span>
             <i class="fa-solid fa-chevron-right text-xs"></i>
           </a>
-          <a href="shop.html" class="mobile-nav-item">
+          <a
+            href="shop.html"
+            class="flex items-center justify-between py-[0.65rem] px-2 text-[0.95rem] font-semibold text-slate-800 rounded-[6px] transition-all duration-[250ms] hover:text-orange-500 hover:bg-orange-50 hover:pl-3"
+          >
             <span>Shop Products</span>
             <i class="fa-solid fa-chevron-right text-xs"></i>
           </a>
-          <a href="about.html" class="mobile-nav-item">
+          <a
+            href="about.html"
+            class="flex items-center justify-between py-[0.65rem] px-2 text-[0.95rem] font-semibold text-slate-800 rounded-[6px] transition-all duration-[250ms] hover:text-orange-500 hover:bg-orange-50 hover:pl-3"
+          >
             <span>About Us</span>
             <i class="fa-solid fa-chevron-right text-xs"></i>
           </a>
-          <a href="blogs.html" class="mobile-nav-item">
+          <a
+            href="blogs.html"
+            class="flex items-center justify-between py-[0.65rem] px-2 text-[0.95rem] font-semibold text-slate-800 rounded-[6px] transition-all duration-[250ms] hover:text-orange-500 hover:bg-orange-50 hover:pl-3"
+          >
             <span>Blogs & Recipes</span>
             <i class="fa-solid fa-chevron-right text-xs"></i>
           </a>
-          <a href="contact.html" class="mobile-nav-item">
+          <a
+            href="contact.html"
+            class="flex items-center justify-between py-[0.65rem] px-2 text-[0.95rem] font-semibold text-slate-800 rounded-[6px] transition-all duration-[250ms] hover:text-orange-500 hover:bg-orange-50 hover:pl-3"
+          >
             <span>Contact Store</span>
             <i class="fa-solid fa-chevron-right text-xs"></i>
           </a>
-          <a href="account.html" class="mobile-nav-item">
+          <a
+            href="account.html"
+            class="flex items-center justify-between py-[0.65rem] px-2 text-[0.95rem] font-semibold text-slate-800 rounded-[6px] transition-all duration-[250ms] hover:text-orange-500 hover:bg-orange-50 hover:pl-3"
+          >
             <span>My Orders</span>
             <i class="fa-solid fa-chevron-right text-xs"></i>
           </a>
         </nav>
 
         <!-- Mobile Categories Accordion -->
-        <div class="mobile-categories-accordion">
-          <button class="mobile-categories-btn" id="mobileCategoriesToggle">
-            <span style="display: flex; align-items: center; gap: 0.5rem">
+        <div class="border-t border-slate-100 pt-3">
+          <button
+            class="flex items-center justify-between w-full py-[0.65rem] px-2 text-[0.95rem] font-bold text-slate-800"
+            id="mobileCategoriesToggle"
+          >
+            <span class="flex items-center gap-2">
               <i class="fa-solid fa-layer-group text-green-600"></i> All
               Categories
             </span>
@@ -446,56 +616,62 @@
               class="fa-solid fa-chevron-down text-xs transition-transform"
             ></i>
           </button>
-          <div class="mobile-categories-list" id="mobileCategoriesList">
-            <a href="shop.html?cat=Fresh%20Vegetables" class="mobile-cat-link"
+          <div
+            class="mobile-categories-list hidden flex-col pl-6 gap-[0.4rem] mt-2"
+            id="mobileCategoriesList"
+          >
+            <a
+              href="shop.html?cat=Fresh%20Vegetables"
+              class="text-sm text-slate-500 py-[0.35rem] hover:text-orange-500"
               >🥕 Fresh Vegetables</a
             >
-            <a href="shop.html?cat=Fresh%20Fruits" class="mobile-cat-link"
+            <a
+              href="shop.html?cat=Fresh%20Fruits"
+              class="text-sm text-slate-500 py-[0.35rem] hover:text-orange-500"
               >🍌 Fresh Fruits</a
             >
             <a
               href="shop.html?cat=Dairy%20%26%20Breakfast"
-              class="mobile-cat-link"
+              class="text-sm text-slate-500 py-[0.35rem] hover:text-orange-500"
               >🥛 Dairy & Breakfast</a
             >
-            <a href="shop.html?cat=Rice%20%26%20Staples" class="mobile-cat-link"
+            <a
+              href="shop.html?cat=Rice%20%26%20Staples"
+              class="text-sm text-slate-500 py-[0.35rem] hover:text-orange-500"
               >🌾 Rice & Staples</a
             >
             <a
               href="shop.html?cat=Spices%20%26%20Condiments"
-              class="mobile-cat-link"
+              class="text-sm text-slate-500 py-[0.35rem] hover:text-orange-500"
               >🌶️ Spices & Condiments</a
             >
-            <a href="shop.html?cat=Tea%20%26%20Biscuits" class="mobile-cat-link"
+            <a
+              href="shop.html?cat=Tea%20%26%20Biscuits"
+              class="text-sm text-slate-500 py-[0.35rem] hover:text-orange-500"
               >☕ Ceylon Tea & Biscuits</a
             >
             <a
               href="shop.html?cat=Bakery%20%26%20Snacks"
-              class="mobile-cat-link"
+              class="text-sm text-slate-500 py-[0.35rem] hover:text-orange-500"
               >🥖 Bakery & Snacks</a
             >
           </div>
         </div>
 
         <!-- Mobile Actions (Phone & Track Order) -->
-        <div class="mobile-footer-actions">
+        <div
+          class="mt-auto pt-4 border-t border-slate-200 flex flex-col gap-[0.85rem]"
+        >
           <a
             href="tel:+94412224589"
-            class="nav-phone-contact"
-            style="font-size: 1rem"
+            class="flex items-center gap-[0.55rem] text-[1rem] font-bold text-gray-800 transition-all duration-[250ms] hover:text-orange-500"
           >
             <i class="fa-solid fa-phone"></i>
             <span>+94 41-222-4589</span>
           </a>
           <a
             href="account.html?track=true"
-            class="btn-primary-green"
-            style="
-              width: 100%;
-              border-radius: 999px;
-              padding: 0.75rem;
-              text-align: center;
-            "
+            class="bg-green-500 text-white font-bold py-[0.75rem] px-[1.85rem] rounded-full shadow-[0_10px_20px_-5px_rgba(34,197,94,0.4)] transition-all duration-[250ms] hover:bg-green-600 hover:-translate-y-0.5 w-full text-center"
           >
             <i class="fa-solid fa-truck-fast mr-1"></i>
             <span>Track Order</span>
@@ -504,89 +680,100 @@
       </div>
     </aside>
 
+    <!-- ==========================================
+       MAIN CONTENT: HERO & PRODUCTS
+       ========================================== -->
     <main>
       <!-- 100vh Fullscreen Supermarket Hero Section (Sri Lanka - Keells Supermarket Style) -->
-      <section class="hero-fullscreen-100vh scroll-reveal">
-        <div class="container-custom">
-          <div style="max-width: 780px">
-            <div class="hero-fullscreen-badge">
+      <section
+        class="hero-fullscreen-100vh min-h-[460px] max-h-[540px] relative flex items-center py-11 text-white max-md:min-h-0 max-md:max-h-none max-md:py-10 min-[992px]:min-h-[480px] min-[992px]:max-h-[530px] scroll-reveal"
+      >
+        <div class="w-full max-w-custom mx-auto px-5">
+          <div class="max-w-[780px]">
+            <div
+              class="inline-flex items-center gap-2 bg-green-500/20 border border-green-400/40 text-green-400 text-[0.85rem] font-bold py-[0.35rem] px-[1.15rem] rounded-full mb-[0.85rem] backdrop-blur-[8px]"
+            >
               <i class="fa-solid fa-shield-halved"></i> 100% Quality Inspected ·
               Sri Lanka's Fresh Supermarket
             </div>
 
-            <h1 class="hero-fullscreen-title">
-              Sri Lanka’s Freshest Groceries <br />Delivered Fast To
-              <span class="highlight">Your Doorstep</span>
+            <h1
+              class="text-[2.75rem] font-extrabold leading-[1.18] text-white mb-[0.85rem] tracking-tight [text-shadow:0_2px_10px_rgba(0,0,0,0.3)] max-md:text-[2rem]"
+            >
+              Sri Lanka's Freshest Groceries <br />Delivered Fast To
+              <span class="text-green-400">Your Doorstep</span>
             </h1>
 
-            <p class="hero-fullscreen-subtitle">
+            <p
+              class="text-[1.05rem] text-slate-200 leading-[1.55] mb-6 max-w-[620px] [text-shadow:0_1px_4px_rgba(0,0,0,0.4)] max-md:text-[0.95rem]"
+            >
               Shop upcountry Nuwara Eliya vegetables, fresh tropical fruits,
               pure Kotmale dairy, Keeri Samba rice, Wijaya spices, and bakery
               classics. Packed with care and delivered with islandwide doorstep
               service.
             </p>
 
-            <div class="hero-fullscreen-cta-group">
+            <div class="flex items-center gap-[1.15rem] flex-wrap mb-7">
               <a
                 href="shop.html"
-                class="btn-primary-green"
-                style="
-                  padding: 1rem 2.25rem;
-                  font-size: 1.05rem;
-                  border-radius: 999px;
-                "
+                class="bg-green-500 text-white font-bold py-4 px-9 rounded-full shadow-[0_10px_20px_-5px_rgba(34,197,94,0.4)] transition-all duration-[250ms] hover:bg-green-600 hover:-translate-y-0.5 text-[1.05rem]"
               >
                 <i class="fa-solid fa-basket-shopping mr-2"></i> Shop
                 Supermarket Deals
               </a>
               <a
                 href="#featured-products"
-                class="btn-secondary-outline"
-                style="
-                  padding: 1rem 2rem;
-                  font-size: 1.05rem;
-                  border-radius: 999px;
-                  color: #ffffff;
-                  border-color: rgba(255, 255, 255, 0.4);
-                  background: rgba(255, 255, 255, 0.08);
-                  backdrop-filter: blur(6px);
-                "
+                class="border-[1.5px] border-white/40 text-white font-bold py-4 px-8 rounded-full bg-white/[0.08] backdrop-blur-[6px] transition-all duration-[250ms] hover:border-orange-500 hover:text-orange-500 text-[1.05rem]"
               >
                 <i class="fa-solid fa-tags mr-2"></i> Today's Specials
               </a>
             </div>
 
             <!-- Trust Badges Strip -->
-            <div class="hero-trust-bar">
-              <div class="hero-trust-item">
-                <div class="hero-trust-icon">
+            <div
+              class="grid grid-cols-[repeat(auto-fit,minmax(180px,1fr))] gap-5 border-t border-white/15 pt-5"
+            >
+              <div class="flex items-center gap-3">
+                <div
+                  class="w-[38px] h-[38px] rounded-full bg-green-500/20 border border-green-400/40 text-green-400 flex items-center justify-center text-[1.05rem] shrink-0"
+                >
                   <i class="fa-solid fa-leaf"></i>
                 </div>
                 <div>
-                  <div class="hero-trust-title">Morning Harvest</div>
-                  <div class="hero-trust-desc">
+                  <div class="font-bold text-[0.9rem] text-white">
+                    Morning Harvest
+                  </div>
+                  <div class="text-xs text-slate-400">
                     Direct from local verified growers
                   </div>
                 </div>
               </div>
-              <div class="hero-trust-item">
-                <div class="hero-trust-icon">
+              <div class="flex items-center gap-3">
+                <div
+                  class="w-[38px] h-[38px] rounded-full bg-green-500/20 border border-green-400/40 text-green-400 flex items-center justify-center text-[1.05rem] shrink-0"
+                >
                   <i class="fa-solid fa-truck-fast"></i>
                 </div>
                 <div>
-                  <div class="hero-trust-title">Fast Islandwide Delivery</div>
-                  <div class="hero-trust-desc">
+                  <div class="font-bold text-[0.9rem] text-white">
+                    Fast Islandwide Delivery
+                  </div>
+                  <div class="text-xs text-slate-400">
                     Chilled & safe doorstep packaging
                   </div>
                 </div>
               </div>
-              <div class="hero-trust-item">
-                <div class="hero-trust-icon">
+              <div class="flex items-center gap-3">
+                <div
+                  class="w-[38px] h-[38px] rounded-full bg-green-500/20 border border-green-400/40 text-green-400 flex items-center justify-center text-[1.05rem] shrink-0"
+                >
                   <i class="fa-solid fa-circle-check"></i>
                 </div>
                 <div>
-                  <div class="hero-trust-title">100% Quality Guarantee</div>
-                  <div class="hero-trust-desc">
+                  <div class="font-bold text-[0.9rem] text-white">
+                    100% Quality Guarantee
+                  </div>
+                  <div class="text-xs text-slate-400">
                     Instant doorstep exchange or refund
                   </div>
                 </div>
@@ -598,102 +785,53 @@
 
       <!-- Supermarket Value Banner -->
       <section
-        class="scroll-reveal scroll-reveal-delay-1"
-        style="
-          background: #ffffff;
-          padding: 2rem 0;
-          border-top: 1px solid #f1f5f9;
-          border-bottom: 1px solid #f1f5f9;
-        "
+        class="scroll-reveal scroll-reveal-delay-1 bg-white py-8 border-t border-slate-100 border-b"
       >
-        <div class="container-custom">
+        <div class="w-full max-w-custom mx-auto px-5">
           <div
-            style="
-              display: grid;
-              grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-              gap: 1.5rem;
-            "
+            class="grid grid-cols-[repeat(auto-fit,minmax(240px,1fr))] gap-6"
           >
-            <div style="display: flex; align-items: center; gap: 1rem">
+            <div class="flex items-center gap-4">
               <div
-                style="
-                  width: 50px;
-                  height: 50px;
-                  border-radius: 50%;
-                  background: #dcfce7;
-                  color: #16a34a;
-                  display: flex;
-                  align-items: center;
-                  justify-content: center;
-                  font-size: 1.4rem;
-                  flex-shrink: 0;
-                "
+                class="w-[50px] h-[50px] rounded-full bg-green-100 text-green-600 flex items-center justify-center text-[1.4rem] shrink-0"
               >
                 <i class="fa-solid fa-truck-ramp-box"></i>
               </div>
               <div>
-                <div
-                  style="font-weight: 800; font-size: 0.95rem; color: #0f172a"
-                >
+                <div class="font-extrabold text-[0.95rem] text-slate-900">
                   FREE Doorstep Delivery
                 </div>
-                <div style="font-size: 0.8rem; color: #64748b">
+                <div class="text-[0.8rem] text-slate-500">
                   On qualifying orders above Rs. 2,000 across Sri Lanka
                 </div>
               </div>
             </div>
-            <div style="display: flex; align-items: center; gap: 1rem">
+            <div class="flex items-center gap-4">
               <div
-                style="
-                  width: 50px;
-                  height: 50px;
-                  border-radius: 50%;
-                  background: #ffedd5;
-                  color: #ea580c;
-                  display: flex;
-                  align-items: center;
-                  justify-content: center;
-                  font-size: 1.4rem;
-                  flex-shrink: 0;
-                "
+                class="w-[50px] h-[50px] rounded-full bg-orange-100 text-orange-600 flex items-center justify-center text-[1.4rem] shrink-0"
               >
                 <i class="fa-solid fa-seedling"></i>
               </div>
               <div>
-                <div
-                  style="font-weight: 800; font-size: 0.95rem; color: #0f172a"
-                >
+                <div class="font-extrabold text-[0.95rem] text-slate-900">
                   Supermarket Fresh Everyday
                 </div>
-                <div style="font-size: 0.8rem; color: #64748b">
+                <div class="text-[0.8rem] text-slate-500">
                   Upcountry vegetables, Kotmale dairy & Ceylon spices
                 </div>
               </div>
             </div>
-            <div style="display: flex; align-items: center; gap: 1rem">
+            <div class="flex items-center gap-4">
               <div
-                style="
-                  width: 50px;
-                  height: 50px;
-                  border-radius: 50%;
-                  background: #e0f2fe;
-                  color: #0284c7;
-                  display: flex;
-                  align-items: center;
-                  justify-content: center;
-                  font-size: 1.4rem;
-                  flex-shrink: 0;
-                "
+                class="w-[50px] h-[50px] rounded-full bg-sky-100 text-sky-600 flex items-center justify-center text-[1.4rem] shrink-0"
               >
                 <i class="fa-solid fa-shield-heart"></i>
               </div>
               <div>
-                <div
-                  style="font-weight: 800; font-size: 0.95rem; color: #0f172a"
-                >
+                <div class="font-extrabold text-[0.95rem] text-slate-900">
                   Cash on Delivery Available
                 </div>
-                <div style="font-size: 0.8rem; color: #64748b">
+                <div class="text-[0.8rem] text-slate-500">
                   Pay safely at your door upon inspection
                 </div>
               </div>
@@ -702,34 +840,37 @@
         </div>
       </section>
 
-      <section class="deals-section scroll-reveal" id="weekly-deals">
-        <div class="container-custom">
-          <div class="deals-header-row">
+      <!-- ==========================================
+         WEEKLY SUPERMARKET DISCOUNTS & DEALS SECTION
+         ========================================== -->
+      <section
+        class="py-14 bg-gradient-to-b from-slate-50 to-white border-y border-slate-100 relative scroll-reveal"
+        id="weekly-deals"
+      >
+        <div class="w-full max-w-custom mx-auto px-5">
+          <div class="flex justify-between items-end mb-9 flex-wrap gap-5">
             <div>
-              <div class="deals-badge-tag">
+              <div
+                class="inline-flex items-center gap-[0.45rem] bg-red-50 border border-red-200 text-red-500 text-[0.8rem] font-extrabold uppercase tracking-[0.05em] py-[0.35rem] px-[0.95rem] rounded-full mb-2"
+              >
                 <i class="fa-solid fa-fire"></i> Super Saver Deals · Limited
                 Quantities
               </div>
               <h2
-                style="
-                  font-size: 2.25rem;
-                  font-weight: 800;
-                  color: #0f172a;
-                  line-height: 1.2;
-                "
+                class="text-[2.25rem] font-extrabold text-slate-900 leading-[1.2]"
               >
                 Weekly Supermarket Specials
               </h2>
-              <p
-                style="color: #64748b; font-size: 0.95rem; margin-top: 0.35rem"
-              >
+              <p class="text-slate-500 text-[0.95rem] mt-[0.35rem]">
                 Save up to 20% on fresh Nuwara Eliya vegetables, Kotmale dairy,
                 Keeri Samba rice, and Ceylon spices.
               </p>
             </div>
 
             <!-- Live Deal Expiry Countdown -->
-            <div class="deals-countdown-box">
+            <div
+              class="inline-flex items-center gap-3 bg-slate-900 text-white py-[0.65rem] px-[1.35rem] rounded-full text-[0.85rem] font-bold shadow-[0_4px_15px_rgba(15,23,42,0.18)]"
+            >
               <i class="fa-regular fa-clock text-yellow-400"></i>
               <span>Deals Refresh In:</span>
               <span class="timer-digits" id="dealsTimer"
@@ -739,34 +880,51 @@
           </div>
 
           <!-- Deals Grid (Populated dynamically by js/shop.js) -->
-          <div class="deals-grid" id="homeDiscountContainer">
+          <div
+            class="grid grid-cols-[repeat(auto-fill,minmax(270px,1fr))] gap-7"
+            id="homeDiscountContainer"
+          >
             <!-- Rendered by renderHomeDiscountDeals() in shop.js -->
           </div>
         </div>
       </section>
 
-      <section class="container-custom scroll-reveal scroll-reveal-delay-1">
-        <div class="promo-banners-grid">
+      <!-- ==========================================
+         IMAGE 2: SIDE-BY-SIDE PROMOTIONAL BANNERS
+         (Pure Organic Coconut Delight & Crunch Best)
+         ========================================== -->
+      <section
+        class="w-full max-w-custom mx-auto px-5 scroll-reveal scroll-reveal-delay-1"
+      >
+        <div class="grid grid-cols-2 gap-8 my-14 max-[900px]:grid-cols-1">
           <!-- Promo Banner 1: Coconut Goodness -->
-          <div class="promo-banner-card">
-            <div class="promo-banner-text">
-              <h3 class="promo-banner-title">
+          <div
+            class="bg-gradient-to-br from-[#f0ede6] to-[#e6e2d8] rounded-2xl py-9 px-10 flex items-center justify-between gap-6 relative overflow-hidden shadow-[0_4px_15px_rgba(0,0,0,0.04)] transition-all duration-[350ms] min-h-[220px] hover:-translate-y-1 hover:shadow-[0_12px_25px_rgba(0,0,0,0.08)]"
+          >
+            <div class="flex-1 z-[2]">
+              <h3
+                class="text-2xl font-extrabold text-slate-800 leading-[1.25] mb-[0.4rem] tracking-tight"
+              >
                 Pure Organic Delight <br />Crispy Coconut Goodness
               </h3>
-              <p class="promo-banner-subtitle">Taste the Tropical Crunch</p>
+              <p class="text-[0.95rem] text-slate-500 font-medium mb-5">
+                Taste the Tropical Crunch
+              </p>
               <a
                 href="shop.html?cat=Tea%20%26%20Biscuits"
-                class="promo-banner-btn"
+                class="inline-flex items-center gap-2 bg-green-500 text-white font-bold text-[0.85rem] py-[0.55rem] px-5 rounded-full transition-all duration-[250ms] hover:bg-green-600 hover:translate-x-[3px]"
               >
                 <span>Shop Now</span>
                 <i class="fa-solid fa-arrow-right"></i>
               </a>
             </div>
-            <div class="promo-banner-img-wrap">
+            <div
+              class="w-[190px] h-40 flex items-center justify-center shrink-0 relative"
+            >
               <img
                 src="ass/promo-coconut.png"
                 alt="Pure Organic Delight Crispy Coconut Goodness"
-                class="promo-banner-img"
+                class="max-w-full max-h-full object-contain drop-shadow-[0_10px_15px_rgba(0,0,0,0.12)] transition-transform duration-[400ms]"
                 onerror="
                   this.onerror = null;
                   this.src =
@@ -777,25 +935,33 @@
           </div>
 
           <!-- Promo Banner 2: Nature's Best Crunch -->
-          <div class="promo-banner-card">
-            <div class="promo-banner-text">
-              <h3 class="promo-banner-title">
-                Crunch into <br />Nature’s Best
+          <div
+            class="bg-gradient-to-br from-[#f0ede6] to-[#e6e2d8] rounded-2xl py-9 px-10 flex items-center justify-between gap-6 relative overflow-hidden shadow-[0_4px_15px_rgba(0,0,0,0.04)] transition-all duration-[350ms] min-h-[220px] hover:-translate-y-1 hover:shadow-[0_12px_25px_rgba(0,0,0,0.08)]"
+          >
+            <div class="flex-1 z-[2]">
+              <h3
+                class="text-2xl font-extrabold text-slate-800 leading-[1.25] mb-[0.4rem] tracking-tight"
+              >
+                Crunch into <br />Nature's Best
               </h3>
-              <p class="promo-banner-subtitle">Savor Every Bite</p>
+              <p class="text-[0.95rem] text-slate-500 font-medium mb-5">
+                Savor Every Bite
+              </p>
               <a
                 href="shop.html?cat=Bakery%20%26%20Snacks"
-                class="promo-banner-btn"
+                class="inline-flex items-center gap-2 bg-green-500 text-white font-bold text-[0.85rem] py-[0.55rem] px-5 rounded-full transition-all duration-[250ms] hover:bg-green-600 hover:translate-x-[3px]"
               >
                 <span>Discover Snacks</span>
                 <i class="fa-solid fa-arrow-right"></i>
               </a>
             </div>
-            <div class="promo-banner-img-wrap">
+            <div
+              class="w-[190px] h-40 flex items-center justify-center shrink-0 relative"
+            >
               <img
                 src="ass/promo-crunch.png"
                 alt="Crunch into Nature's Best"
-                class="promo-banner-img"
+                class="max-w-full max-h-full object-contain drop-shadow-[0_10px_15px_rgba(0,0,0,0.12)] transition-transform duration-[400ms]"
                 onerror="
                   this.onerror = null;
                   this.src =
@@ -807,47 +973,25 @@
         </div>
       </section>
 
-      <section
-        id="featured-products"
-        class="scroll-reveal"
-        style="padding: 4.5rem 0 3.5rem"
-      >
-        <div class="container-custom">
-          <div
-            style="
-              display: flex;
-              justify-content: space-between;
-              align-items: flex-end;
-              margin-bottom: 2.25rem;
-              flex-wrap: wrap;
-              gap: 1rem;
-            "
-          >
+      <!-- ==========================================
+         FEATURED PRODUCTS (CURATED 8 ITEMS ONLY)
+         + PROMINENT "GO TO SHOP" CTA BANNER
+         ========================================== -->
+      <section id="featured-products" class="scroll-reveal py-[4.5rem] pb-14">
+        <div class="w-full max-w-custom mx-auto px-5">
+          <div class="flex justify-between items-end mb-9 flex-wrap gap-4">
             <div>
               <span
-                style="
-                  font-size: 0.85rem;
-                  font-weight: 700;
-                  color: #16a34a;
-                  text-transform: uppercase;
-                  letter-spacing: 0.05em;
-                "
+                class="text-[0.85rem] font-bold text-green-600 uppercase tracking-[0.05em]"
               >
                 <i class="fa-solid fa-leaf mr-1"></i> Freshly Harvested Today
               </span>
               <h2
-                style="
-                  font-size: 2.25rem;
-                  font-weight: 800;
-                  color: #0f172a;
-                  line-height: 1.2;
-                "
+                class="text-[2.25rem] font-extrabold text-slate-900 leading-[1.2]"
               >
                 Featured Supermarket Picks
               </h2>
-              <p
-                style="color: #64748b; font-size: 0.95rem; margin-top: 0.35rem"
-              >
+              <p class="text-slate-500 text-[0.95rem] mt-[0.35rem]">
                 Hand-picked morning harvest of Sri Lanka's most popular kitchen
                 vegetables, fruits, dairy, and pantry staples.
               </p>
@@ -855,12 +999,7 @@
             <div>
               <a
                 href="shop.html"
-                class="btn-primary-green"
-                style="
-                  font-size: 0.92rem;
-                  border-radius: 999px;
-                  padding: 0.65rem 1.6rem;
-                "
+                class="bg-green-500 text-white font-bold text-[0.92rem] py-[0.65rem] px-[1.6rem] rounded-full shadow-[0_10px_20px_-5px_rgba(34,197,94,0.4)] transition-all duration-[250ms] hover:bg-green-600 hover:-translate-y-0.5"
               >
                 View All 24+ Items <i class="fa-solid fa-arrow-right ml-1"></i>
               </a>
@@ -868,29 +1007,42 @@
           </div>
 
           <!-- Curated 8 Products Grid Loaded from /api/products -->
-          <div class="products-grid" id="productsContainer">
+          <div
+            class="grid grid-cols-[repeat(auto-fill,minmax(260px,1fr))] gap-7"
+            id="productsContainer"
+          >
             <!-- Populated dynamically by js/shop.js (Curated 8 items on Home) -->
           </div>
 
           <!-- Prominent Senior-Dev "Go to Shop" Call-To-Action Banner -->
-          <div class="view-all-shop-cta-wrap scroll-reveal">
-            <div class="cta-inner">
-              <div class="cta-text">
-                <span class="cta-kicker"
+          <div
+            class="mt-14 bg-gradient-to-br from-slate-900 to-slate-800 rounded-2xl py-11 px-12 text-white relative overflow-hidden shadow-[0_12px_32px_rgba(15,23,42,0.12)] scroll-reveal"
+          >
+            <div
+              class="flex items-center justify-between gap-8 relative z-[2] flex-wrap"
+            >
+              <div class="max-w-[650px]">
+                <span
+                  class="inline-flex items-center gap-[0.45rem] bg-green-500/20 text-green-400 text-[0.8rem] font-extrabold uppercase tracking-[0.05em] py-[0.3rem] px-[0.85rem] rounded-full mb-3"
                   ><i class="fa-solid fa-basket-shopping"></i> Full Supermarket
                   Catalog</span
                 >
-                <h3 class="cta-title">
+                <h3
+                  class="text-[1.85rem] font-extrabold leading-[1.25] text-white mb-2"
+                >
                   Looking for More Supermarket Groceries?
                 </h3>
-                <p class="cta-desc">
+                <p class="text-slate-300 text-[0.98rem] leading-[1.6]">
                   Browse our complete aisle catalog including upcountry highland
                   vegetables, Kotmale dairy milk, Keeri Samba rice, Munchee
                   biscuits, Dilmah tea, and bakery classics.
                 </p>
               </div>
               <div class="cta-action">
-                <a href="shop.html" class="btn-explore-shop">
+                <a
+                  href="shop.html"
+                  class="inline-flex items-center gap-3 bg-green-500 text-white font-bold text-[1.05rem] py-[1.1rem] px-9 rounded-full shadow-[0_6px_20px_rgba(34,197,94,0.35)] transition-all duration-300 whitespace-nowrap no-underline hover:bg-green-600 hover:-translate-y-[3px] hover:scale-[1.02] hover:shadow-[0_10px_25px_rgba(34,197,94,0.45)]"
+                >
                   <span>Explore All 24+ Supermarket Aisles</span>
                   <i class="fa-solid fa-arrow-right"></i>
                 </a>
@@ -900,20 +1052,31 @@
         </div>
       </section>
 
-      <section class="home-about-section scroll-reveal" id="home-about-section">
-        <div class="container-custom">
-          <div class="home-about-grid">
+      <!-- ==========================================
+         ABOUT US PAGE PREVIEW NAVIGATION SECTION
+         ========================================== -->
+      <section
+        class="py-20 bg-white border-t border-slate-100 scroll-reveal"
+        id="home-about-section"
+      >
+        <div class="w-full max-w-custom mx-auto px-5">
+          <div
+            class="grid grid-cols-[1.15fr_0.85fr] gap-16 items-center max-lg:grid-cols-1 max-lg:gap-10"
+          >
             <!-- Left Column: Story & Certification Details -->
             <div class="home-about-content">
-              <span class="section-kicker"
+              <span
+                class="inline-flex items-center gap-[0.45rem] bg-green-100 text-green-800 text-[0.8rem] font-extrabold uppercase tracking-[0.05em] py-[0.35rem] px-[0.95rem] rounded-full mb-3"
                 ><i class="fa-solid fa-seedling"></i> Our Story &
                 Guarantee</span
               >
-              <h2 class="home-about-title">
+              <h2
+                class="text-[2.25rem] font-extrabold text-slate-900 leading-[1.25] mb-4"
+              >
                 100% Biological Produce Direct From Sri Lankan Farmer
                 Cooperatives
               </h2>
-              <p class="home-about-narrative">
+              <p class="text-slate-600 text-[1.02rem] leading-[1.65] mb-8">
                 GreenBasket was founded with a clear mission: connect verified
                 sustainable smallholders across Nuwara Eliya, Weligama, and
                 Jaffna directly with conscious families in Sri Lanka. 100% PGS
@@ -922,44 +1085,52 @@
               </p>
 
               <!-- 3 Feature Highlights -->
-              <div class="about-highlights-list">
-                <div class="about-highlight-item">
-                  <div class="highlight-icon">
+              <div class="flex flex-col gap-5 mb-10">
+                <div class="flex items-start gap-[1.15rem]">
+                  <div
+                    class="w-11 h-11 rounded-xl bg-emerald-50 text-emerald-500 flex items-center justify-center text-xl shrink-0 border border-emerald-200"
+                  >
                     <i class="fa-solid fa-sun"></i>
                   </div>
                   <div>
-                    <h4 class="highlight-title">5:00 AM Morning Harvest</h4>
-                    <p class="highlight-desc">
+                    <h4 class="text-[1.02rem] font-bold text-slate-900 mb-1">
+                      5:00 AM Morning Harvest
+                    </h4>
+                    <p class="text-[0.885rem] text-slate-500 leading-normal">
                       Produce is harvested at dawn and transferred into chilled
                       crates within 2 hours to seal in natural vitamins and
                       crunch.
                     </p>
                   </div>
                 </div>
-                <div class="about-highlight-item">
-                  <div class="highlight-icon">
+                <div class="flex items-start gap-[1.15rem]">
+                  <div
+                    class="w-11 h-11 rounded-xl bg-emerald-50 text-emerald-500 flex items-center justify-center text-xl shrink-0 border border-emerald-200"
+                  >
                     <i class="fa-solid fa-hand-holding-heart"></i>
                   </div>
                   <div>
-                    <h4 class="highlight-title">
+                    <h4 class="text-[1.02rem] font-bold text-slate-900 mb-1">
                       Fair Pricing for 45+ Farming Families
                     </h4>
-                    <p class="highlight-desc">
+                    <p class="text-[0.885rem] text-slate-500 leading-normal">
                       We guarantee 20% higher returns paid directly to local
                       farmer cooperatives, supporting sustainable rural
                       livelihoods.
                     </p>
                   </div>
                 </div>
-                <div class="about-highlight-item">
-                  <div class="highlight-icon">
+                <div class="flex items-start gap-[1.15rem]">
+                  <div
+                    class="w-11 h-11 rounded-xl bg-emerald-50 text-emerald-500 flex items-center justify-center text-xl shrink-0 border border-emerald-200"
+                  >
                     <i class="fa-solid fa-truck-fast"></i>
                   </div>
                   <div>
-                    <h4 class="highlight-title">
+                    <h4 class="text-[1.02rem] font-bold text-slate-900 mb-1">
                       Central Cold Hub & Islandwide Delivery
                     </h4>
-                    <p class="highlight-desc">
+                    <p class="text-[0.885rem] text-slate-500 leading-normal">
                       Central quality-sorting and temperature-controlled
                       doorstep packaging ensure farm freshness delivered
                       straight to your home.
@@ -969,12 +1140,18 @@
               </div>
 
               <!-- Navigation Button to About Page -->
-              <div class="home-about-cta">
-                <a href="about.html" class="btn-primary-green btn-about-nav">
+              <div class="flex items-center gap-6 flex-wrap">
+                <a
+                  href="about.html"
+                  class="bg-green-500 text-white font-bold py-[0.95rem] px-8 text-[0.95rem] rounded-full shadow-[0_10px_20px_-5px_rgba(34,197,94,0.4)] transition-all duration-[250ms] hover:bg-green-600 hover:-translate-y-0.5"
+                >
                   <span>Discover Our Story & Biological Standards</span>
                   <i class="fa-solid fa-arrow-right ml-2"></i>
                 </a>
-                <a href="about.html#heritage" class="btn-link-simple">
+                <a
+                  href="about.html#heritage"
+                  class="inline-flex items-center gap-[0.45rem] text-green-600 font-bold text-[0.92rem] no-underline transition-all duration-[250ms] hover:text-green-700 hover:translate-x-1"
+                >
                   <span>Meet Our Farmers</span>
                   <i class="fa-solid fa-chevron-right text-xs"></i>
                 </a>
@@ -982,20 +1159,24 @@
             </div>
 
             <!-- Right Column: Visual Card with Farmer & Key Stats -->
-            <div class="home-about-visual-wrap">
-              <div class="home-about-img-box">
+            <div class="relative">
+              <div
+                class="relative rounded-2xl overflow-hidden shadow-[0_16px_36px_rgba(0,0,0,0.1)]"
+              >
                 <img
                   src="https://images.unsplash.com/photo-1595974482597-4b8da8879bc5?w=800&auto=format&fit=crop&q=80"
                   alt="Sri Lankan Organic Farmer at Sunrise"
-                  class="home-about-main-img"
+                  class="w-full h-[380px] object-cover block"
                 />
-                <div class="about-badge-float">
+                <div
+                  class="absolute bottom-5 left-5 bg-slate-900/[0.88] backdrop-blur-[8px] text-white py-[0.85rem] px-5 rounded-[14px] flex items-center gap-3 border border-white/15 shadow-[0_8px_20px_rgba(0,0,0,0.25)]"
+                >
                   <i class="fa-solid fa-certificate"></i>
                   <div>
-                    <div style="font-weight: 800; font-size: 0.9rem">
+                    <div class="font-extrabold text-[0.9rem]">
                       PGS Certified Biological
                     </div>
-                    <div style="font-size: 0.74rem; opacity: 0.85">
+                    <div class="text-[0.74rem] opacity-85">
                       100% Chemical-Free Harvest
                     </div>
                   </div>
@@ -1003,22 +1184,54 @@
               </div>
 
               <!-- Metric Counter Strip -->
-              <div class="about-metrics-strip">
-                <div class="metric-item">
-                  <div class="metric-num">45+</div>
-                  <div class="metric-lbl">Family Farms</div>
+              <div class="grid grid-cols-4 gap-3 mt-5 max-[560px]:grid-cols-2">
+                <div
+                  class="bg-slate-50 border border-slate-200 rounded-xl py-4 px-3 text-center"
+                >
+                  <div
+                    class="text-2xl font-extrabold text-green-600 leading-[1.2]"
+                  >
+                    45+
+                  </div>
+                  <div class="text-xs font-semibold text-slate-500 mt-[0.2rem]">
+                    Family Farms
+                  </div>
                 </div>
-                <div class="metric-item">
-                  <div class="metric-num">100%</div>
-                  <div class="metric-lbl">Biological Fresh</div>
+                <div
+                  class="bg-slate-50 border border-slate-200 rounded-xl py-4 px-3 text-center"
+                >
+                  <div
+                    class="text-2xl font-extrabold text-green-600 leading-[1.2]"
+                  >
+                    100%
+                  </div>
+                  <div class="text-xs font-semibold text-slate-500 mt-[0.2rem]">
+                    Biological Fresh
+                  </div>
                 </div>
-                <div class="metric-item">
-                  <div class="metric-num">25+</div>
-                  <div class="metric-lbl">Districts Served</div>
+                <div
+                  class="bg-slate-50 border border-slate-200 rounded-xl py-4 px-3 text-center"
+                >
+                  <div
+                    class="text-2xl font-extrabold text-green-600 leading-[1.2]"
+                  >
+                    25+
+                  </div>
+                  <div class="text-xs font-semibold text-slate-500 mt-[0.2rem]">
+                    Districts Served
+                  </div>
                 </div>
-                <div class="metric-item">
-                  <div class="metric-num">12k+</div>
-                  <div class="metric-lbl">Happy Families</div>
+                <div
+                  class="bg-slate-50 border border-slate-200 rounded-xl py-4 px-3 text-center"
+                >
+                  <div
+                    class="text-2xl font-extrabold text-green-600 leading-[1.2]"
+                  >
+                    12k+
+                  </div>
+                  <div class="text-xs font-semibold text-slate-500 mt-[0.2rem]">
+                    Happy Families
+                  </div>
                 </div>
               </div>
             </div>
@@ -1026,35 +1239,26 @@
         </div>
       </section>
 
-      <section class="home-blog-section scroll-reveal" id="home-blog-section">
-        <div class="container-custom">
-          <div
-            style="
-              display: flex;
-              justify-content: space-between;
-              align-items: flex-end;
-              margin-bottom: 2.75rem;
-              flex-wrap: wrap;
-              gap: 1.25rem;
-            "
-          >
+      <!-- ==========================================
+         HEALTH & NUTRITION BLOG NAVIGATION SECTION
+         ========================================== -->
+      <section
+        class="py-20 bg-gradient-to-b from-slate-50 to-white border-t border-slate-200 scroll-reveal"
+        id="home-blog-section"
+      >
+        <div class="w-full max-w-custom mx-auto px-5">
+          <div class="flex justify-between items-end mb-11 flex-wrap gap-5">
             <div>
-              <span class="section-kicker"
+              <span
+                class="inline-flex items-center gap-[0.45rem] bg-green-100 text-green-800 text-[0.8rem] font-extrabold uppercase tracking-[0.05em] py-[0.35rem] px-[0.95rem] rounded-full mb-3"
                 ><i class="fa-solid fa-book-open"></i> Knowledge Journal</span
               >
               <h2
-                style="
-                  font-size: 2.25rem;
-                  font-weight: 800;
-                  color: #0f172a;
-                  line-height: 1.2;
-                "
+                class="text-[2.25rem] font-extrabold text-slate-900 leading-[1.2]"
               >
                 Health, Nutrition & Ceylon Superfoods
               </h2>
-              <p
-                style="color: #64748b; font-size: 0.95rem; margin-top: 0.35rem"
-              >
+              <p class="text-slate-500 text-[0.95rem] mt-[0.35rem]">
                 Evidence-based nutritional insights, ancient Sri Lankan recipes,
                 and farmer stories from our wellness journal.
               </p>
@@ -1062,13 +1266,7 @@
             <div>
               <a
                 href="blogs.html"
-                class="btn-secondary-outline"
-                style="
-                  border-radius: 999px;
-                  padding: 0.65rem 1.6rem;
-                  font-size: 0.885rem;
-                  font-weight: 700;
-                "
+                class="border-[1.5px] border-slate-200 text-slate-800 font-bold py-[0.65rem] px-[1.6rem] rounded-full bg-white transition-all duration-[250ms] hover:border-orange-500 hover:text-orange-500 text-[0.885rem]"
               >
                 All Articles (12) <i class="fa-solid fa-arrow-right ml-1"></i>
               </a>
@@ -1076,35 +1274,49 @@
           </div>
 
           <!-- 3 Curated Blog Preview Cards -->
-          <div class="home-blog-grid">
+          <div
+            class="grid grid-cols-[repeat(auto-fit,minmax(320px,1fr))] gap-8"
+          >
             <!-- Article 1: Traditional Ceylon Rice -->
-            <article class="home-blog-card">
-              <div class="home-blog-img-box">
+            <article
+              class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-[0_4px_15px_rgba(0,0,0,0.04)] flex flex-col transition-all duration-[350ms] hover:-translate-y-1.5 hover:shadow-[0_16px_30px_rgba(0,0,0,0.08)] hover:border-green-500"
+            >
+              <div class="relative h-[210px] overflow-hidden">
                 <img
                   src="https://images.unsplash.com/photo-1586201375761-83865001e31c?w=600&auto=format&fit=crop&q=80"
                   alt="Traditional Sri Lankan Heirloom Rice"
-                  class="home-blog-img"
+                  class="w-full h-full object-cover transition-transform duration-500"
                 />
-                <span class="blog-pill-tag">Heirloom Rice</span>
+                <span
+                  class="absolute top-3 left-3 bg-slate-900/85 backdrop-blur-[6px] text-white text-xs font-bold py-[0.3rem] px-3 rounded-full"
+                  >Heirloom Rice</span
+                >
               </div>
-              <div class="home-blog-body">
-                <div class="home-blog-meta">
+              <div class="p-6 flex flex-col grow">
+                <div
+                  class="flex items-center gap-2 text-[0.8rem] text-slate-400 font-semibold mb-[0.65rem]"
+                >
                   <span><i class="fa-regular fa-clock"></i> 7 Min Read</span>
                   <span>·</span>
                   <span>Traditional Agriculture</span>
                 </div>
-                <h3 class="home-blog-title">
+                <h3
+                  class="text-[1.15rem] font-extrabold leading-[1.38] text-slate-900 mb-3"
+                >
                   <a href="blogs.html"
                     >The Healing Power of Ancient Ceylon Rice: Suwandel & Kalu
                     Heenati</a
                   >
                 </h3>
-                <p class="home-blog-excerpt">
+                <p class="text-slate-500 text-[0.9rem] leading-[1.6] mb-5 grow">
                   Ancestral non-hybrid Sri Lankan red rices boast high iron
                   density, low glycemic index, and bioactive anthocyanins that
                   combat insulin resistance.
                 </p>
-                <a href="blogs.html" class="home-blog-read-link">
+                <a
+                  href="blogs.html"
+                  class="inline-flex items-center gap-2 text-green-600 font-bold text-[0.885rem] no-underline transition-transform duration-200 hover:translate-x-1 hover:text-green-700"
+                >
                   <span>Read Full Article</span>
                   <i class="fa-solid fa-arrow-right"></i>
                 </a>
@@ -1112,33 +1324,45 @@
             </article>
 
             <!-- Article 2: True Ceylon Alba Cinnamon -->
-            <article class="home-blog-card">
-              <div class="home-blog-img-box">
+            <article
+              class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-[0_4px_15px_rgba(0,0,0,0.04)] flex flex-col transition-all duration-[350ms] hover:-translate-y-1.5 hover:shadow-[0_16px_30px_rgba(0,0,0,0.08)] hover:border-green-500"
+            >
+              <div class="relative h-[210px] overflow-hidden">
                 <img
                   src="https://images.unsplash.com/photo-1514733670139-4d87a1941d55?w=600&auto=format&fit=crop&q=80"
                   alt="Pure Ceylon Alba Cinnamon"
-                  class="home-blog-img"
+                  class="w-full h-full object-cover transition-transform duration-500"
                 />
-                <span class="blog-pill-tag">Ceylon Spices</span>
+                <span
+                  class="absolute top-3 left-3 bg-slate-900/85 backdrop-blur-[6px] text-white text-xs font-bold py-[0.3rem] px-3 rounded-full"
+                  >Ceylon Spices</span
+                >
               </div>
-              <div class="home-blog-body">
-                <div class="home-blog-meta">
+              <div class="p-6 flex flex-col grow">
+                <div
+                  class="flex items-center gap-2 text-[0.8rem] text-slate-400 font-semibold mb-[0.65rem]"
+                >
                   <span><i class="fa-regular fa-clock"></i> 5 Min Read</span>
                   <span>·</span>
                   <span>Cardio Health</span>
                 </div>
-                <h3 class="home-blog-title">
+                <h3
+                  class="text-[1.15rem] font-extrabold leading-[1.38] text-slate-900 mb-3"
+                >
                   <a href="blogs.html"
                     >Why True Ceylon Alba Cinnamon is the Global Gold Standard
                     Over Cassia</a
                   >
                 </h3>
-                <p class="home-blog-excerpt">
+                <p class="text-slate-500 text-[0.9rem] leading-[1.6] mb-5 grow">
                   True Ceylon Cinnamon contains negligible toxic coumarin
                   compared to synthetic Cassia, while actively supporting
                   healthy cholesterol and arterial health.
                 </p>
-                <a href="blogs.html" class="home-blog-read-link">
+                <a
+                  href="blogs.html"
+                  class="inline-flex items-center gap-2 text-green-600 font-bold text-[0.885rem] no-underline transition-transform duration-200 hover:translate-x-1 hover:text-green-700"
+                >
                   <span>Read Full Article</span>
                   <i class="fa-solid fa-arrow-right"></i>
                 </a>
@@ -1146,32 +1370,44 @@
             </article>
 
             <!-- Article 3: Nuwara Eliya Freshness Secret -->
-            <article class="home-blog-card">
-              <div class="home-blog-img-box">
+            <article
+              class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-[0_4px_15px_rgba(0,0,0,0.04)] flex flex-col transition-all duration-[350ms] hover:-translate-y-1.5 hover:shadow-[0_16px_30px_rgba(0,0,0,0.08)] hover:border-green-500"
+            >
+              <div class="relative h-[210px] overflow-hidden">
                 <img
                   src="https://images.unsplash.com/photo-1540420773420-3366772f4999?w=600&auto=format&fit=crop&q=80"
                   alt="Fresh Nuwara Eliya Produce"
-                  class="home-blog-img"
+                  class="w-full h-full object-cover transition-transform duration-500"
                 />
-                <span class="blog-pill-tag">Farm to Fork</span>
+                <span
+                  class="absolute top-3 left-3 bg-slate-900/85 backdrop-blur-[6px] text-white text-xs font-bold py-[0.3rem] px-3 rounded-full"
+                  >Farm to Fork</span
+                >
               </div>
-              <div class="home-blog-body">
-                <div class="home-blog-meta">
+              <div class="p-6 flex flex-col grow">
+                <div
+                  class="flex items-center gap-2 text-[0.8rem] text-slate-400 font-semibold mb-[0.65rem]"
+                >
                   <span><i class="fa-regular fa-clock"></i> 4 Min Read</span>
                   <span>·</span>
                   <span>Nutrition Science</span>
                 </div>
-                <h3 class="home-blog-title">
+                <h3
+                  class="text-[1.15rem] font-extrabold leading-[1.38] text-slate-900 mb-3"
+                >
                   <a href="blogs.html"
                     >From Nuwara Eliya Highlands to Your Kitchen in 12 Hours</a
                   >
                 </h3>
-                <p class="home-blog-excerpt">
+                <p class="text-slate-500 text-[0.9rem] leading-[1.6] mb-5 grow">
                   How rapid pre-cooling and temperature-controlled transit
                   preserves 95% of active Vitamin C and crispness compared to
                   typical wholesale markets.
                 </p>
-                <a href="blogs.html" class="home-blog-read-link">
+                <a
+                  href="blogs.html"
+                  class="inline-flex items-center gap-2 text-green-600 font-bold text-[0.885rem] no-underline transition-transform duration-200 hover:translate-x-1 hover:text-green-700"
+                >
                   <span>Read Full Article</span>
                   <i class="fa-solid fa-arrow-right"></i>
                 </a>
@@ -1180,15 +1416,10 @@
           </div>
 
           <!-- Centered CTA Link to Blogs Page -->
-          <div style="text-align: center; margin-top: 3rem">
+          <div class="text-center mt-12">
             <a
               href="blogs.html"
-              class="btn-primary-green"
-              style="
-                padding: 1rem 2.5rem;
-                font-size: 0.98rem;
-                border-radius: 999px;
-              "
+              class="bg-green-500 text-white font-bold py-4 px-10 rounded-full shadow-[0_10px_20px_-5px_rgba(34,197,94,0.4)] transition-all duration-[250ms] hover:bg-green-600 hover:-translate-y-0.5 text-[0.98rem]"
             >
               <i class="fa-solid fa-book-open mr-2"></i> Visit GreenBasket
               Knowledge Journal
@@ -1198,52 +1429,59 @@
       </section>
     </main>
 
-    <div class="cart-drawer-overlay" id="cartDrawerOverlay"></div>
-    <aside class="cart-drawer" id="cartDrawer">
-      <div class="cart-drawer-header">
-        <div class="cart-drawer-title">
+    <!-- ==========================================
+       SLIDE-OUT SHOPPING CART DRAWER
+       ========================================== -->
+    <div
+      class="cart-drawer-overlay fixed inset-0 bg-slate-900/60 backdrop-blur-[4px] z-[300] opacity-0 invisible transition-all duration-[250ms]"
+      id="cartDrawerOverlay"
+    ></div>
+    <aside
+      class="cart-drawer fixed top-0 right-0 bottom-0 w-[420px] max-w-[90vw] bg-white z-[310] translate-x-full transition-transform duration-[350ms] ease-[cubic-bezier(0.16,1,0.3,1)] flex flex-col shadow-lg"
+      id="cartDrawer"
+    >
+      <div
+        class="py-5 px-6 border-b border-slate-200 flex items-center justify-between"
+      >
+        <div
+          class="text-[1.15rem] font-extrabold text-slate-800 flex items-center gap-2"
+        >
           <i class="fa-solid fa-cart-shopping text-green-600"></i>
           <span>Your Shopping Basket</span>
         </div>
         <button
           id="cartDrawerClose"
-          style="font-size: 1.25rem; color: #64748b; cursor: pointer"
+          class="text-[1.25rem] text-slate-500 cursor-pointer"
         >
           <i class="fa-solid fa-xmark"></i>
         </button>
       </div>
 
       <!-- Free Delivery Progress Tracker -->
-      <div style="padding: 1rem 1.5rem 0" id="cartDrawerShippingMeter">
+      <div class="px-6 pt-4" id="cartDrawerShippingMeter">
         <!-- Populated dynamically by js/main.js -->
       </div>
 
-      <div class="cart-drawer-body" id="cartDrawerItems">
+      <div class="py-5 px-6 flex-1 overflow-y-auto" id="cartDrawerItems">
         <!-- Populated dynamically by js/main.js -->
       </div>
 
-      <div class="cart-drawer-footer">
-        <div class="summary-row">
+      <div class="p-6 border-t border-slate-200 bg-slate-50">
+        <div
+          class="flex justify-between items-center text-[0.9rem] text-slate-700 mb-3"
+        >
           <span>Basket Subtotal</span>
-          <span id="cartDrawerSubtotal" style="font-weight: 800; color: #0f172a"
+          <span id="cartDrawerSubtotal" class="font-extrabold text-slate-900"
             >Rs. 0</span
           >
         </div>
-        <div style="font-size: 0.78rem; color: #64748b; margin-bottom: 1rem">
+        <div class="text-[0.78rem] text-slate-500 mb-4">
           * Shipping is automatically calculated at checkout according to
           distance.
         </div>
         <a
           href="checkout.html"
-          class="btn-primary-orange"
-          style="
-            display: flex;
-            width: 100%;
-            text-align: center;
-            border-radius: 999px;
-            padding: 0.85rem;
-            font-size: 1rem;
-          "
+          class="inline-flex items-center justify-center gap-2 bg-orange-500 text-white font-bold text-[1rem] py-[0.85rem] px-7 rounded-full transition-all duration-[250ms] shadow-[0_4px_12px_rgba(249,115,22,0.25)] border-none cursor-pointer no-underline hover:bg-orange-600 hover:-translate-y-0.5 hover:shadow-[0_6px_16px_rgba(249,115,22,0.35)] flex w-full text-center"
         >
           <span>Proceed to Checkout</span>
           <i class="fa-solid fa-arrow-right ml-1"></i>
@@ -1251,38 +1489,40 @@
       </div>
     </aside>
 
-    <div class="auth-modal-overlay" id="authModalOverlay">
-      <div class="auth-modal-card">
+    <!-- ==========================================
+       AUTH MODAL: LOGIN & REGISTER
+       ========================================== -->
+    <div
+      class="auth-modal-overlay fixed inset-0 bg-slate-900/65 backdrop-blur-[4px] z-[400] flex items-center justify-center p-4 opacity-0 invisible transition-all duration-[250ms]"
+      id="authModalOverlay"
+    >
+      <div
+        class="auth-modal-card w-full max-w-[480px] bg-white rounded-2xl shadow-lg overflow-hidden translate-y-5 transition-transform duration-300"
+      >
         <div
-          style="
-            padding: 1.25rem 1.5rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 1px solid #e2e8f0;
-          "
+          class="py-5 px-6 flex justify-between items-center border-b border-slate-200"
         >
-          <span style="font-weight: 800; font-size: 1.15rem; color: #0f172a"
+          <span class="font-extrabold text-[1.15rem] text-slate-900"
             >Customer Account</span
           >
           <button
             onclick="closeAuthModal()"
-            style="font-size: 1.2rem; color: #94a3b8; cursor: pointer"
+            class="text-[1.2rem] text-slate-400 cursor-pointer"
           >
             <i class="fa-solid fa-xmark"></i>
           </button>
         </div>
 
-        <div class="auth-tabs">
+        <div class="flex border-b border-slate-200">
           <button
-            class="auth-tab-btn active"
+            class="auth-tab-btn flex-1 p-4 font-bold text-[0.95rem] text-slate-500 border-b-2 border-transparent transition-all duration-[250ms] text-center active"
             id="tabLoginBtn"
             onclick="switchAuthTab('login')"
           >
             Login
           </button>
           <button
-            class="auth-tab-btn"
+            class="auth-tab-btn flex-1 p-4 font-bold text-[0.95rem] text-slate-500 border-b-2 border-transparent transition-all duration-[250ms] text-center"
             id="tabRegisterBtn"
             onclick="switchAuthTab('register')"
           >
@@ -1290,34 +1530,39 @@
           </button>
         </div>
 
-        <div style="padding: 1.5rem">
+        <div class="p-6">
           <!-- Modal Login Form -->
           <div id="loginFormContainer">
             <form onsubmit="handleAccountLogin(event)">
-              <div class="form-group">
-                <label class="form-label">Email Address</label>
+              <div class="mb-[1.15rem]">
+                <label
+                  class="block text-[0.85rem] font-bold text-slate-800 mb-[0.4rem]"
+                  >Email Address</label
+                >
                 <input
                   type="email"
                   id="loginEmail"
-                  class="form-control"
+                  class="w-full py-[0.7rem] px-[0.9rem] rounded-[6px] border border-slate-200 text-[0.9rem] font-[family-name:inherit] transition-all duration-[250ms] focus:outline-none focus:border-orange-500 focus:ring-[3px] focus:ring-orange-500/15"
                   value="customer@greenbasket.com"
                   required
                 />
               </div>
-              <div class="form-group">
-                <label class="form-label">Password</label>
+              <div class="mb-[1.15rem]">
+                <label
+                  class="block text-[0.85rem] font-bold text-slate-800 mb-[0.4rem]"
+                  >Password</label
+                >
                 <input
                   type="password"
                   id="loginPassword"
-                  class="form-control"
+                  class="w-full py-[0.7rem] px-[0.9rem] rounded-[6px] border border-slate-200 text-[0.9rem] font-[family-name:inherit] transition-all duration-[250ms] focus:outline-none focus:border-orange-500 focus:ring-[3px] focus:ring-orange-500/15"
                   value="customer123"
                   required
                 />
               </div>
               <button
                 type="submit"
-                class="btn-primary-green"
-                style="width: 100%; margin-top: 0.5rem"
+                class="bg-green-500 text-white font-bold py-[0.85rem] px-[1.85rem] rounded-full shadow-[0_10px_20px_-5px_rgba(34,197,94,0.4)] transition-all duration-[250ms] hover:bg-green-600 hover:-translate-y-0.5 w-full mt-2"
               >
                 Sign In
               </button>
@@ -1327,38 +1572,44 @@
           <!-- Modal Register Form with Location Selection -->
           <div id="registerFormContainer" style="display: none">
             <form onsubmit="handleAccountRegister(event)">
-              <div class="form-group">
-                <label class="form-label">Full Name</label>
+              <div class="mb-[1.15rem]">
+                <label
+                  class="block text-[0.85rem] font-bold text-slate-800 mb-[0.4rem]"
+                  >Full Name</label
+                >
                 <input
                   type="text"
                   id="regName"
-                  class="form-control"
+                  class="w-full py-[0.7rem] px-[0.9rem] rounded-[6px] border border-slate-200 text-[0.9rem] font-[family-name:inherit] transition-all duration-[250ms] focus:outline-none focus:border-orange-500 focus:ring-[3px] focus:ring-orange-500/15"
                   placeholder="John Doe"
                   required
                 />
               </div>
-              <div class="form-group">
-                <label class="form-label">Email Address</label>
+              <div class="mb-[1.15rem]">
+                <label
+                  class="block text-[0.85rem] font-bold text-slate-800 mb-[0.4rem]"
+                  >Email Address</label
+                >
                 <input
                   type="email"
                   id="regEmail"
-                  class="form-control"
+                  class="w-full py-[0.7rem] px-[0.9rem] rounded-[6px] border border-slate-200 text-[0.9rem] font-[family-name:inherit] transition-all duration-[250ms] focus:outline-none focus:border-orange-500 focus:ring-[3px] focus:ring-orange-500/15"
                   placeholder="john@example.com"
                   required
                 />
               </div>
-              <div class="form-group">
-                <label class="form-label"
+              <div class="mb-[1.15rem]">
+                <label
+                  class="block text-[0.85rem] font-bold text-slate-800 mb-[0.4rem]"
                   >Phone Number *
-                  <span
-                    style="font-weight: 400; color: #64748b; font-size: 0.8rem"
+                  <span class="font-normal text-slate-500 text-[0.8rem]"
                     >(10 Digits)</span
                   ></label
                 >
                 <input
                   type="tel"
                   id="regPhone"
-                  class="form-control"
+                  class="w-full py-[0.7rem] px-[0.9rem] rounded-[6px] border border-slate-200 text-[0.9rem] font-[family-name:inherit] transition-all duration-[250ms] focus:outline-none focus:border-orange-500 focus:ring-[3px] focus:ring-orange-500/15"
                   placeholder="07XXXXXXXX"
                   maxlength="10"
                   pattern="0[0-9]{9}"
@@ -1367,24 +1618,20 @@
                     this.value = this.value.replace(/\\D/g, '').slice(0, 10)
                   "
                 />
-                <small
-                  style="
-                    font-size: 0.72rem;
-                    color: #64748b;
-                    display: block;
-                    margin-top: 3px;
-                  "
+                <small class="text-[0.72rem] text-slate-500 block mt-[3px]"
                   >10-digit Sri Lankan number starting with 0 (e.g.
                   0771234567)</small
                 >
               </div>
-              <div class="form-group">
-                <label class="form-label">Select Delivery Location</label>
+              <div class="mb-[1.15rem]">
+                <label
+                  class="block text-[0.85rem] font-bold text-slate-800 mb-[0.4rem]"
+                  >Select Delivery Location</label
+                >
                 <select
                   id="regLocationZone"
-                  class="form-control"
+                  class="w-full py-[0.7rem] px-[0.9rem] rounded-[6px] border border-slate-200 text-[0.9rem] font-[family-name:inherit] transition-all duration-[250ms] focus:outline-none focus:border-orange-500 focus:ring-[3px] focus:ring-orange-500/15 font-semibold"
                   required
-                  style="font-weight: 600"
                 >
                   <option value="within_1km">
                     Within 1 km of shop (FREE delivery on orders > Rs. 2,000)
@@ -1395,29 +1642,34 @@
                   </option>
                 </select>
               </div>
-              <div class="form-group">
-                <label class="form-label">Delivery Address</label>
+              <div class="mb-[1.15rem]">
+                <label
+                  class="block text-[0.85rem] font-bold text-slate-800 mb-[0.4rem]"
+                  >Delivery Address</label
+                >
                 <input
                   type="text"
                   id="regAddress"
-                  class="form-control"
+                  class="w-full py-[0.7rem] px-[0.9rem] rounded-[6px] border border-slate-200 text-[0.9rem] font-[family-name:inherit] transition-all duration-[250ms] focus:outline-none focus:border-orange-500 focus:ring-[3px] focus:ring-orange-500/15"
                   placeholder="Road, House No, Area"
                   required
                 />
               </div>
-              <div class="form-group">
-                <label class="form-label">Password</label>
+              <div class="mb-[1.15rem]">
+                <label
+                  class="block text-[0.85rem] font-bold text-slate-800 mb-[0.4rem]"
+                  >Password</label
+                >
                 <input
                   type="password"
                   id="regPassword"
-                  class="form-control"
+                  class="w-full py-[0.7rem] px-[0.9rem] rounded-[6px] border border-slate-200 text-[0.9rem] font-[family-name:inherit] transition-all duration-[250ms] focus:outline-none focus:border-orange-500 focus:ring-[3px] focus:ring-orange-500/15"
                   required
                 />
               </div>
               <button
                 type="submit"
-                class="btn-primary-green"
-                style="width: 100%; margin-top: 0.5rem"
+                class="bg-green-500 text-white font-bold py-[0.85rem] px-[1.85rem] rounded-full shadow-[0_10px_20px_-5px_rgba(34,197,94,0.4)] transition-all duration-[250ms] hover:bg-green-600 hover:-translate-y-0.5 w-full mt-2"
               >
                 Create Account
               </button>
@@ -1427,46 +1679,53 @@
       </div>
     </div>
 
-    <footer class="site-footer-dark">
-      <div class="container-custom">
-        <div class="footer-main-grid">
+    <!-- ==========================================
+       SITE FOOTER (Exact Image 1 Dark Theme Format)
+       ========================================== -->
+    <footer
+      class="bg-[#121212] text-zinc-400 pt-[4.5rem] pb-8 border-t-[3px] border-green-500 font-[family-name:var(--font-main)]"
+    >
+      <div class="w-full max-w-custom mx-auto px-5">
+        <div
+          class="grid grid-cols-[1.4fr_1fr_1fr_1.1fr] gap-12 mb-14 max-lg:grid-cols-2 max-lg:gap-10 max-sm:grid-cols-1 max-sm:gap-8"
+        >
           <!-- Column 1: Contact Info -->
           <div>
-            <h4 class="footer-col-title">Contact Info</h4>
-            <div class="footer-contact-list">
-              <div class="footer-contact-item">
+            <h4
+              class="footer-col-title text-white text-[1.15rem] font-bold relative pb-3 mb-6 tracking-tight"
+            >
+              Contact Info
+            </h4>
+            <div
+              class="flex flex-col gap-4 text-[0.9rem] text-zinc-300 leading-normal"
+            >
+              <div class="flex items-start gap-[0.85rem]">
                 <i class="fa-solid fa-location-dot"></i>
                 <span>No. 45, Beach Road, Matara City 81000, Sri Lanka.</span>
               </div>
-              <div class="footer-contact-item">
+              <div class="flex items-start gap-[0.85rem]">
                 <i class="fa-solid fa-phone"></i>
-                <a
-                  href="tel:+94412224589"
-                  style="color: inherit; text-decoration: none"
+                <a href="tel:+94412224589" class="text-inherit no-underline"
                   >+94 41-222-4589</a
                 >
               </div>
-              <div class="footer-contact-item">
+              <div class="flex items-start gap-[0.85rem]">
                 <i class="fa-solid fa-mobile-screen-button"></i>
-                <a
-                  href="tel:+94778958144"
-                  style="color: inherit; text-decoration: none"
+                <a href="tel:+94778958144" class="text-inherit no-underline"
                   >+94 77-895-8144</a
                 >
               </div>
-              <div class="footer-contact-item">
+              <div class="flex items-start gap-[0.85rem]">
                 <i class="fa-regular fa-envelope"></i>
                 <a
                   href="mailto:info@greenbasket.lk"
-                  style="color: inherit; text-decoration: none"
+                  class="text-inherit no-underline"
                   >info@greenbasket.lk</a
                 >
               </div>
-              <div class="footer-contact-item">
+              <div class="flex items-start gap-[0.85rem]">
                 <i class="fa-solid fa-desktop"></i>
-                <a
-                  href="index.html"
-                  style="color: inherit; text-decoration: none"
+                <a href="index.html" class="text-inherit no-underline"
                   >greenbasket.lk</a
                 >
               </div>
@@ -1475,30 +1734,61 @@
 
           <!-- Column 2: Info -->
           <div>
-            <h4 class="footer-col-title">Info</h4>
-            <div class="footer-links-list">
-              <a href="contact.html" class="footer-link-item">
-                <span class="chevron-arrow">&gt;</span>
+            <h4
+              class="footer-col-title text-white text-[1.15rem] font-bold relative pb-3 mb-6 tracking-tight"
+            >
+              Info
+            </h4>
+            <div class="flex flex-col gap-3 text-[0.9rem]">
+              <a
+                href="contact.html"
+                class="flex items-center gap-[0.65rem] text-zinc-300 transition-all duration-200 no-underline hover:text-green-500 hover:translate-x-1"
+              >
+                <span
+                  class="text-zinc-500 text-[0.85rem] font-bold transition-all duration-200"
+                  >&gt;</span
+                >
                 <span>Contact us</span>
               </a>
-              <a href="about.html" class="footer-link-item">
-                <span class="chevron-arrow">&gt;</span>
+              <a
+                href="about.html"
+                class="flex items-center gap-[0.65rem] text-zinc-300 transition-all duration-200 no-underline hover:text-green-500 hover:translate-x-1"
+              >
+                <span
+                  class="text-zinc-500 text-[0.85rem] font-bold transition-all duration-200"
+                  >&gt;</span
+                >
                 <span>About us</span>
               </a>
               <a
                 href="javascript:void(0)"
                 onclick="openCartDrawer()"
-                class="footer-link-item"
+                class="flex items-center gap-[0.65rem] text-zinc-300 transition-all duration-200 no-underline hover:text-green-500 hover:translate-x-1"
               >
-                <span class="chevron-arrow">&gt;</span>
+                <span
+                  class="text-zinc-500 text-[0.85rem] font-bold transition-all duration-200"
+                  >&gt;</span
+                >
                 <span>My cart</span>
               </a>
-              <a href="checkout.html" class="footer-link-item">
-                <span class="chevron-arrow">&gt;</span>
+              <a
+                href="checkout.html"
+                class="flex items-center gap-[0.65rem] text-zinc-300 transition-all duration-200 no-underline hover:text-green-500 hover:translate-x-1"
+              >
+                <span
+                  class="text-zinc-500 text-[0.85rem] font-bold transition-all duration-200"
+                  >&gt;</span
+                >
                 <span>Checkout</span>
               </a>
-              <a href="account.html" class="footer-link-item">
-                <span class="chevron-arrow">&gt;</span>
+              <a
+                href="account.html"
+                class="flex items-center gap-[0.65rem] text-zinc-300 transition-all duration-200 no-underline hover:text-green-500 hover:translate-x-1"
+              >
+                <span
+                  class="text-zinc-500 text-[0.85rem] font-bold transition-all duration-200"
+                  >&gt;</span
+                >
                 <span>My account</span>
               </a>
             </div>
@@ -1506,26 +1796,60 @@
 
           <!-- Column 3: Policy -->
           <div>
-            <h4 class="footer-col-title">Policy</h4>
-            <div class="footer-links-list">
-              <a href="about.html#policies" class="footer-link-item">
-                <span class="chevron-arrow">&gt;</span>
+            <h4
+              class="footer-col-title text-white text-[1.15rem] font-bold relative pb-3 mb-6 tracking-tight"
+            >
+              Policy
+            </h4>
+            <div class="flex flex-col gap-3 text-[0.9rem]">
+              <a
+                href="about.html#policies"
+                class="flex items-center gap-[0.65rem] text-zinc-300 transition-all duration-200 no-underline hover:text-green-500 hover:translate-x-1"
+              >
+                <span
+                  class="text-zinc-500 text-[0.85rem] font-bold transition-all duration-200"
+                  >&gt;</span
+                >
                 <span>Return Policy</span>
               </a>
-              <a href="about.html#policies" class="footer-link-item">
-                <span class="chevron-arrow">&gt;</span>
+              <a
+                href="about.html#policies"
+                class="flex items-center gap-[0.65rem] text-zinc-300 transition-all duration-200 no-underline hover:text-green-500 hover:translate-x-1"
+              >
+                <span
+                  class="text-zinc-500 text-[0.85rem] font-bold transition-all duration-200"
+                  >&gt;</span
+                >
                 <span>Privacy Policy</span>
               </a>
-              <a href="about.html#careers" class="footer-link-item">
-                <span class="chevron-arrow">&gt;</span>
+              <a
+                href="about.html#careers"
+                class="flex items-center gap-[0.65rem] text-zinc-300 transition-all duration-200 no-underline hover:text-green-500 hover:translate-x-1"
+              >
+                <span
+                  class="text-zinc-500 text-[0.85rem] font-bold transition-all duration-200"
+                  >&gt;</span
+                >
                 <span>Careers</span>
               </a>
-              <a href="shop.html" class="footer-link-item">
-                <span class="chevron-arrow">&gt;</span>
+              <a
+                href="shop.html"
+                class="flex items-center gap-[0.65rem] text-zinc-300 transition-all duration-200 no-underline hover:text-green-500 hover:translate-x-1"
+              >
+                <span
+                  class="text-zinc-500 text-[0.85rem] font-bold transition-all duration-200"
+                  >&gt;</span
+                >
                 <span>Sitemap</span>
               </a>
-              <a href="about.html#faqs" class="footer-link-item">
-                <span class="chevron-arrow">&gt;</span>
+              <a
+                href="about.html#faqs"
+                class="flex items-center gap-[0.65rem] text-zinc-300 transition-all duration-200 no-underline hover:text-green-500 hover:translate-x-1"
+              >
+                <span
+                  class="text-zinc-500 text-[0.85rem] font-bold transition-all duration-200"
+                  >&gt;</span
+                >
                 <span>FAQs</span>
               </a>
             </div>
@@ -1533,26 +1857,60 @@
 
           <!-- Column 4: Product -->
           <div>
-            <h4 class="footer-col-title">Product</h4>
-            <div class="footer-links-list">
-              <a href="shop.html?filter=bestseller" class="footer-link-item">
-                <span class="chevron-arrow">&gt;</span>
+            <h4
+              class="footer-col-title text-white text-[1.15rem] font-bold relative pb-3 mb-6 tracking-tight"
+            >
+              Product
+            </h4>
+            <div class="flex flex-col gap-3 text-[0.9rem]">
+              <a
+                href="shop.html?filter=bestseller"
+                class="flex items-center gap-[0.65rem] text-zinc-300 transition-all duration-200 no-underline hover:text-green-500 hover:translate-x-1"
+              >
+                <span
+                  class="text-zinc-500 text-[0.85rem] font-bold transition-all duration-200"
+                  >&gt;</span
+                >
                 <span>Best Seller</span>
               </a>
-              <a href="shop.html?filter=toprated" class="footer-link-item">
-                <span class="chevron-arrow">&gt;</span>
+              <a
+                href="shop.html?filter=toprated"
+                class="flex items-center gap-[0.65rem] text-zinc-300 transition-all duration-200 no-underline hover:text-green-500 hover:translate-x-1"
+              >
+                <span
+                  class="text-zinc-500 text-[0.85rem] font-bold transition-all duration-200"
+                  >&gt;</span
+                >
                 <span>Top Rated</span>
               </a>
-              <a href="shop.html?filter=special" class="footer-link-item">
-                <span class="chevron-arrow">&gt;</span>
+              <a
+                href="shop.html?filter=special"
+                class="flex items-center gap-[0.65rem] text-zinc-300 transition-all duration-200 no-underline hover:text-green-500 hover:translate-x-1"
+              >
+                <span
+                  class="text-zinc-500 text-[0.85rem] font-bold transition-all duration-200"
+                  >&gt;</span
+                >
                 <span>Special</span>
               </a>
-              <a href="shop.html?filter=featured" class="footer-link-item">
-                <span class="chevron-arrow">&gt;</span>
+              <a
+                href="shop.html?filter=featured"
+                class="flex items-center gap-[0.65rem] text-zinc-300 transition-all duration-200 no-underline hover:text-green-500 hover:translate-x-1"
+              >
+                <span
+                  class="text-zinc-500 text-[0.85rem] font-bold transition-all duration-200"
+                  >&gt;</span
+                >
                 <span>Featured</span>
               </a>
-              <a href="shop.html?filter=new" class="footer-link-item">
-                <span class="chevron-arrow">&gt;</span>
+              <a
+                href="shop.html?filter=new"
+                class="flex items-center gap-[0.65rem] text-zinc-300 transition-all duration-200 no-underline hover:text-green-500 hover:translate-x-1"
+              >
+                <span
+                  class="text-zinc-500 text-[0.85rem] font-bold transition-all duration-200"
+                  >&gt;</span
+                >
                 <span>New Arrivals</span>
               </a>
             </div>
@@ -1560,17 +1918,19 @@
         </div>
 
         <!-- Footer Bottom Bar -->
-        <div class="footer-bottom-bar">
+        <div
+          class="border-t border-zinc-800 pt-8 flex justify-between items-center flex-wrap gap-4"
+        >
           <div>
             &copy; 2026 <strong>GreenBasket (Pvt) Ltd</strong>. Matara, Sri
             Lanka. All Rights Reserved.
           </div>
-          <div style="display: flex; align-items: center; gap: 1.5rem">
-            <span style="color: #71717a"
+          <div class="flex items-center gap-6">
+            <span class="text-zinc-500"
               ><i class="fa-solid fa-shield-halved text-green-500 mr-1"></i>
               100% Certified Organic Sri Lanka</span
             >
-            <span style="color: #71717a"
+            <span class="text-zinc-500"
               ><i class="fa-solid fa-truck-fast text-green-500 mr-1"></i>
               Islandwide Delivery from Matara Hub</span
             >

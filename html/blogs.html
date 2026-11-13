@@ -1,0 +1,1268 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Organic Living & Nutrition Journal - GreenBasket Matara</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/pages.css" />
+  </head>
+  <body>
+    <!-- Top Announcement Bar -->
+    <div class="shipping-promo-bar">
+      <span class="highlight-tag"
+        ><i class="fa-solid fa-shield-halved"></i> Islandwide Delivery</span
+      >
+      <span
+        >Sri Lanka’s Freshest Groceries & Daily Essentials Delivered Islandwide
+        to Your Doorstep!</span
+      >
+    </div>
+
+    <!-- Header -->
+    <header class="site-header">
+      <div class="header-top">
+        <div class="container-custom header-top-inner">
+          <div class="header-left-group">
+            <button
+              class="mobile-toggle-btn"
+              id="mobileToggleBtn"
+              aria-label="Open Mobile Menu"
+            >
+              <i class="fa-solid fa-bars"></i>
+            </button>
+            <a
+              href="index.html"
+              class="brand-logo"
+              aria-label="GreenBasket Home"
+            >
+              <img src="logo.png" alt="GreenBasket" class="brand-logo-img" />
+            </a>
+            <div class="delivery-selector-wrap" id="deliveryWrapper">
+              <div
+                class="delivery-box"
+                id="deliveryBox"
+                title="Select Sri Lanka delivery location"
+              >
+                <span class="delivery-label">Deliver to</span>
+                <div class="delivery-location">
+                  <i class="fa-solid fa-location-dot loc-icon"></i>
+                  <span id="deliveryLocationText">Colombo, Sri Lanka</span>
+                  <i class="fa-solid fa-chevron-down chevron"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="header-actions-group">
+            <a
+              href="javascript:void(0)"
+              onclick="openWishlistDrawer()"
+              class="action-wishlist"
+              title="View Wishlist"
+              ><i class="fa-regular fa-heart"></i
+              ><span class="badge-count">00</span></a
+            >
+            <div class="action-cart-wrap">
+              <div class="action-cart" title="Shopping Cart">
+                <div class="cart-icon-box">
+                  <i class="fa-solid fa-cart-shopping"></i>
+                </div>
+                <div class="cart-info">
+                  <span class="cart-label">My Cart</span
+                  ><span class="cart-amount">Rs. 0</span>
+                </div>
+              </div>
+            </div>
+            <div class="action-user-wrap">
+              <div class="action-user">
+                <img
+                  src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&auto=format&fit=crop&q=80"
+                  alt="User"
+                  class="user-avatar-img"
+                />
+                <span class="user-name-text">Account</span>
+              </div>
+              <div class="user-dropdown-menu"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <nav class="header-bottom">
+        <div class="container-custom header-bottom-inner">
+          <div class="bottom-left-group">
+            <ul class="main-nav-list">
+              <li><a href="index.html" class="nav-link">Home</a></li>
+              <li><a href="about.html" class="nav-link">About</a></li>
+              <li><a href="shop.html" class="nav-link">Best Deals</a></li>
+              <li><a href="blogs.html" class="nav-link active">Blogs</a></li>
+              <li><a href="contact.html" class="nav-link">Contact</a></li>
+              <li>
+                <a href="account.html?track=true" class="nav-link"
+                  ><i class="fa-solid fa-truck-fast mr-1 text-green-600"></i>
+                  Track Order</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="bottom-right-group">
+            <a href="tel:+94412224589" class="nav-phone-contact"
+              ><i class="fa-solid fa-phone"></i><span>+94 41-222-4589</span></a
+            >
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Mobile Drawer -->
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+    <aside class="mobile-drawer" id="mobileDrawer">
+      <div class="mobile-drawer-header">
+        <div class="brand-logo">
+          <img
+            src="logo.png"
+            alt="GreenBasket"
+            class="brand-logo-img"
+            style="height: 38px"
+          />
+        </div>
+        <button class="mobile-close-btn" id="mobileCloseBtn">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+      <div class="mobile-drawer-body">
+        <nav class="mobile-nav-links">
+          <a href="index.html" class="mobile-nav-item"><span>Home</span></a>
+          <a href="shop.html" class="mobile-nav-item"><span>Shop</span></a>
+          <a href="about.html" class="mobile-nav-item"><span>About</span></a>
+          <a href="blogs.html" class="mobile-nav-item active"
+            ><span>Blogs</span></a
+          >
+          <a href="contact.html" class="mobile-nav-item"
+            ><span>Contact</span></a
+          >
+        </nav>
+      </div>
+    </aside>
+
+    <!-- Blog Main Content -->
+    <main style="padding: 3.5rem 0 6rem">
+      <div class="container-custom">
+        <!-- Blog Header -->
+        <div
+          class="scroll-reveal"
+          style="text-align: center; max-width: 780px; margin: 0 auto 3rem"
+        >
+          <span class="hero-badge-tag"
+            ><i class="fa-solid fa-book-open"></i> Sri Lanka Organic Wisdom &
+            Science</span
+          >
+          <h1
+            style="
+              font-size: 2.8rem;
+              font-weight: 800;
+              color: #0f172a;
+              margin: 0.5rem 0 1rem;
+              line-height: 1.2;
+            "
+          >
+            GreenBasket Knowledge Journal
+          </h1>
+          <p style="color: #64748b; font-size: 1.05rem; line-height: 1.6">
+            Evidence-based articles on ancient Ceylon heirloom crops, holistic
+            Ayurvedic nutrition, and regenerative farming practices straight
+            from our Southern Sri Lankan growers.
+          </p>
+        </div>
+
+        <!-- Blog Categories Navigation Section (User Request) -->
+        <div
+          class="scroll-reveal"
+          style="
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-bottom: 3.5rem;
+          "
+        >
+          <button
+            class="btn-primary-green blog-cat-filter active"
+            onclick="filterBlogCategory('all', this)"
+            style="
+              border-radius: 999px;
+              padding: 0.5rem 1.25rem;
+              font-size: 0.85rem;
+            "
+          >
+            All Articles
+          </button>
+          <button
+            class="btn-secondary-outline blog-cat-filter"
+            onclick="filterBlogCategory('heirloom-rice', this)"
+            style="
+              border-radius: 999px;
+              padding: 0.5rem 1.25rem;
+              font-size: 0.85rem;
+            "
+          >
+            Traditional Rice
+          </button>
+          <button
+            class="btn-secondary-outline blog-cat-filter"
+            onclick="filterBlogCategory('spices-herbs', this)"
+            style="
+              border-radius: 999px;
+              padding: 0.5rem 1.25rem;
+              font-size: 0.85rem;
+            "
+          >
+            Ceylon Spices & Herbs
+          </button>
+          <button
+            class="btn-secondary-outline blog-cat-filter"
+            onclick="filterBlogCategory('coconut-oils', this)"
+            style="
+              border-radius: 999px;
+              padding: 0.5rem 1.25rem;
+              font-size: 0.85rem;
+            "
+          >
+            Coconut & Healthy Fats
+          </button>
+          <button
+            class="btn-secondary-outline blog-cat-filter"
+            onclick="filterBlogCategory('matara-hub', this)"
+            style="
+              border-radius: 999px;
+              padding: 0.5rem 1.25rem;
+              font-size: 0.85rem;
+            "
+          >
+            Matara Hub & Sourcing
+          </button>
+        </div>
+
+        <!-- Featured Master Blog Article -->
+        <article
+          class="scroll-reveal"
+          data-category="heirloom-rice"
+          style="
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            margin-bottom: 4rem;
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+          "
+        >
+          <div style="height: 100%; min-height: 380px">
+            <img
+              src="https://images.unsplash.com/photo-1586201375761-83865001e31c?w=900&auto=format&fit=crop&q=80"
+              alt="Traditional Sri Lankan Heirloom Rice"
+              style="width: 100%; height: 100%; object-fit: cover"
+            />
+          </div>
+          <div
+            style="
+              padding: 2.75rem;
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+            "
+          >
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 1rem;
+                margin-bottom: 0.85rem;
+              "
+            >
+              <span
+                style="
+                  background: #dcfce7;
+                  color: #15803d;
+                  font-size: 0.75rem;
+                  font-weight: 800;
+                  text-transform: uppercase;
+                  padding: 0.25rem 0.75rem;
+                  border-radius: 999px;
+                "
+              >
+                Featured Guide · Traditional Agriculture
+              </span>
+              <span style="font-size: 0.8rem; color: #94a3b8"
+                ><i class="fa-regular fa-clock mr-1"></i> 7 Min Read</span
+              >
+            </div>
+            <h2
+              style="
+                font-size: 1.85rem;
+                font-weight: 800;
+                color: #0f172a;
+                line-height: 1.3;
+                margin-bottom: 1rem;
+              "
+            >
+              The Healing Power of Ancient Ceylon Rice: Suwandel, Kalu Heenati &
+              Pachchaperumal
+            </h2>
+            <p
+              style="
+                color: #64748b;
+                font-size: 0.95rem;
+                line-height: 1.7;
+                margin-bottom: 1.5rem;
+              "
+            >
+              Before the 1960s green revolution replaced indigenous grains with
+              hybrid white rice, Sri Lanka cultivated over 2,000 distinct
+              genetic rice strains. Modern clinical trials now prove that
+              varieties like <em>Kalu Heenati</em> possess unprecedented iron
+              density, low glycemic index, and bioactive anthocyanins that
+              combat insulin resistance.
+            </p>
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                flex-wrap: wrap;
+                gap: 1rem;
+              "
+            >
+              <div style="display: flex; align-items: center; gap: 0.75rem">
+                <img
+                  src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=80&auto=format&fit=crop&q=80"
+                  alt="Author"
+                  style="
+                    width: 36px;
+                    height: 36px;
+                    border-radius: 50%;
+                    object-fit: cover;
+                  "
+                />
+                <span
+                  style="font-size: 0.85rem; font-weight: 700; color: #334155"
+                  >Dr. Anoma Wijesekara, Agronomist</span
+                >
+              </div>
+              <button
+                onclick="openBlogModal('heirloom-rice-master')"
+                class="btn-primary-orange"
+                style="
+                  padding: 0.55rem 1.25rem;
+                  font-size: 0.85rem;
+                  border-radius: 999px;
+                "
+              >
+                Read Full Article <i class="fa-solid fa-arrow-right ml-1"></i>
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Grid of In-Depth Blog Articles -->
+        <div
+          class="scroll-reveal"
+          style="
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.25rem;
+          "
+          id="blogArticlesGrid"
+        >
+          <!-- Article 1: Ceylon Cinnamon -->
+          <article class="product-card" data-category="spices-herbs">
+            <img
+              src="https://images.unsplash.com/photo-1509358271058-acd22cc93898?w=600&auto=format&fit=crop&q=80"
+              alt="Ceylon Cinnamon"
+              style="height: 220px; width: 100%; object-fit: cover"
+            />
+            <div style="padding: 1.75rem">
+              <div
+                style="
+                  display: flex;
+                  justify-content: space-between;
+                  align-items: center;
+                  margin-bottom: 0.5rem;
+                "
+              >
+                <span
+                  style="
+                    font-size: 0.75rem;
+                    color: #ea580c;
+                    font-weight: 800;
+                    text-transform: uppercase;
+                  "
+                  >Ceylon Spices</span
+                >
+                <span style="font-size: 0.75rem; color: #94a3b8"
+                  ><i class="fa-regular fa-clock mr-1"></i> 5 min read</span
+                >
+              </div>
+              <h3
+                style="
+                  font-size: 1.25rem;
+                  font-weight: 800;
+                  color: #0f172a;
+                  margin-bottom: 0.65rem;
+                  line-height: 1.35;
+                "
+              >
+                Ceylon Alba Cinnamon vs. Cassia: Why True Sri Lankan Cinnamon is
+                the World Standard
+              </h3>
+              <p
+                style="
+                  color: #64748b;
+                  font-size: 0.885rem;
+                  line-height: 1.6;
+                  margin-bottom: 1.25rem;
+                "
+              >
+                Unlike toxic Indonesian Cassia packed with liver-damaging
+                coumarin, authentic Ceylon Cinnamon (<em>Cinnamomum verum</em>)
+                is hand-rolled into delicate golden quills with sweet, gentle
+                medicinal aroma.
+              </p>
+              <div
+                style="
+                  display: flex;
+                  justify-content: space-between;
+                  align-items: center;
+                  border-top: 1px solid #f1f5f9;
+                  padding-top: 1rem;
+                "
+              >
+                <a
+                  href="shop.html?cat=Spices%20%26%20Herbs"
+                  style="color: #16a34a; font-weight: 700; font-size: 0.85rem"
+                  >Buy Ceylon Alba Quills →</a
+                >
+                <button
+                  onclick="openBlogModal('cinnamon-guide')"
+                  style="
+                    background: none;
+                    border: none;
+                    color: #ea580c;
+                    font-weight: 700;
+                    font-size: 0.85rem;
+                    cursor: pointer;
+                  "
+                >
+                  Read Guide →
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Article 2: Kithul Treacle -->
+          <article class="product-card" data-category="spices-herbs">
+            <img
+              src="https://images.unsplash.com/photo-1589301760014-d929f3979dbc?w=600&auto=format&fit=crop&q=80"
+              alt="Kithul Treacle"
+              style="height: 220px; width: 100%; object-fit: cover"
+            />
+            <div style="padding: 1.75rem">
+              <div
+                style="
+                  display: flex;
+                  justify-content: space-between;
+                  align-items: center;
+                  margin-bottom: 0.5rem;
+                "
+              >
+                <span
+                  style="
+                    font-size: 0.75rem;
+                    color: #854d0e;
+                    font-weight: 800;
+                    text-transform: uppercase;
+                  "
+                  >Natural Sweeteners</span
+                >
+                <span style="font-size: 0.75rem; color: #94a3b8"
+                  ><i class="fa-regular fa-clock mr-1"></i> 6 min read</span
+                >
+              </div>
+              <h3
+                style="
+                  font-size: 1.25rem;
+                  font-weight: 800;
+                  color: #0f172a;
+                  margin-bottom: 0.65rem;
+                  line-height: 1.35;
+                "
+              >
+                Pure Kithul Treacle: The Low-GI Ancient Forest Elixir Tapped in
+                Sinharaja Rainforest
+              </h3>
+              <p
+                style="
+                  color: #64748b;
+                  font-size: 0.885rem;
+                  line-height: 1.6;
+                  margin-bottom: 1.25rem;
+                "
+              >
+                Harvested high in the mist-shrouded palm canopy by traditional
+                tappers, genuine unadulterated Kithul contains natural inositol
+                and trace minerals that will not cause abrupt insulin spikes.
+              </p>
+              <div
+                style="
+                  display: flex;
+                  justify-content: space-between;
+                  align-items: center;
+                  border-top: 1px solid #f1f5f9;
+                  padding-top: 1rem;
+                "
+              >
+                <a
+                  href="shop.html?cat=Natural%20Sweeteners"
+                  style="color: #16a34a; font-weight: 700; font-size: 0.85rem"
+                  >Buy Pure Kithul →</a
+                >
+                <button
+                  onclick="openBlogModal('kithul-guide')"
+                  style="
+                    background: none;
+                    border: none;
+                    color: #ea580c;
+                    font-weight: 700;
+                    font-size: 0.85rem;
+                    cursor: pointer;
+                  "
+                >
+                  Read Guide →
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Article 3: Virgin Coconut Oil & Crunch -->
+          <article class="product-card" data-category="coconut-oils">
+            <img
+              src="https://images.unsplash.com/photo-1546554137-f86b9593a222?w=600&auto=format&fit=crop&q=80"
+              alt="Organic Coconut"
+              style="height: 220px; width: 100%; object-fit: cover"
+            />
+            <div style="padding: 1.75rem">
+              <div
+                style="
+                  display: flex;
+                  justify-content: space-between;
+                  align-items: center;
+                  margin-bottom: 0.5rem;
+                "
+              >
+                <span
+                  style="
+                    font-size: 0.75rem;
+                    color: #16a34a;
+                    font-weight: 800;
+                    text-transform: uppercase;
+                  "
+                  >Tropical Nutrition</span
+                >
+                <span style="font-size: 0.75rem; color: #94a3b8"
+                  ><i class="fa-regular fa-clock mr-1"></i> 4 min read</span
+                >
+              </div>
+              <h3
+                style="
+                  font-size: 1.25rem;
+                  font-weight: 800;
+                  color: #0f172a;
+                  margin-bottom: 0.65rem;
+                  line-height: 1.35;
+                "
+              >
+                The Southern Coconut Belt: Cold-Pressed Virgin Oils & Crispy
+                Coconut Rolls
+              </h3>
+              <p
+                style="
+                  color: #64748b;
+                  font-size: 0.885rem;
+                  line-height: 1.6;
+                  margin-bottom: 1.25rem;
+                "
+              >
+                From our coconut groves in Matara, see how fresh white kernel
+                meat is cold-pressed below 40°C to preserve medium-chain
+                triglycerides (MCTs) and lauric acid that power metabolism.
+              </p>
+              <div
+                style="
+                  display: flex;
+                  justify-content: space-between;
+                  align-items: center;
+                  border-top: 1px solid #f1f5f9;
+                  padding-top: 1rem;
+                "
+              >
+                <a
+                  href="shop.html?cat=Coconut%20%26%20Oils"
+                  style="color: #16a34a; font-weight: 700; font-size: 0.85rem"
+                  >Shop Coconut Range →</a
+                >
+                <button
+                  onclick="openBlogModal('coconut-guide')"
+                  style="
+                    background: none;
+                    border: none;
+                    color: #ea580c;
+                    font-weight: 700;
+                    font-size: 0.85rem;
+                    cursor: pointer;
+                  "
+                >
+                  Read Guide →
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Article 4: Nilwala River Greens & Moringa -->
+          <article class="product-card" data-category="spices-herbs">
+            <img
+              src="https://images.unsplash.com/photo-1540420773420-3366772f4999?w=600&auto=format&fit=crop&q=80"
+              alt="Moringa & Fresh Greens"
+              style="height: 220px; width: 100%; object-fit: cover"
+            />
+            <div style="padding: 1.75rem">
+              <div
+                style="
+                  display: flex;
+                  justify-content: space-between;
+                  align-items: center;
+                  margin-bottom: 0.5rem;
+                "
+              >
+                <span
+                  style="
+                    font-size: 0.75rem;
+                    color: #16a34a;
+                    font-weight: 800;
+                    text-transform: uppercase;
+                  "
+                  >Botanical Greens</span
+                >
+                <span style="font-size: 0.75rem; color: #94a3b8"
+                  ><i class="fa-regular fa-clock mr-1"></i> 5 min read</span
+                >
+              </div>
+              <h3
+                style="
+                  font-size: 1.25rem;
+                  font-weight: 800;
+                  color: #0f172a;
+                  margin-bottom: 0.65rem;
+                  line-height: 1.35;
+                "
+              >
+                Moringa (Murunga) & Gotukola: The Dual Green Powerhouses of Sri
+                Lankan Longevity
+              </h3>
+              <p
+                style="
+                  color: #64748b;
+                  font-size: 0.885rem;
+                  line-height: 1.6;
+                  margin-bottom: 1.25rem;
+                "
+              >
+                Dubbed the 'Tree of Life', Ceylon Moringa leaves pack 7 times
+                the vitamin C of oranges and 4 times the calcium of milk. Learn
+                how our Nilwala growers cultivate zero-chemical greens daily.
+              </p>
+              <div
+                style="
+                  display: flex;
+                  justify-content: space-between;
+                  align-items: center;
+                  border-top: 1px solid #f1f5f9;
+                  padding-top: 1rem;
+                "
+              >
+                <a
+                  href="shop.html?cat=Fresh%20Produce"
+                  style="color: #16a34a; font-weight: 700; font-size: 0.85rem"
+                  >Order Fresh Harvest →</a
+                >
+                <button
+                  onclick="openBlogModal('moringa-guide')"
+                  style="
+                    background: none;
+                    border: none;
+                    color: #ea580c;
+                    font-weight: 700;
+                    font-size: 0.85rem;
+                    cursor: pointer;
+                  "
+                >
+                  Read Guide →
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Article 5: Matara Hub Zero Carbon Delivery -->
+          <article class="product-card" data-category="matara-hub">
+            <img
+              src="https://images.unsplash.com/photo-1500937386664-56d1dfef3854?w=600&auto=format&fit=crop&q=80"
+              alt="Matara Hub Distribution"
+              style="height: 220px; width: 100%; object-fit: cover"
+            />
+            <div style="padding: 1.75rem">
+              <div
+                style="
+                  display: flex;
+                  justify-content: space-between;
+                  align-items: center;
+                  margin-bottom: 0.5rem;
+                "
+              >
+                <span
+                  style="
+                    font-size: 0.75rem;
+                    color: #0284c7;
+                    font-weight: 800;
+                    text-transform: uppercase;
+                  "
+                  >Eco Logistics</span
+                >
+                <span style="font-size: 0.75rem; color: #94a3b8"
+                  ><i class="fa-regular fa-clock mr-1"></i> 4 min read</span
+                >
+              </div>
+              <h3
+                style="
+                  font-size: 1.25rem;
+                  font-weight: 800;
+                  color: #0f172a;
+                  margin-bottom: 0.65rem;
+                  line-height: 1.35;
+                "
+              >
+                How Matara City's 1 km Free Delivery Network Cuts Food Miles &
+                Waste
+              </h3>
+              <p
+                style="
+                  color: #64748b;
+                  font-size: 0.885rem;
+                  line-height: 1.6;
+                  margin-bottom: 1.25rem;
+                "
+              >
+                Explore the engineering and route optimization behind
+                GreenBasket's Matara central fulfillment hub, bringing organic
+                greens to local homes with electric cycles and zero plastic
+                wrapping.
+              </p>
+              <div
+                style="
+                  display: flex;
+                  justify-content: space-between;
+                  align-items: center;
+                  border-top: 1px solid #f1f5f9;
+                  padding-top: 1rem;
+                "
+              >
+                <a
+                  href="about.html"
+                  style="color: #16a34a; font-weight: 700; font-size: 0.85rem"
+                  >About Matara Store →</a
+                >
+                <button
+                  onclick="openBlogModal('matara-logistics')"
+                  style="
+                    background: none;
+                    border: none;
+                    color: #ea580c;
+                    font-weight: 700;
+                    font-size: 0.85rem;
+                    cursor: pointer;
+                  "
+                >
+                  Read Guide →
+                </button>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- Newsletter / Organic Living Guide Signup -->
+        <div
+          class="scroll-reveal"
+          style="
+            margin-top: 5rem;
+            background: linear-gradient(135deg, #15803d 0%, #166534 100%);
+            border-radius: 20px;
+            padding: 3rem 2rem;
+            color: white;
+            text-align: center;
+          "
+        >
+          <div style="max-width: 600px; margin: 0 auto">
+            <i
+              class="fa-solid fa-envelope-open-text"
+              style="font-size: 2.5rem; color: #86efac; margin-bottom: 1rem"
+            ></i>
+            <h3
+              style="font-size: 2rem; font-weight: 800; margin-bottom: 0.5rem"
+            >
+              Get Sri Lanka Organic Recipes Weekly
+            </h3>
+            <p
+              style="color: #bbf7d0; font-size: 0.95rem; margin-bottom: 1.5rem"
+            >
+              Subscribe to receive seasonal harvest alerts from our Matara
+              growers, authentic Sinhala organic recipes, and exclusive discount
+              promo codes.
+            </p>
+            <form
+              onsubmit="
+                event.preventDefault();
+                showToast(
+                  'Subscribed! Check your email for our Sri Lanka Organic Recipe E-book.',
+                  'success',
+                );
+                this.reset();
+              "
+              style="
+                display: flex;
+                gap: 0.75rem;
+                max-width: 480px;
+                margin: 0 auto;
+                flex-wrap: wrap;
+              "
+            >
+              <input
+                type="email"
+                class="form-control"
+                placeholder="Enter your email address"
+                style="
+                  flex: 1;
+                  min-width: 240px;
+                  border-radius: 999px;
+                  padding: 0.75rem 1.25rem;
+                  border: none;
+                "
+                required
+              />
+              <button
+                type="submit"
+                class="btn-primary-orange"
+                style="
+                  border-radius: 999px;
+                  padding: 0.75rem 1.5rem;
+                  font-size: 0.9rem;
+                "
+              >
+                Join Community
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Interactive Article Reader Modal -->
+    <div class="auth-modal-overlay" id="blogModalOverlay">
+      <div
+        class="auth-modal-card"
+        style="
+          max-width: 700px;
+          max-height: 85vh;
+          display: flex;
+          flex-direction: column;
+        "
+      >
+        <div
+          style="
+            padding: 1.25rem 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #e2e8f0;
+          "
+        >
+          <span
+            style="font-weight: 800; font-size: 1.1rem; color: #0f172a"
+            id="blogModalHeading"
+            >GreenBasket Knowledge Base</span
+          >
+          <button
+            onclick="closeBlogModal()"
+            style="
+              font-size: 1.25rem;
+              color: #64748b;
+              cursor: pointer;
+              border: none;
+              background: none;
+            "
+          >
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+        <div
+          id="blogModalBody"
+          style="
+            padding: 2rem;
+            overflow-y: auto;
+            line-height: 1.7;
+            color: #334155;
+            font-size: 0.95rem;
+          "
+        >
+          <!-- Injected dynamically -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide-out Shopping Cart Drawer -->
+    <div class="cart-drawer-overlay" id="cartDrawerOverlay"></div>
+    <aside class="cart-drawer" id="cartDrawer">
+      <div class="cart-drawer-header">
+        <div class="cart-drawer-title">
+          <i class="fa-solid fa-cart-shopping text-green-600"></i
+          ><span>Shopping Basket</span>
+        </div>
+        <button id="cartDrawerClose"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div style="padding: 1rem 1.5rem 0" id="cartDrawerShippingMeter"></div>
+      <div class="cart-drawer-body" id="cartDrawerItems"></div>
+      <div class="cart-drawer-footer">
+        <div class="summary-row">
+          <span>Subtotal</span
+          ><span id="cartDrawerSubtotal" style="font-weight: 800">Rs. 0</span>
+        </div>
+        <a
+          href="checkout.html"
+          class="btn-primary-orange"
+          style="
+            display: flex;
+            width: 100%;
+            text-align: center;
+            border-radius: 999px;
+            padding: 0.85rem;
+          "
+          >Proceed to Checkout</a
+        >
+      </div>
+    </aside>
+
+    <footer class="site-footer-dark">
+      <div class="container-custom">
+        <div class="footer-main-grid">
+          <!-- Column 1: Contact Info -->
+          <div>
+            <h4 class="footer-col-title">Contact Info</h4>
+            <div class="footer-contact-list">
+              <div class="footer-contact-item">
+                <i class="fa-solid fa-location-dot"></i>
+                <span>No. 45, Beach Road, Matara City 81000, Sri Lanka.</span>
+              </div>
+              <div class="footer-contact-item">
+                <i class="fa-solid fa-phone"></i>
+                <a
+                  href="tel:+94412224589"
+                  style="color: inherit; text-decoration: none"
+                  >+94 41-222-4589</a
+                >
+              </div>
+              <div class="footer-contact-item">
+                <i class="fa-solid fa-mobile-screen-button"></i>
+                <a
+                  href="tel:+94778958144"
+                  style="color: inherit; text-decoration: none"
+                  >+94 77-895-8144</a
+                >
+              </div>
+              <div class="footer-contact-item">
+                <i class="fa-regular fa-envelope"></i>
+                <a
+                  href="mailto:info@greenbasket.lk"
+                  style="color: inherit; text-decoration: none"
+                  >info@greenbasket.lk</a
+                >
+              </div>
+              <div class="footer-contact-item">
+                <i class="fa-solid fa-desktop"></i>
+                <a
+                  href="index.html"
+                  style="color: inherit; text-decoration: none"
+                  >greenbasket.lk</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Column 2: Info -->
+          <div>
+            <h4 class="footer-col-title">Info</h4>
+            <div class="footer-links-list">
+              <a href="contact.html" class="footer-link-item">
+                <span class="chevron-arrow">&gt;</span>
+                <span>Contact us</span>
+              </a>
+              <a href="about.html" class="footer-link-item">
+                <span class="chevron-arrow">&gt;</span>
+                <span>About us</span>
+              </a>
+              <a
+                href="javascript:void(0)"
+                onclick="openCartDrawer()"
+                class="footer-link-item"
+              >
+                <span class="chevron-arrow">&gt;</span>
+                <span>My cart</span>
+              </a>
+              <a href="checkout.html" class="footer-link-item">
+                <span class="chevron-arrow">&gt;</span>
+                <span>Checkout</span>
+              </a>
+              <a href="account.html" class="footer-link-item">
+                <span class="chevron-arrow">&gt;</span>
+                <span>My account</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Column 3: Policy -->
+          <div>
+            <h4 class="footer-col-title">Policy</h4>
+            <div class="footer-links-list">
+              <a href="about.html#policies" class="footer-link-item">
+                <span class="chevron-arrow">&gt;</span>
+                <span>Return Policy</span>
+              </a>
+              <a href="about.html#policies" class="footer-link-item">
+                <span class="chevron-arrow">&gt;</span>
+                <span>Privacy Policy</span>
+              </a>
+              <a href="about.html#careers" class="footer-link-item">
+                <span class="chevron-arrow">&gt;</span>
+                <span>Careers</span>
+              </a>
+              <a href="shop.html" class="footer-link-item">
+                <span class="chevron-arrow">&gt;</span>
+                <span>Sitemap</span>
+              </a>
+              <a href="about.html#faqs" class="footer-link-item">
+                <span class="chevron-arrow">&gt;</span>
+                <span>FAQs</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Column 4: Product -->
+          <div>
+            <h4 class="footer-col-title">Product</h4>
+            <div class="footer-links-list">
+              <a href="shop.html?filter=bestseller" class="footer-link-item">
+                <span class="chevron-arrow">&gt;</span>
+                <span>Best Seller</span>
+              </a>
+              <a href="shop.html?filter=toprated" class="footer-link-item">
+                <span class="chevron-arrow">&gt;</span>
+                <span>Top Rated</span>
+              </a>
+              <a href="shop.html?filter=special" class="footer-link-item">
+                <span class="chevron-arrow">&gt;</span>
+                <span>Special</span>
+              </a>
+              <a href="shop.html?filter=featured" class="footer-link-item">
+                <span class="chevron-arrow">&gt;</span>
+                <span>Featured</span>
+              </a>
+              <a href="shop.html?filter=new" class="footer-link-item">
+                <span class="chevron-arrow">&gt;</span>
+                <span>New Arrivals</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Footer Bottom Bar -->
+        <div class="footer-bottom-bar">
+          <div>
+            &copy; 2026 <strong>GreenBasket (Pvt) Ltd</strong>. Matara, Sri
+            Lanka. All Rights Reserved.
+          </div>
+          <div style="display: flex; align-items: center; gap: 1.5rem">
+            <span style="color: #71717a"
+              ><i class="fa-solid fa-shield-halved text-green-500 mr-1"></i>
+              100% Certified Organic Sri Lanka</span
+            >
+            <span style="color: #71717a"
+              ><i class="fa-solid fa-truck-fast text-green-500 mr-1"></i>
+              Islandwide Delivery from Matara Hub</span
+            >
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+
+    <!-- Blog Category Filter & Modal Reader Script -->
+    <script>
+      const blogArticlesData = {
+        "heirloom-rice-master": {
+          title:
+            "The Healing Power of Ancient Ceylon Rice: Suwandel, Kalu Heenati & Pachchaperumal",
+          author: "Dr. Anoma Wijesekara, Senior Agronomist",
+          content: `
+          <p>Sri Lanka's agricultural heritage stretches back more than 3,000 years, anchored by a sophisticated hydraulic reservoir network that nurtured indigenous heirloom rice strains. Varieties like <strong>Suwandel</strong> were historically reserved for royal banquets due to its captivating jasmine aroma and milk-enhancing properties for nursing mothers.</p>
+          <h4 style="font-weight: 800; color: #0f172a; margin: 1.25rem 0 0.5rem;">Why Modern Science Backs Ancient Rice</h4>
+          <p>Recent studies conducted by the Industrial Technology Institute (ITI) of Sri Lanka reveal that <strong>Kalu Heenati</strong> (black-sheathed rice) contains significantly higher iron, dietary zinc, and polyphenols than standard basmati or polished white rice. Its natural bran is rich in proanthocyanidins which reduce blood sugar spikes by inhibiting alpha-amylase and alpha-glucosidase enzymes.</p>
+          <div style="background: #f0fdf4; border: 1px solid #86efac; border-radius: 12px; padding: 1.25rem; margin: 1.25rem 0;">
+            <strong style="color: #15803d;">Key Nutritional Highlights:</strong>
+            <ul style="margin-top: 0.5rem; padding-left: 1.25rem; color: #166534;">
+              <li>Low Glycemic Index (GI 48-52) – diabetic safe</li>
+              <li>4x more soluble dietary fiber than polished white rice</li>
+              <li>Packed with natural magnesium, vitamin E, and bioactive ferulic acid</li>
+            </ul>
+          </div>
+          <p>At GreenBasket, all heirloom rice is harvested exclusively by smallholder farmer families in Matara and Southern Sri Lanka using zero synthetic pesticides or chemical fertilizers.</p>
+          <div style="margin-top: 1.5rem; text-align: center;">
+            <a href="shop.html?cat=Traditional%20Rice" class="btn-primary-green">Shop Heirloom Rice From Our Matara Hub</a>
+          </div>
+        `,
+        },
+        "cinnamon-guide": {
+          title:
+            "Ceylon Alba Cinnamon vs. Cassia: Why True Sri Lankan Cinnamon is the World Standard",
+          author: "Priyantha Mendis, Master Cinnamon Peeler",
+          content: `
+          <p>Sri Lanka supplies over 85% of the world's supply of authentic <em>Cinnamomum verum</em> (True Ceylon Cinnamon). Unlike Cassia, which originates from China and Indonesia and possesses a harsh, pungent taste, true Ceylon Cinnamon features multi-layered, papery thin quills that easily crumble and emit a delicate, sweet aroma.</p>
+          <h4 style="font-weight: 800; color: #0f172a; margin: 1.25rem 0 0.5rem;">The Critical Coumarin Difference</h4>
+          <p>Cassia contains up to 1% coumarin—a chemical compound known to cause serious hepatic and kidney toxicity when consumed regularly in supplements or tea. In contrast, genuine Ceylon Cinnamon contains merely <strong>0.004% coumarin</strong>, making it completely safe for daily wellness routines, blood sugar regulation, and cardiovascular support.</p>
+          <p>Our Grade Alba quills are the thinnest and highest quality grading, delicately peeled and air-dried under shade in the southern hills of Kamburupitiya, Matara.</p>
+          <div style="margin-top: 1.5rem; text-align: center;">
+            <a href="shop.html?cat=Spices%20%26%20Herbs" class="btn-primary-green">Buy Ceylon Alba Cinnamon</a>
+          </div>
+        `,
+        },
+        "kithul-guide": {
+          title:
+            "Pure Kithul Treacle: The Low-GI Ancient Forest Elixir Tapped in Sinharaja Rainforest",
+          author: "Dharmasena Silva, Southern Forager",
+          content: `
+          <p>Kithul treacle (sap of the Caryota urens fish-tail palm) is Sri Lanka’s traditional answer to maple syrup and honey. Skilled traditional tappers climb ladders made of bamboo into forest canopies over 40 feet high to gently incise the blossom and gather pure sap in clay pots.</p>
+          <p>Pure Kithul treacle has an exceptionally low glycemic index and is naturally rich in essential micronutrients including zinc, calcium, iron, and riboflavin. It contains zero added cane sugar or glucose syrup when bought directly from GreenBasket's verified smallholder producers.</p>
+          <div style="margin-top: 1.5rem; text-align: center;">
+            <a href="shop.html?cat=Natural%20Sweeteners" class="btn-primary-green">Order Pure Kithul Treacle</a>
+          </div>
+        `,
+        },
+        "coconut-guide": {
+          title:
+            "The Southern Coconut Belt: Cold-Pressed Virgin Oils & Crispy Coconut Goodness",
+          author: "Dr. Nilmini Perera, Food Technologist",
+          content: `
+          <p>The southern coastal belt surrounding Matara produces some of the most nutrient-dense coconuts on the Indian Ocean rim. Our virgin coconut oil is processed from fresh coconut milk within 24 hours of dehulling, without any heat treatment, chemical solvents, or bleaching agents.</p>
+          <p>Rich in Lauric Acid (which the human body converts to monolaurin, a potent antimicrobial and immune-supporting compound), pure coconut oil enhances gut microbiome biodiversity and promotes sustained ketone-based physical energy.</p>
+          <div style="margin-top: 1.5rem; text-align: center;">
+            <a href="shop.html?cat=Coconut%20%26%20Oils" class="btn-primary-green">Shop Coconut Products</a>
+          </div>
+        `,
+        },
+        "moringa-guide": {
+          title:
+            "Moringa & Gotukola: The Dual Green Powerhouses of Sri Lankan Longevity",
+          author: "Kavindi Jayawardena, Holistic Herbalist",
+          content: `
+          <p>Ancient Ayurvedic texts celebrate Gotukola (<em>Centella asiatica</em>) as the supreme herb of memory, nervous system rejuvenation, and collagen synthesis. Cultivated along clean freshwater beds of the Nilwala river in Matara, our Gotukola is harvested every sunrise.</p>
+          <p>Combined with shade-dried Moringa leaves containing 9 essential amino acids and potent quercetin antioxidants, incorporating green sambols into your daily lunch promotes vibrant cellular health and deep sleep.</p>
+          <div style="margin-top: 1.5rem; text-align: center;">
+            <a href="shop.html?cat=Fresh%20Produce" class="btn-primary-green">Order Nilwala River Fresh Greens</a>
+          </div>
+        `,
+        },
+        "matara-logistics": {
+          title:
+            "How Matara City 1 km Free Delivery Network Eliminates Food Waste",
+          author: "GreenBasket Logistics Operations Team",
+          content: `
+          <p>Traditional supermarkets discard up to 35% of fresh inventory because long transport routes degrade shelf stability. GreenBasket operates an on-demand harvest model from our central hub on Beach Road, Matara City.</p>
+          <p>When customers within 1 km place an order over Rs. 2,000, our delivery riders deploy electric-assist cargo bicycles directly to your residence with zero delivery fee. Orders are packed in breathable palm-leaf baskets, cutting plastic waste to zero.</p>
+          <div style="margin-top: 1.5rem; text-align: center;">
+            <a href="shop.html" class="btn-primary-green">Shop Fresh at Matara Hub</a>
+          </div>
+        `,
+        },
+      };
+
+      function filterBlogCategory(category, btnEl) {
+        document.querySelectorAll(".blog-cat-filter").forEach((b) => {
+          b.classList.remove("btn-primary-green", "active");
+          b.classList.add("btn-secondary-outline");
+        });
+        btnEl.classList.remove("btn-secondary-outline");
+        btnEl.classList.add("btn-primary-green", "active");
+
+        const articles = document.querySelectorAll(
+          "#blogArticlesGrid article, article[data-category]",
+        );
+        articles.forEach((art) => {
+          const artCat = art.getAttribute("data-category");
+          if (category === "all" || artCat === category) {
+            art.style.display =
+              art.tagName.toLowerCase() === "article" &&
+              art.classList.contains("scroll-reveal") &&
+              !art.classList.contains("product-card")
+                ? "grid"
+                : "block";
+          } else {
+            art.style.display = "none";
+          }
+        });
+      }
+
+      function openBlogModal(articleKey) {
+        const data = blogArticlesData[articleKey];
+        if (!data) return;
+
+        document.getElementById("blogModalHeading").textContent = data.title;
+        document.getElementById("blogModalBody").innerHTML = `
+        <div style="font-size: 0.85rem; color: #16a34a; font-weight: 700; margin-bottom: 1rem;">
+          <i class="fa-solid fa-pen-nib mr-1"></i> Written by ${data.author}
+        </div>
+        ${data.content}
+      `;
+        document.getElementById("blogModalOverlay").classList.add("active");
+      }
+
+      function closeBlogModal() {
+        document.getElementById("blogModalOverlay").classList.remove("active");
+      }
+
+      // Close on backdrop click
+      document
+        .getElementById("blogModalOverlay")
+        ?.addEventListener("click", (e) => {
+          if (e.target.id === "blogModalOverlay") closeBlogModal();
+        });
+    </script>
+  </body>
+</html>

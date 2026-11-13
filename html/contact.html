@@ -1,0 +1,546 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Store & Delivery Map - GreenBasket</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/pages.css" />
+  </head>
+  <body>
+    <!-- Top Announcement Bar -->
+    <div class="shipping-promo-bar">
+      <span class="highlight-tag"
+        ><i class="fa-solid fa-shield-halved"></i> Islandwide Delivery</span
+      >
+      <span
+        >Sri Lanka’s Freshest Groceries & Daily Essentials Delivered Islandwide
+        to Your Doorstep!</span
+      >
+    </div>
+
+    <!-- Header -->
+    <header class="site-header">
+      <div class="header-top">
+        <div class="container-custom header-top-inner">
+          <div class="header-left-group">
+            <button
+              class="mobile-toggle-btn"
+              id="mobileToggleBtn"
+              aria-label="Open Mobile Menu"
+            >
+              <i class="fa-solid fa-bars"></i>
+            </button>
+            <a
+              href="index.html"
+              class="brand-logo"
+              aria-label="GreenBasket Home"
+            >
+              <img src="logo.png" alt="GreenBasket" class="brand-logo-img" />
+            </a>
+            <div class="delivery-selector-wrap" id="deliveryWrapper">
+              <div
+                class="delivery-box"
+                id="deliveryBox"
+                title="Select Sri Lanka delivery location"
+              >
+                <span class="delivery-label">Deliver to</span>
+                <div class="delivery-location">
+                  <i class="fa-solid fa-location-dot loc-icon"></i>
+                  <span id="deliveryLocationText">Colombo, Sri Lanka</span>
+                  <i class="fa-solid fa-chevron-down chevron"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="header-actions-group">
+            <a
+              href="javascript:void(0)"
+              onclick="openWishlistDrawer()"
+              class="action-wishlist"
+              title="View Wishlist"
+              ><i class="fa-regular fa-heart"></i
+              ><span class="badge-count">00</span></a
+            >
+            <div class="action-cart-wrap">
+              <div class="action-cart" title="Shopping Cart">
+                <div class="cart-icon-box">
+                  <i class="fa-solid fa-cart-shopping"></i>
+                </div>
+                <div class="cart-info">
+                  <span class="cart-label">My Cart</span
+                  ><span class="cart-amount">Rs. 0</span>
+                </div>
+              </div>
+            </div>
+            <div class="action-user-wrap">
+              <div class="action-user">
+                <img
+                  src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&auto=format&fit=crop&q=80"
+                  alt="User"
+                  class="user-avatar-img"
+                />
+                <span class="user-name-text">Account</span>
+              </div>
+              <div class="user-dropdown-menu"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <nav class="header-bottom">
+        <div class="container-custom header-bottom-inner">
+          <div class="bottom-left-group">
+            <ul class="main-nav-list">
+              <li><a href="index.html" class="nav-link">Home</a></li>
+              <li><a href="shop.html" class="nav-link">Shop</a></li>
+              <li><a href="about.html" class="nav-link">About</a></li>
+              <li><a href="blogs.html" class="nav-link">Blogs</a></li>
+              <li>
+                <a href="contact.html" class="nav-link active">Contact</a>
+              </li>
+              <li>
+                <a href="account.html?track=true" class="nav-link"
+                  ><i class="fa-solid fa-truck-fast mr-1 text-green-600"></i>
+                  Track Order</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="bottom-right-group">
+            <a href="tel:+94412224589" class="nav-phone-contact"
+              ><i class="fa-solid fa-phone"></i><span>+94 41-222-4589</span></a
+            >
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Mobile Drawer -->
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+    <aside class="mobile-drawer" id="mobileDrawer">
+      <div class="mobile-drawer-header">
+        <div class="brand-logo">
+          <img
+            src="logo.png"
+            alt="GreenBasket"
+            class="brand-logo-img"
+            style="height: 38px"
+          />
+        </div>
+        <button class="mobile-close-btn" id="mobileCloseBtn">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+      <div class="mobile-drawer-body">
+        <nav class="mobile-nav-links">
+          <a href="index.html" class="mobile-nav-item"><span>Home</span></a>
+          <a href="shop.html" class="mobile-nav-item"><span>Shop</span></a>
+          <a href="about.html" class="mobile-nav-item"><span>About</span></a>
+          <a href="blogs.html" class="mobile-nav-item"><span>Blogs</span></a>
+          <a href="contact.html" class="mobile-nav-item active"
+            ><span>Contact</span></a
+          >
+        </nav>
+      </div>
+    </aside>
+
+    <!-- Contact Main -->
+    <main style="padding: 3.5rem 0 6rem">
+      <div class="container-custom">
+        <div
+          style="text-align: center; max-width: 700px; margin: 0 auto 3.5rem"
+        >
+          <span
+            style="
+              color: #16a34a;
+              font-weight: 700;
+              text-transform: uppercase;
+              font-size: 0.85rem;
+            "
+            >Get In Touch</span
+          >
+          <h1
+            style="
+              font-size: 2.6rem;
+              font-weight: 800;
+              color: #0f172a;
+              margin: 0.5rem 0 1rem;
+            "
+          >
+            Store Location & Support
+          </h1>
+          <p style="color: #64748b; font-size: 1rem">
+            Have questions about our daily harvests, custom orders, or delivery
+            zones? Reach out anytime!
+          </p>
+        </div>
+
+        <div
+          style="
+            display: grid;
+            grid-template-columns: 1.2fr 1.8fr;
+            gap: 3rem;
+            align-items: start;
+          "
+        >
+          <!-- Contact Info & 1KM Shipping Explanation -->
+          <div>
+            <div class="checkout-card" style="margin-bottom: 1.5rem">
+              <h3
+                style="
+                  font-size: 1.25rem;
+                  font-weight: 800;
+                  color: #0f172a;
+                  margin-bottom: 1rem;
+                "
+              >
+                <i class="fa-solid fa-shop text-green-600 mr-2"></i> Matara
+                Central Hub & Store
+              </h3>
+              <div
+                style="
+                  display: flex;
+                  flex-direction: column;
+                  gap: 0.85rem;
+                  font-size: 0.9rem;
+                  color: #334155;
+                "
+              >
+                <div>
+                  <i class="fa-solid fa-location-dot text-green-600 mr-2"></i>
+                  <strong>GreenBasket Hub:</strong> No. 45, Beach Road, Matara
+                  City 81000, Sri Lanka
+                </div>
+                <div>
+                  <i class="fa-solid fa-phone text-green-600 mr-2"></i>
+                  <strong>Direct Line:</strong>
+                  <a
+                    href="tel:+94412224589"
+                    style="color: #ea580c; font-weight: 700"
+                    >+94 41-222-4589</a
+                  >
+                </div>
+                <div>
+                  <i
+                    class="fa-solid fa-mobile-screen-button text-green-600 mr-2"
+                  ></i>
+                  <strong>Mobile / WhatsApp:</strong>
+                  <a
+                    href="tel:+94778958144"
+                    style="color: #ea580c; font-weight: 700"
+                    >+94 77-895-8144</a
+                  >
+                </div>
+                <div>
+                  <i class="fa-regular fa-envelope text-green-600 mr-2"></i>
+                  info@greenbasket.lk
+                </div>
+                <div>
+                  <i class="fa-regular fa-clock text-green-600 mr-2"></i> Open
+                  Everyday: 7:30 AM – 8:30 PM (Sun: 8:00 AM – 6:00 PM)
+                </div>
+              </div>
+            </div>
+
+            <div class="delivery-meter-box">
+              <div class="meter-title">
+                <i class="fa-solid fa-truck-fast"></i>
+                <span>Matara City Delivery Zone Rules</span>
+              </div>
+              <p style="font-size: 0.85rem; color: #166534; line-height: 1.5">
+                Our dispatch base is located in <strong>Matara City</strong>:
+                <br />• Within <strong>1 km</strong>:
+                <strong>FREE Shipping</strong> on orders above Rs. 2,000
+                (otherwise Rs. 60). <br />• 1 - 5 km (Polhena, Nupe, Walgama):
+                <strong>Rs. 100</strong>. <br />• 5 - 25 km (Mirissa, Weligama,
+                Dondra, Dikwella): <strong>Rs. 180</strong>. <br />• Regional &
+                Islandwide: <strong>Rs. 250 - Rs. 350</strong>.
+              </p>
+            </div>
+          </div>
+
+          <!-- Contact Form -->
+          <div class="checkout-card">
+            <h3
+              style="
+                font-size: 1.35rem;
+                font-weight: 800;
+                color: #0f172a;
+                margin-bottom: 1.5rem;
+              "
+            >
+              Send Us a Message
+            </h3>
+            <form
+              onsubmit="
+                event.preventDefault();
+                showToast(
+                  'Thank you! Your message has been sent to our farm support team.',
+                  'success',
+                );
+                this.reset();
+              "
+            >
+              <div
+                style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem"
+              >
+                <div class="form-group">
+                  <label class="form-label">Your Name</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    required
+                    placeholder="John Doe"
+                  />
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Phone Number</label>
+                  <input
+                    type="tel"
+                    class="form-control"
+                    placeholder="+94 77 123 4567"
+                  />
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Email Address</label>
+                <input
+                  type="email"
+                  class="form-control"
+                  required
+                  placeholder="john@example.com"
+                />
+              </div>
+              <div class="form-group">
+                <label class="form-label">Subject</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  required
+                  placeholder="Question about organic produce / delivery"
+                />
+              </div>
+              <div class="form-group">
+                <label class="form-label">Message</label>
+                <textarea
+                  class="form-control"
+                  rows="4"
+                  required
+                  placeholder="How can we help you?"
+                ></textarea>
+              </div>
+              <button
+                type="submit"
+                class="btn-primary-green"
+                style="padding: 0.85rem 2rem"
+              >
+                <i class="fa-solid fa-paper-plane mr-1"></i> Send Message
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Slide-out Shopping Cart Drawer -->
+    <div class="cart-drawer-overlay" id="cartDrawerOverlay"></div>
+    <aside class="cart-drawer" id="cartDrawer">
+      <div class="cart-drawer-header">
+        <div class="cart-drawer-title">
+          <i class="fa-solid fa-cart-shopping text-green-600"></i
+          ><span>Shopping Basket</span>
+        </div>
+        <button id="cartDrawerClose"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div style="padding: 1rem 1.5rem 0" id="cartDrawerShippingMeter"></div>
+      <div class="cart-drawer-body" id="cartDrawerItems"></div>
+      <div class="cart-drawer-footer">
+        <div class="summary-row">
+          <span>Subtotal</span
+          ><span id="cartDrawerSubtotal" style="font-weight: 800">Rs. 0</span>
+        </div>
+        <a
+          href="checkout.html"
+          class="btn-primary-orange"
+          style="
+            display: flex;
+            width: 100%;
+            text-align: center;
+            border-radius: 999px;
+            padding: 0.85rem;
+          "
+          >Proceed to Checkout</a
+        >
+      </div>
+    </aside>
+
+    <!-- ==========================================
+       SITE FOOTER (Exact Image 1 Dark Theme Format)
+       ========================================== -->
+    <footer class="site-footer-dark">
+      <div class="container-custom">
+        <div class="footer-main-grid">
+          <!-- Column 1: Contact Info -->
+          <div>
+            <h4 class="footer-col-title">Contact Info</h4>
+            <div class="footer-contact-list">
+              <div class="footer-contact-item">
+                <i class="fa-solid fa-location-dot"></i>
+                <span>No. 45, Beach Road, Matara City 81000, Sri Lanka.</span>
+              </div>
+              <div class="footer-contact-item">
+                <i class="fa-solid fa-phone"></i>
+                <a
+                  href="tel:+94412224589"
+                  style="color: inherit; text-decoration: none"
+                  >+94 41-222-4589</a
+                >
+              </div>
+              <div class="footer-contact-item">
+                <i class="fa-solid fa-mobile-screen-button"></i>
+                <a
+                  href="tel:+94778958144"
+                  style="color: inherit; text-decoration: none"
+                  >+94 77-895-8144</a
+                >
+              </div>
+              <div class="footer-contact-item">
+                <i class="fa-regular fa-envelope"></i>
+                <a
+                  href="mailto:info@greenbasket.lk"
+                  style="color: inherit; text-decoration: none"
+                  >info@greenbasket.lk</a
+                >
+              </div>
+              <div class="footer-contact-item">
+                <i class="fa-solid fa-desktop"></i>
+                <a
+                  href="index.html"
+                  style="color: inherit; text-decoration: none"
+                  >greenbasket.lk</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Column 2: Info -->
+          <div>
+            <h4 class="footer-col-title">Info</h4>
+            <div class="footer-links-list">
+              <a href="contact.html" class="footer-link-item">
+                <span class="chevron-arrow">&gt;</span>
+                <span>Contact us</span>
+              </a>
+              <a href="about.html" class="footer-link-item">
+                <span class="chevron-arrow">&gt;</span>
+                <span>About us</span>
+              </a>
+              <a
+                href="javascript:void(0)"
+                onclick="openCartDrawer()"
+                class="footer-link-item"
+              >
+                <span class="chevron-arrow">&gt;</span>
+                <span>My cart</span>
+              </a>
+              <a href="checkout.html" class="footer-link-item">
+                <span class="chevron-arrow">&gt;</span>
+                <span>Checkout</span>
+              </a>
+              <a href="account.html" class="footer-link-item">
+                <span class="chevron-arrow">&gt;</span>
+                <span>My account</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Column 3: Policy -->
+          <div>
+            <h4 class="footer-col-title">Policy</h4>
+            <div class="footer-links-list">
+              <a href="about.html#policies" class="footer-link-item">
+                <span class="chevron-arrow">&gt;</span>
+                <span>Return Policy</span>
+              </a>
+              <a href="about.html#policies" class="footer-link-item">
+                <span class="chevron-arrow">&gt;</span>
+                <span>Privacy Policy</span>
+              </a>
+              <a href="about.html#careers" class="footer-link-item">
+                <span class="chevron-arrow">&gt;</span>
+                <span>Careers</span>
+              </a>
+              <a href="shop.html" class="footer-link-item">
+                <span class="chevron-arrow">&gt;</span>
+                <span>Sitemap</span>
+              </a>
+              <a href="about.html#faqs" class="footer-link-item">
+                <span class="chevron-arrow">&gt;</span>
+                <span>FAQs</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Column 4: Product -->
+          <div>
+            <h4 class="footer-col-title">Product</h4>
+            <div class="footer-links-list">
+              <a href="shop.html?filter=bestseller" class="footer-link-item">
+                <span class="chevron-arrow">&gt;</span>
+                <span>Best Seller</span>
+              </a>
+              <a href="shop.html?filter=toprated" class="footer-link-item">
+                <span class="chevron-arrow">&gt;</span>
+                <span>Top Rated</span>
+              </a>
+              <a href="shop.html?filter=special" class="footer-link-item">
+                <span class="chevron-arrow">&gt;</span>
+                <span>Special</span>
+              </a>
+              <a href="shop.html?filter=featured" class="footer-link-item">
+                <span class="chevron-arrow">&gt;</span>
+                <span>Featured</span>
+              </a>
+              <a href="shop.html?filter=new" class="footer-link-item">
+                <span class="chevron-arrow">&gt;</span>
+                <span>New Arrivals</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Footer Bottom Bar -->
+        <div class="footer-bottom-bar">
+          <div>
+            &copy; 2026 <strong>GreenBasket (Pvt) Ltd</strong>. Matara, Sri
+            Lanka. All Rights Reserved.
+          </div>
+          <div style="display: flex; align-items: center; gap: 1.5rem">
+            <span style="color: #71717a"
+              ><i class="fa-solid fa-shield-halved text-green-500 mr-1"></i>
+              100% Certified Organic Sri Lanka</span
+            >
+            <span style="color: #71717a"
+              ><i class="fa-solid fa-truck-fast text-green-500 mr-1"></i>
+              Islandwide Delivery from Matara Hub</span
+            >
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+  </body>
+</html>

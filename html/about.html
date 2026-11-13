@@ -1,0 +1,1060 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Us - GreenBasket Organic | Matara, Sri Lanka</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/pages.css" />
+  </head>
+  <body>
+    <!-- Top Announcement Bar -->
+    <div class="shipping-promo-bar">
+      <span class="highlight-tag"
+        ><i class="fa-solid fa-shield-halved"></i> Islandwide Delivery</span
+      >
+      <span
+        >Sri Lanka’s Freshest Groceries & Daily Essentials Delivered Islandwide
+        to Your Doorstep!</span
+      >
+    </div>
+
+    <!-- Header -->
+    <header class="site-header">
+      <div class="header-top">
+        <div class="container-custom header-top-inner">
+          <div class="header-left-group">
+            <button
+              class="mobile-toggle-btn"
+              id="mobileToggleBtn"
+              aria-label="Open Mobile Menu"
+            >
+              <i class="fa-solid fa-bars"></i>
+            </button>
+            <a
+              href="index.html"
+              class="brand-logo"
+              aria-label="GreenBasket Home"
+            >
+              <img src="logo.png" alt="GreenBasket" class="brand-logo-img" />
+            </a>
+            <div class="delivery-selector-wrap" id="deliveryWrapper">
+              <div
+                class="delivery-box"
+                id="deliveryBox"
+                title="Select Sri Lanka delivery location"
+              >
+                <span class="delivery-label">Deliver to</span>
+                <div class="delivery-location">
+                  <i class="fa-solid fa-location-dot loc-icon"></i>
+                  <span id="deliveryLocationText">Colombo, Sri Lanka</span>
+                  <i class="fa-solid fa-chevron-down chevron"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="header-actions-group">
+            <a
+              href="javascript:void(0)"
+              onclick="openWishlistDrawer()"
+              class="action-wishlist"
+              title="View Wishlist"
+              ><i class="fa-regular fa-heart"></i
+              ><span class="badge-count">00</span></a
+            >
+            <div class="action-cart-wrap">
+              <div class="action-cart" title="Shopping Cart">
+                <div class="cart-icon-box">
+                  <i class="fa-solid fa-cart-shopping"></i>
+                </div>
+                <div class="cart-info">
+                  <span class="cart-label">My Cart</span
+                  ><span class="cart-amount">Rs. 0</span>
+                </div>
+              </div>
+            </div>
+            <div class="action-user-wrap">
+              <div class="action-user">
+                <img
+                  src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&auto=format&fit=crop&q=80"
+                  alt="User"
+                  class="user-avatar-img"
+                />
+                <span class="user-name-text">Account</span>
+              </div>
+              <div class="user-dropdown-menu"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <nav class="header-bottom">
+        <div class="container-custom header-bottom-inner">
+          <div class="bottom-left-group">
+            <ul class="main-nav-list">
+              <li><a href="index.html" class="nav-link">Home</a></li>
+              <li><a href="about.html" class="nav-link active">About</a></li>
+              <li><a href="shop.html" class="nav-link">Best Deals</a></li>
+              <li><a href="blogs.html" class="nav-link">Blogs</a></li>
+              <li><a href="contact.html" class="nav-link">Contact</a></li>
+              <li>
+                <a href="account.html?track=true" class="nav-link"
+                  ><i class="fa-solid fa-truck-fast mr-1 text-green-600"></i>
+                  Track Order</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="bottom-right-group">
+            <a href="tel:+94412224589" class="nav-phone-contact"
+              ><i class="fa-solid fa-phone"></i><span>+94 41-222-4589</span></a
+            >
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Mobile Drawer -->
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+    <aside class="mobile-drawer" id="mobileDrawer">
+      <div class="mobile-drawer-header">
+        <div class="brand-logo">
+          <img
+            src="logo.png"
+            alt="GreenBasket"
+            class="brand-logo-img"
+            style="height: 38px"
+          />
+        </div>
+        <button class="mobile-close-btn" id="mobileCloseBtn">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+      <div class="mobile-drawer-body">
+        <nav class="mobile-nav-links">
+          <a href="index.html" class="mobile-nav-item"><span>Home</span></a>
+          <a href="shop.html" class="mobile-nav-item"><span>Shop</span></a>
+          <a href="about.html" class="mobile-nav-item active"
+            ><span>About Us</span></a
+          >
+          <a href="blogs.html" class="mobile-nav-item"><span>Blogs</span></a>
+          <a href="contact.html" class="mobile-nav-item"
+            ><span>Contact</span></a
+          >
+        </nav>
+      </div>
+    </aside>
+
+    <!-- Main About Content -->
+    <main style="padding: 3.5rem 0 6rem">
+      <div class="container-custom">
+        <!-- Hero Header -->
+        <div
+          class="scroll-reveal"
+          style="
+            max-width: 840px;
+            margin: 0 auto;
+            text-align: center;
+            margin-bottom: 4rem;
+          "
+        >
+          <span class="hero-badge-tag"
+            ><i class="fa-solid fa-leaf"></i> Rooted in Matara, Sri Lanka</span
+          >
+          <h1
+            style="
+              font-size: 3rem;
+              font-weight: 800;
+              color: #0f172a;
+              margin: 1rem 0;
+              line-height: 1.2;
+            "
+          >
+            Cultivating Wholesome Living <br />From Southern Sri Lanka
+          </h1>
+          <p style="font-size: 1.15rem; color: #64748b; line-height: 1.7">
+            GreenBasket is Sri Lanka’s premier direct-from-farm organic
+            cooperative headquartered in historic <strong>Matara City</strong>.
+            We empower over 45 regenerative southern farming families, providing
+            our community with pesticide-free heirloom rice, virgin coconut oil,
+            sun-dried Ceylon spices, and pristine river-valley produce.
+          </p>
+        </div>
+
+        <!-- Feature Grid: Farm to Table Story -->
+        <div
+          id="heritage"
+          class="scroll-reveal"
+          style="
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 3rem;
+            align-items: center;
+            margin-bottom: 5.5rem;
+          "
+        >
+          <div>
+            <img
+              src="https://images.unsplash.com/photo-1500937386664-56d1dfef3854?w=800&auto=format&fit=crop&q=80"
+              alt="Southern Organic Farm Sri Lanka"
+              style="
+                width: 100%;
+                border-radius: 18px;
+                box-shadow: var(--shadow-lg);
+              "
+            />
+          </div>
+          <div>
+            <span
+              style="
+                font-size: 0.85rem;
+                font-weight: 700;
+                color: #16a34a;
+                text-transform: uppercase;
+                letter-spacing: 0.05em;
+              "
+              >Our Matara Heritage</span
+            >
+            <h2
+              style="
+                font-size: 2.2rem;
+                font-weight: 800;
+                color: #0f172a;
+                margin: 0.5rem 0 1rem;
+                line-height: 1.25;
+              "
+            >
+              Direct From Soil to Your Table in Under 12 Hours
+            </h2>
+            <p style="color: #64748b; line-height: 1.7; margin-bottom: 1.5rem">
+              Conventional supermarket produce languishes in cold chemical
+              storage for weeks. At GreenBasket, our harvesting cycle is
+              coordinated with customer orders daily at dawn across the lush
+              Nilwala river plains and Akuressa plantations. Fresh greens,
+              jackfruit, organic coconuts, and Ceylon Alba cinnamon reach our
+              Matara hub and your doorstep the very same day.
+            </p>
+            <div
+              style="
+                display: flex;
+                flex-direction: column;
+                gap: 0.85rem;
+                font-weight: 600;
+                color: #1e293b;
+              "
+            >
+              <div style="display: flex; align-items: center; gap: 0.75rem">
+                <i
+                  class="fa-solid fa-circle-check text-green-600"
+                  style="font-size: 1.1rem"
+                ></i>
+                <span
+                  >100% Participatory Guarantee System (PGS) Organic
+                  Certified</span
+                >
+              </div>
+              <div style="display: flex; align-items: center; gap: 0.75rem">
+                <i
+                  class="fa-solid fa-circle-check text-green-600"
+                  style="font-size: 1.1rem"
+                ></i>
+                <span
+                  >Zero chemical weedicides, synthetic hormones, or artificial
+                  ripeners</span
+                >
+              </div>
+              <div style="display: flex; align-items: center; gap: 0.75rem">
+                <i
+                  class="fa-solid fa-circle-check text-green-600"
+                  style="font-size: 1.1rem"
+                ></i>
+                <span
+                  >Guaranteed fair living wages for Sri Lankan farming
+                  households</span
+                >
+              </div>
+              <div style="display: flex; align-items: center; gap: 0.75rem">
+                <i
+                  class="fa-solid fa-circle-check text-green-600"
+                  style="font-size: 1.1rem"
+                ></i>
+                <span
+                  >Free Delivery within 1 km of our Matara Shop on orders above
+                  Rs. 2,000</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- The 4 Pillars of GreenBasket -->
+        <div class="scroll-reveal" style="margin-bottom: 5.5rem">
+          <div
+            style="text-align: center; max-width: 650px; margin: 0 auto 3rem"
+          >
+            <h2 style="font-size: 2rem; font-weight: 800; color: #0f172a">
+              Our Organic Principles
+            </h2>
+            <p style="color: #64748b; font-size: 0.95rem">
+              Every harvest is verified to protect both human health and
+              delicate Sri Lankan ecosystems.
+            </p>
+          </div>
+
+          <div
+            style="
+              display: grid;
+              grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+              gap: 2rem;
+            "
+          >
+            <div
+              style="
+                background: white;
+                border: 1px solid #e2e8f0;
+                border-radius: 16px;
+                padding: 2rem;
+                box-shadow: var(--shadow-sm);
+                transition: transform 0.25s ease;
+              "
+            >
+              <div
+                style="
+                  width: 56px;
+                  height: 56px;
+                  border-radius: 14px;
+                  background: #dcfce7;
+                  color: #16a34a;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 1.6rem;
+                  margin-bottom: 1.25rem;
+                "
+              >
+                <i class="fa-solid fa-seedling"></i>
+              </div>
+              <h3
+                style="
+                  font-size: 1.2rem;
+                  font-weight: 800;
+                  color: #0f172a;
+                  margin-bottom: 0.5rem;
+                "
+              >
+                Heirloom Varieties
+              </h3>
+              <p style="font-size: 0.885rem; color: #64748b; line-height: 1.6">
+                Preserving ancient Sri Lankan rice strains like
+                <em>Suwandel</em>, <em>Kalu Heenati</em>, and
+                <em>Pachchaperumal</em> which are rich in natural antioxidants
+                and low glycemic index.
+              </p>
+            </div>
+
+            <div
+              style="
+                background: white;
+                border: 1px solid #e2e8f0;
+                border-radius: 16px;
+                padding: 2rem;
+                box-shadow: var(--shadow-sm);
+                transition: transform 0.25s ease;
+              "
+            >
+              <div
+                style="
+                  width: 56px;
+                  height: 56px;
+                  border-radius: 14px;
+                  background: #ffedd5;
+                  color: #ea580c;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 1.6rem;
+                  margin-bottom: 1.25rem;
+                "
+              >
+                <i class="fa-solid fa-hand-holding-dollar"></i>
+              </div>
+              <h3
+                style="
+                  font-size: 1.2rem;
+                  font-weight: 800;
+                  color: #0f172a;
+                  margin-bottom: 0.5rem;
+                "
+              >
+                Fair Trade Sourcing
+              </h3>
+              <p style="font-size: 0.885rem; color: #64748b; line-height: 1.6">
+                By cutting out exploitative middlemen and wholesale cartels, our
+                farmers earn up to 40% higher returns, funding school education
+                and community water sanitation.
+              </p>
+            </div>
+
+            <div
+              style="
+                background: white;
+                border: 1px solid #e2e8f0;
+                border-radius: 16px;
+                padding: 2rem;
+                box-shadow: var(--shadow-sm);
+                transition: transform 0.25s ease;
+              "
+            >
+              <div
+                style="
+                  width: 56px;
+                  height: 56px;
+                  border-radius: 14px;
+                  background: #e0f2fe;
+                  color: #0284c7;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 1.6rem;
+                  margin-bottom: 1.25rem;
+                "
+              >
+                <i class="fa-solid fa-earth-americas"></i>
+              </div>
+              <h3
+                style="
+                  font-size: 1.2rem;
+                  font-weight: 800;
+                  color: #0f172a;
+                  margin-bottom: 0.5rem;
+                "
+              >
+                Soil Regeneration
+              </h3>
+              <p style="font-size: 0.885rem; color: #64748b; line-height: 1.6">
+                We enrich Southern Sri Lankan topsoil with biochar,
+                nitrogen-fixing green manure, and compost, reversing erosion and
+                maintaining groundwater purity.
+              </p>
+            </div>
+
+            <div
+              style="
+                background: white;
+                border: 1px solid #e2e8f0;
+                border-radius: 16px;
+                padding: 2rem;
+                box-shadow: var(--shadow-sm);
+                transition: transform 0.25s ease;
+              "
+            >
+              <div
+                style="
+                  width: 56px;
+                  height: 56px;
+                  border-radius: 14px;
+                  background: #fef08a;
+                  color: #854d0e;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 1.6rem;
+                  margin-bottom: 1.25rem;
+                "
+              >
+                <i class="fa-solid fa-box-open"></i>
+              </div>
+              <h3
+                style="
+                  font-size: 1.2rem;
+                  font-weight: 800;
+                  color: #0f172a;
+                  margin-bottom: 0.5rem;
+                "
+              >
+                Eco Packaging
+              </h3>
+              <p style="font-size: 0.885rem; color: #64748b; line-height: 1.6">
+                100% biodegradable palm leaf cartons, compostable banana-leaf
+                wrapping, and reusable glass bottles for oils and artisanal
+                Kithul treacle.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Visit Matara Central Hub Section -->
+        <div
+          class="scroll-reveal"
+          style="
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            color: white;
+            border-radius: 20px;
+            padding: 3rem;
+            margin-bottom: 5.5rem;
+            box-shadow: var(--shadow-lg);
+          "
+        >
+          <div
+            style="
+              display: grid;
+              grid-template-columns: 1.2fr 1fr;
+              gap: 2.5rem;
+              align-items: center;
+            "
+          >
+            <div>
+              <span
+                style="
+                  font-size: 0.85rem;
+                  font-weight: 700;
+                  color: #4ade80;
+                  text-transform: uppercase;
+                  letter-spacing: 0.05em;
+                "
+                >Physical Store & Dispatch Center</span
+              >
+              <h2
+                style="
+                  font-size: 2.2rem;
+                  font-weight: 800;
+                  margin: 0.5rem 0 1rem;
+                  color: #ffffff;
+                "
+              >
+                Visit Our Matara City Storefront
+              </h2>
+              <p
+                style="
+                  color: #cbd5e1;
+                  line-height: 1.7;
+                  margin-bottom: 1.5rem;
+                  font-size: 0.95rem;
+                "
+              >
+                Experience the aroma of freshly roasted organic coffee,
+                cold-pressed virgin oils, and heirloom grains at our Matara
+                flagship hub. Walk-ins are warmly welcome to sample our products
+                or pick up click-and-collect orders.
+              </p>
+              <div
+                style="
+                  display: flex;
+                  flex-direction: column;
+                  gap: 0.75rem;
+                  font-size: 0.9rem;
+                  color: #e2e8f0;
+                "
+              >
+                <div>
+                  <i class="fa-solid fa-location-dot text-green-400 mr-2"></i>
+                  <strong
+                    >No. 45, Beach Road, Matara City 81000, Sri Lanka</strong
+                  >
+                </div>
+                <div>
+                  <i class="fa-solid fa-clock text-green-400 mr-2"></i> Monday –
+                  Saturday: 7:30 AM – 8:30 PM | Sunday: 8:00 AM – 6:00 PM
+                </div>
+                <div>
+                  <i class="fa-solid fa-phone text-green-400 mr-2"></i> Direct
+                  Line: +94 41-222-4589 | Mobile: +94 77-895-8144
+                </div>
+              </div>
+            </div>
+            <div
+              style="
+                background: rgba(255, 255, 255, 0.08);
+                border: 1px solid rgba(255, 255, 255, 0.15);
+                border-radius: 14px;
+                padding: 2rem;
+                backdrop-filter: blur(8px);
+              "
+            >
+              <div
+                style="
+                  font-size: 1.15rem;
+                  font-weight: 800;
+                  margin-bottom: 0.75rem;
+                  color: #4ade80;
+                "
+              >
+                <i class="fa-solid fa-truck-fast mr-2"></i> Distance-Based
+                Express Delivery
+              </div>
+              <p
+                style="
+                  font-size: 0.85rem;
+                  color: #cbd5e1;
+                  line-height: 1.6;
+                  margin-bottom: 1.25rem;
+                "
+              >
+                We dispatch daily throughout Matara, Weligama, Mirissa,
+                Dikwella, Galle, and islandwide across Sri Lanka. Orders placed
+                before 1:00 PM are delivered same-day.
+              </p>
+              <a
+                href="checkout.html"
+                class="btn-primary-green"
+                style="
+                  display: inline-block;
+                  width: 100%;
+                  text-align: center;
+                  border-radius: 999px;
+                "
+              >
+                Calculate Distance to Your Address
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ & Policies Section (Matching Footer Links) -->
+        <div id="policies" class="scroll-reveal" style="margin-bottom: 5.5rem">
+          <div
+            style="text-align: center; max-width: 650px; margin: 0 auto 3rem"
+          >
+            <h2 style="font-size: 2rem; font-weight: 800; color: #0f172a">
+              Store Policies & Standards
+            </h2>
+            <p style="color: #64748b; font-size: 0.95rem">
+              Transparent, customer-centric, and community-first practices.
+            </p>
+          </div>
+
+          <div
+            style="
+              display: grid;
+              grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+              gap: 1.75rem;
+            "
+          >
+            <div
+              style="
+                background: white;
+                border: 1px solid #e2e8f0;
+                border-radius: 14px;
+                padding: 1.75rem;
+              "
+            >
+              <h4
+                style="
+                  font-size: 1.1rem;
+                  font-weight: 800;
+                  color: #0f172a;
+                  margin-bottom: 0.5rem;
+                "
+              >
+                <i class="fa-solid fa-rotate-left text-green-600 mr-2"></i> 100%
+                Return & Refund Policy
+              </h4>
+              <p style="font-size: 0.85rem; color: #64748b; line-height: 1.6">
+                If any fresh vegetable, fruit, or dairy item arrives damaged or
+                fails to satisfy your culinary standard, our courier will
+                immediately replace it or issue an instant store credit refund
+                on the spot.
+              </p>
+            </div>
+
+            <div
+              style="
+                background: white;
+                border: 1px solid #e2e8f0;
+                border-radius: 14px;
+                padding: 1.75rem;
+              "
+            >
+              <h4
+                style="
+                  font-size: 1.1rem;
+                  font-weight: 800;
+                  color: #0f172a;
+                  margin-bottom: 0.5rem;
+                "
+              >
+                <i class="fa-solid fa-user-shield text-green-600 mr-2"></i>
+                Privacy & Data Policy
+              </h4>
+              <p style="font-size: 0.85rem; color: #64748b; line-height: 1.6">
+                Your personal information, Sri Lankan address, and contact
+                numbers are strictly used for delivery logistics. We never sell
+                or share customer data with third-party advertisers.
+              </p>
+            </div>
+
+            <div
+              style="
+                background: white;
+                border: 1px solid #e2e8f0;
+                border-radius: 14px;
+                padding: 1.75rem;
+              "
+            >
+              <h4
+                style="
+                  font-size: 1.1rem;
+                  font-weight: 800;
+                  color: #0f172a;
+                  margin-bottom: 0.5rem;
+                "
+              >
+                <i class="fa-solid fa-truck text-green-600 mr-2"></i> Matara
+                Free Shipping Guarantee
+              </h4>
+              <p style="font-size: 0.85rem; color: #64748b; line-height: 1.6">
+                Customers residing within 1 km of our Matara Shop enjoy
+                completely FREE shipping whenever their basket subtotal exceeds
+                Rs. 2,000. Verified automatically at checkout.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQs Section -->
+        <div
+          id="faqs"
+          class="scroll-reveal"
+          style="max-width: 800px; margin: 0 auto 5.5rem"
+        >
+          <h2
+            style="
+              font-size: 2rem;
+              font-weight: 800;
+              color: #0f172a;
+              text-align: center;
+              margin-bottom: 2rem;
+            "
+          >
+            Frequently Asked Questions
+          </h2>
+
+          <div style="display: flex; flex-direction: column; gap: 1rem">
+            <div
+              style="
+                background: white;
+                border: 1px solid #e2e8f0;
+                border-radius: 12px;
+                padding: 1.25rem 1.5rem;
+              "
+            >
+              <div
+                style="
+                  font-weight: 800;
+                  color: #0f172a;
+                  font-size: 1rem;
+                  margin-bottom: 0.4rem;
+                "
+              >
+                Q: Where does GreenBasket source its fresh produce?
+              </div>
+              <div
+                style="font-size: 0.875rem; color: #64748b; line-height: 1.6"
+              >
+                A: All produce comes directly from verified southern
+                smallholders in Matara, Nilwala Valley, Galle, and Deniyaya
+                adhering strictly to PGS biological farming with zero synthetic
+                sprays.
+              </div>
+            </div>
+
+            <div
+              style="
+                background: white;
+                border: 1px solid #e2e8f0;
+                border-radius: 12px;
+                padding: 1.25rem 1.5rem;
+              "
+            >
+              <div
+                style="
+                  font-weight: 800;
+                  color: #0f172a;
+                  font-size: 1rem;
+                  margin-bottom: 0.4rem;
+                "
+              >
+                Q: How does distance-based shipping work?
+              </div>
+              <div
+                style="font-size: 0.875rem; color: #64748b; line-height: 1.6"
+              >
+                A: Shipping is calculated directly from our Matara Shop. Within
+                1 km, shipping is FREE on orders over Rs. 2,000 (otherwise Rs.
+                60). Deliveries 1-5 km are Rs. 100, 5-25 km are Rs. 180, and
+                regional courier is Rs. 250-350.
+              </div>
+            </div>
+
+            <div
+              style="
+                background: white;
+                border: 1px solid #e2e8f0;
+                border-radius: 12px;
+                padding: 1.25rem 1.5rem;
+              "
+            >
+              <div
+                style="
+                  font-weight: 800;
+                  color: #0f172a;
+                  font-size: 1rem;
+                  margin-bottom: 0.4rem;
+                "
+              >
+                Q: Can I pay with Cash on Delivery (COD)?
+              </div>
+              <div
+                style="font-size: 0.875rem; color: #64748b; line-height: 1.6"
+              >
+                A: Yes! You can pay safely via cash or mobile banking when
+                receiving your fresh produce box at your doorstep.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Careers Section -->
+        <div
+          id="careers"
+          class="scroll-reveal"
+          style="
+            text-align: center;
+            background: #f0fdf4;
+            border: 1px dashed #86efac;
+            border-radius: 16px;
+            padding: 3rem 2rem;
+          "
+        >
+          <h3
+            style="
+              font-size: 1.75rem;
+              font-weight: 800;
+              color: #166534;
+              margin-bottom: 0.5rem;
+            "
+          >
+            Join the GreenBasket Family
+          </h3>
+          <p
+            style="
+              color: #4b5563;
+              max-width: 600px;
+              margin: 0 auto 1.5rem;
+              font-size: 0.95rem;
+            "
+          >
+            We are constantly looking for enthusiastic delivery champions,
+            agronomists, and retail associates passionate about organic
+            agriculture in Matara.
+          </p>
+          <a
+            href="mailto:careers@greenbasket.lk"
+            class="btn-primary-green"
+            style="font-size: 0.9rem"
+          >
+            <i class="fa-regular fa-envelope mr-1"></i> Send Resume to
+            careers@greenbasket.lk
+          </a>
+        </div>
+      </div>
+    </main>
+
+    <!-- Slide-out Shopping Cart Drawer -->
+    <div class="cart-drawer-overlay" id="cartDrawerOverlay"></div>
+    <aside class="cart-drawer" id="cartDrawer">
+      <div class="cart-drawer-header">
+        <div class="cart-drawer-title">
+          <i class="fa-solid fa-cart-shopping text-green-600"></i
+          ><span>Shopping Basket</span>
+        </div>
+        <button id="cartDrawerClose"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div style="padding: 1rem 1.5rem 0" id="cartDrawerShippingMeter"></div>
+      <div class="cart-drawer-body" id="cartDrawerItems"></div>
+      <div class="cart-drawer-footer">
+        <div class="summary-row">
+          <span>Subtotal</span
+          ><span id="cartDrawerSubtotal" style="font-weight: 800">Rs. 0</span>
+        </div>
+        <a
+          href="checkout.html"
+          class="btn-primary-orange"
+          style="
+            display: flex;
+            width: 100%;
+            text-align: center;
+            border-radius: 999px;
+            padding: 0.85rem;
+          "
+          >Proceed to Checkout</a
+        >
+      </div>
+    </aside>
+
+    <footer class="site-footer-dark">
+      <div class="container-custom">
+        <div class="footer-main-grid">
+          <!-- Column 1: Contact Info -->
+          <div>
+            <h4 class="footer-col-title">Contact Info</h4>
+            <div class="footer-contact-list">
+              <div class="footer-contact-item">
+                <i class="fa-solid fa-location-dot"></i>
+                <span>No. 45, Beach Road, Matara City 81000, Sri Lanka.</span>
+              </div>
+              <div class="footer-contact-item">
+                <i class="fa-solid fa-phone"></i>
+                <a
+                  href="tel:+94412224589"
+                  style="color: inherit; text-decoration: none"
+                  >+94 41-222-4589</a
+                >
+              </div>
+              <div class="footer-contact-item">
+                <i class="fa-solid fa-mobile-screen-button"></i>
+                <a
+                  href="tel:+94778958144"
+                  style="color: inherit; text-decoration: none"
+                  >+94 77-895-8144</a
+                >
+              </div>
+              <div class="footer-contact-item">
+                <i class="fa-regular fa-envelope"></i>
+                <a
+                  href="mailto:info@greenbasket.lk"
+                  style="color: inherit; text-decoration: none"
+                  >info@greenbasket.lk</a
+                >
+              </div>
+              <div class="footer-contact-item">
+                <i class="fa-solid fa-desktop"></i>
+                <a
+                  href="index.html"
+                  style="color: inherit; text-decoration: none"
+                  >greenbasket.lk</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Column 2: Info -->
+          <div>
+            <h4 class="footer-col-title">Info</h4>
+            <div class="footer-links-list">
+              <a href="contact.html" class="footer-link-item">
+                <span class="chevron-arrow">&gt;</span>
+                <span>Contact us</span>
+              </a>
+              <a href="about.html" class="footer-link-item">
+                <span class="chevron-arrow">&gt;</span>
+                <span>About us</span>
+              </a>
+              <a
+                href="javascript:void(0)"
+                onclick="openCartDrawer()"
+                class="footer-link-item"
+              >
+                <span class="chevron-arrow">&gt;</span>
+                <span>My cart</span>
+              </a>
+              <a href="checkout.html" class="footer-link-item">
+                <span class="chevron-arrow">&gt;</span>
+                <span>Checkout</span>
+              </a>
+              <a href="account.html" class="footer-link-item">
+                <span class="chevron-arrow">&gt;</span>
+                <span>My account</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Column 3: Policy -->
+          <div>
+            <h4 class="footer-col-title">Policy</h4>
+            <div class="footer-links-list">
+              <a href="about.html#policies" class="footer-link-item">
+                <span class="chevron-arrow">&gt;</span>
+                <span>Return Policy</span>
+              </a>
+              <a href="about.html#policies" class="footer-link-item">
+                <span class="chevron-arrow">&gt;</span>
+                <span>Privacy Policy</span>
+              </a>
+              <a href="about.html#careers" class="footer-link-item">
+                <span class="chevron-arrow">&gt;</span>
+                <span>Careers</span>
+              </a>
+              <a href="shop.html" class="footer-link-item">
+                <span class="chevron-arrow">&gt;</span>
+                <span>Sitemap</span>
+              </a>
+              <a href="about.html#faqs" class="footer-link-item">
+                <span class="chevron-arrow">&gt;</span>
+                <span>FAQs</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Column 4: Product -->
+          <div>
+            <h4 class="footer-col-title">Product</h4>
+            <div class="footer-links-list">
+              <a href="shop.html?filter=bestseller" class="footer-link-item">
+                <span class="chevron-arrow">&gt;</span>
+                <span>Best Seller</span>
+              </a>
+              <a href="shop.html?filter=toprated" class="footer-link-item">
+                <span class="chevron-arrow">&gt;</span>
+                <span>Top Rated</span>
+              </a>
+              <a href="shop.html?filter=special" class="footer-link-item">
+                <span class="chevron-arrow">&gt;</span>
+                <span>Special</span>
+              </a>
+              <a href="shop.html?filter=featured" class="footer-link-item">
+                <span class="chevron-arrow">&gt;</span>
+                <span>Featured</span>
+              </a>
+              <a href="shop.html?filter=new" class="footer-link-item">
+                <span class="chevron-arrow">&gt;</span>
+                <span>New Arrivals</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Footer Bottom Bar -->
+        <div class="footer-bottom-bar">
+          <div>
+            &copy; 2026 <strong>GreenBasket (Pvt) Ltd</strong>. Matara, Sri
+            Lanka. All Rights Reserved.
+          </div>
+          <div style="display: flex; align-items: center; gap: 1.5rem">
+            <span style="color: #71717a"
+              ><i class="fa-solid fa-shield-halved text-green-500 mr-1"></i>
+              100% Certified Organic Sri Lanka</span
+            >
+            <span style="color: #71717a"
+              ><i class="fa-solid fa-truck-fast text-green-500 mr-1"></i>
+              Islandwide Delivery from Matara Hub</span
+            >
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+  </body>
+</html>

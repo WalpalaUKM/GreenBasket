@@ -1,0 +1,676 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shop Farm Fresh Produce - GreenBasket</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/pages.css" />
+  </head>
+  <body>
+    <!-- Top Announcement Bar -->
+    <div class="shipping-promo-bar">
+      <span class="highlight-tag"
+        ><i class="fa-solid fa-truck-fast"></i> Islandwide Delivery</span
+      >
+      <span
+        >Supermarket fresh goods delivered to your doorstep!
+        <strong>FREE Delivery</strong> on orders above
+        <strong>Rs. 2,000</strong>!</span
+      >
+    </div>
+
+    <!-- Header -->
+    <header class="site-header">
+      <div class="header-top">
+        <div class="container-custom header-top-inner">
+          <div class="header-left-group">
+            <button
+              class="mobile-toggle-btn"
+              id="mobileToggleBtn"
+              aria-label="Open Mobile Menu"
+            >
+              <i class="fa-solid fa-bars"></i>
+            </button>
+            <a
+              href="index.html"
+              class="brand-logo"
+              aria-label="GreenBasket Home"
+            >
+              <img src="logo.png" alt="GreenBasket" class="brand-logo-img" />
+            </a>
+
+            <div class="delivery-selector-wrap" id="deliveryWrapper">
+              <div class="delivery-box" id="deliveryBox">
+                <span class="delivery-label">Deliver to</span>
+                <div class="delivery-location">
+                  <i class="fa-solid fa-location-dot loc-icon"></i>
+                  <span id="deliveryLocationText">Colombo, Sri Lanka</span>
+                  <i class="fa-solid fa-chevron-down chevron"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="header-search-wrap">
+            <form class="search-form" onsubmit="event.preventDefault()">
+              <input
+                type="text"
+                class="search-input"
+                id="shopSearchInput"
+                placeholder="Search Nuwara Eliya vegetables, fruits, Kotmale milk, Keeri Samba..."
+              />
+              <button type="submit" class="search-btn">
+                <i class="fa-solid fa-magnifying-glass"></i>
+              </button>
+            </form>
+          </div>
+
+          <div class="header-actions-group">
+            <a
+              href="javascript:void(0)"
+              onclick="openWishlistDrawer()"
+              class="action-wishlist"
+              title="View Wishlist"
+              ><i class="fa-regular fa-heart"></i
+              ><span class="badge-count" id="wishlistCount">02</span></a
+            >
+            <div class="action-cart-wrap">
+              <div class="action-cart" title="Shopping Cart">
+                <div class="cart-icon-box">
+                  <i class="fa-solid fa-cart-shopping"></i>
+                </div>
+                <div class="cart-info">
+                  <span class="cart-label">My Cart</span>
+                  <span class="cart-amount">Rs. 0</span>
+                </div>
+              </div>
+            </div>
+            <div class="action-user-wrap">
+              <div class="action-user">
+                <img
+                  src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&auto=format&fit=crop&q=80"
+                  alt="User"
+                  class="user-avatar-img"
+                />
+                <span class="user-name-text">Account</span>
+              </div>
+              <div class="user-dropdown-menu"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Navigation Bar -->
+      <nav class="header-bottom">
+        <div class="container-custom header-bottom-inner">
+          <div class="bottom-left-group">
+            <div class="categories-dropdown-wrap">
+              <button class="categories-trigger-btn">
+                <i class="fa-solid fa-layer-group cat-icon"></i>
+                <span>All Categories</span>
+                <i class="fa-solid fa-chevron-down chevron-icon"></i>
+              </button>
+              <div class="categories-menu">
+                <a
+                  href="javascript:void(0)"
+                  onclick="filterByCategory('Fresh Vegetables')"
+                  class="category-menu-item"
+                  >Fresh Vegetables</a
+                >
+                <a
+                  href="javascript:void(0)"
+                  onclick="filterByCategory('Fresh Fruits')"
+                  class="category-menu-item"
+                  >Fresh Fruits</a
+                >
+                <a
+                  href="javascript:void(0)"
+                  onclick="filterByCategory('Dairy & Breakfast')"
+                  class="category-menu-item"
+                  >Dairy & Breakfast</a
+                >
+                <a
+                  href="javascript:void(0)"
+                  onclick="filterByCategory('Rice & Staples')"
+                  class="category-menu-item"
+                  >Rice & Staples</a
+                >
+                <a
+                  href="javascript:void(0)"
+                  onclick="filterByCategory('Spices & Condiments')"
+                  class="category-menu-item"
+                  >Spices & Condiments</a
+                >
+                <a
+                  href="javascript:void(0)"
+                  onclick="filterByCategory('Tea & Biscuits')"
+                  class="category-menu-item"
+                  >Tea & Biscuits</a
+                >
+                <a
+                  href="javascript:void(0)"
+                  onclick="filterByCategory('Bakery & Snacks')"
+                  class="category-menu-item"
+                  >Bakery & Snacks</a
+                >
+              </div>
+            </div>
+            <ul class="main-nav-list">
+              <li><a href="index.html" class="nav-link">Home</a></li>
+              <li><a href="about.html" class="nav-link">About</a></li>
+              <li>
+                <a href="shop.html" class="nav-link active">Best Deals</a>
+              </li>
+              <li><a href="blogs.html" class="nav-link">Blogs</a></li>
+              <li><a href="contact.html" class="nav-link">Contact</a></li>
+              <li>
+                <a href="account.html?track=true" class="nav-link"
+                  ><i class="fa-solid fa-truck-fast mr-1 text-green-600"></i>
+                  Track Order</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="bottom-right-group">
+            <a href="tel:+94412224589" class="nav-phone-contact"
+              ><i class="fa-solid fa-phone"></i><span>+94 41-222-4589</span></a
+            >
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Mobile Drawer -->
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+    <aside class="mobile-drawer" id="mobileDrawer">
+      <div class="mobile-drawer-header">
+        <div class="brand-logo">
+          <img
+            src="logo.png"
+            alt="GreenBasket"
+            class="brand-logo-img"
+            style="height: 38px"
+          />
+        </div>
+        <button class="mobile-close-btn" id="mobileCloseBtn">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+      <div class="mobile-drawer-body">
+        <nav class="mobile-nav-links">
+          <a href="index.html" class="mobile-nav-item"><span>Home</span></a>
+          <a href="shop.html" class="mobile-nav-item active"
+            ><span>Shop</span></a
+          >
+          <a href="about.html" class="mobile-nav-item"><span>About</span></a>
+          <a href="blogs.html" class="mobile-nav-item"><span>Blogs</span></a>
+          <a href="contact.html" class="mobile-nav-item"
+            ><span>Contact</span></a
+          >
+          <a href="account.html" class="mobile-nav-item"
+            ><span>My Orders</span></a
+          >
+        </nav>
+      </div>
+    </aside>
+
+    <!-- Shop Main -->
+    <main style="padding: 2.5rem 0 5rem">
+      <div class="container-custom">
+        <!-- Page Header -->
+        <div style="margin-bottom: 2rem">
+          <div
+            style="
+              font-size: 0.85rem;
+              color: #16a34a;
+              font-weight: 700;
+              text-transform: uppercase;
+            "
+          >
+            100% Quality Inspected · Keells Standard
+          </div>
+          <h1 style="font-size: 2.4rem; font-weight: 800; color: #0f172a">
+            Sri Lanka Supermarket Grocery Aisles
+          </h1>
+          <p style="color: #64748b; font-size: 0.95rem">
+            Fresh Nuwara Eliya vegetables, dairy, Keeri Samba rice, Wijaya
+            spices, and daily household essentials.
+          </p>
+        </div>
+
+        <!-- Category Filter Tabs (Keells Supermarket Aisles) -->
+        <div class="category-filter-bar">
+          <button
+            class="category-tab-btn active"
+            data-cat="All"
+            onclick="filterByCategory('All', this)"
+          >
+            All Items
+          </button>
+          <button
+            class="category-tab-btn"
+            data-cat="Fresh Vegetables"
+            onclick="filterByCategory('Fresh Vegetables', this)"
+          >
+            🥕 Fresh Vegetables
+          </button>
+          <button
+            class="category-tab-btn"
+            data-cat="Fresh Fruits"
+            onclick="filterByCategory('Fresh Fruits', this)"
+          >
+            🍌 Fresh Fruits
+          </button>
+          <button
+            class="category-tab-btn"
+            data-cat="Dairy & Breakfast"
+            onclick="filterByCategory('Dairy & Breakfast', this)"
+          >
+            🥛 Dairy & Breakfast
+          </button>
+          <button
+            class="category-tab-btn"
+            data-cat="Rice & Staples"
+            onclick="filterByCategory('Rice & Staples', this)"
+          >
+            🌾 Rice & Staples
+          </button>
+          <button
+            class="category-tab-btn"
+            data-cat="Spices & Condiments"
+            onclick="filterByCategory('Spices & Condiments', this)"
+          >
+            🌿 Spices & Condiments
+          </button>
+          <button
+            class="category-tab-btn"
+            data-cat="Tea & Biscuits"
+            onclick="filterByCategory('Tea & Biscuits', this)"
+          >
+            ☕ Tea & Biscuits
+          </button>
+          <button
+            class="category-tab-btn"
+            data-cat="Bakery & Snacks"
+            onclick="filterByCategory('Bakery & Snacks', this)"
+          >
+            🍞 Bakery & Snacks
+          </button>
+        </div>
+
+        <!-- Count & Result Info -->
+        <div
+          style="
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            font-size: 0.885rem;
+            color: #64748b;
+          "
+        >
+          <span id="productsFoundCount">Loading products...</span>
+          <span
+            ><i class="fa-solid fa-circle-check text-green-500"></i> Free
+            Delivery on Rs. 2,000+ (within 1 km)</span
+          >
+        </div>
+
+        <!-- Products Grid -->
+        <div class="products-grid" id="productsContainer">
+          <!-- Populated by js/shop.js -->
+        </div>
+      </div>
+    </main>
+
+    <!-- Slide-out Shopping Cart Drawer -->
+    <div class="cart-drawer-overlay" id="cartDrawerOverlay"></div>
+    <aside class="cart-drawer" id="cartDrawer">
+      <div class="cart-drawer-header">
+        <div class="cart-drawer-title">
+          <i class="fa-solid fa-cart-shopping text-green-600"></i
+          ><span>Shopping Basket</span>
+        </div>
+        <button id="cartDrawerClose"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div style="padding: 1rem 1.5rem 0" id="cartDrawerShippingMeter"></div>
+      <div class="cart-drawer-body" id="cartDrawerItems"></div>
+      <div class="cart-drawer-footer">
+        <div class="summary-row">
+          <span>Subtotal</span>
+          <span id="cartDrawerSubtotal" style="font-weight: 800; color: #0f172a"
+            >Rs. 0</span
+          >
+        </div>
+        <a
+          href="checkout.html"
+          class="btn-primary-orange"
+          style="
+            display: flex;
+            width: 100%;
+            text-align: center;
+            border-radius: 999px;
+            padding: 0.85rem;
+          "
+        >
+          <span>Proceed to Checkout</span>
+          <i class="fa-solid fa-arrow-right ml-1"></i>
+        </a>
+      </div>
+    </aside>
+
+    <!-- Auth Modal -->
+    <div class="auth-modal-overlay" id="authModalOverlay">
+      <div class="auth-modal-card">
+        <div
+          style="
+            padding: 1rem 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px solid #e2e8f0;
+          "
+        >
+          <span style="font-weight: 800">Customer Account</span>
+          <button onclick="closeAuthModal()">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+        <div class="auth-tabs">
+          <button
+            class="auth-tab-btn active"
+            id="tabLoginBtn"
+            onclick="switchAuthTab('login')"
+          >
+            Login
+          </button>
+          <button
+            class="auth-tab-btn"
+            id="tabRegisterBtn"
+            onclick="switchAuthTab('register')"
+          >
+            Register
+          </button>
+        </div>
+        <div style="padding: 1.5rem">
+          <div id="loginFormContainer">
+            <form onsubmit="handleAccountLogin(event)">
+              <div class="form-group">
+                <label class="form-label">Email</label
+                ><input
+                  type="email"
+                  id="loginEmail"
+                  class="form-control"
+                  value="customer@greenbasket.com"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label class="form-label">Password</label
+                ><input
+                  type="password"
+                  id="loginPassword"
+                  class="form-control"
+                  value="customer123"
+                  required
+                />
+              </div>
+              <button
+                type="submit"
+                class="btn-primary-green"
+                style="width: 100%"
+              >
+                Sign In
+              </button>
+            </form>
+          </div>
+          <div id="registerFormContainer" style="display: none">
+            <form onsubmit="handleAccountRegister(event)">
+              <div class="form-group">
+                <label class="form-label">Name</label
+                ><input
+                  type="text"
+                  id="regName"
+                  class="form-control"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label class="form-label">Email</label
+                ><input
+                  type="email"
+                  id="regEmail"
+                  class="form-control"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label class="form-label">Phone (10 Digits)</label
+                ><input
+                  type="tel"
+                  id="regPhone"
+                  class="form-control"
+                  placeholder="07XXXXXXXX"
+                  maxlength="10"
+                  pattern="0[0-9]{9}"
+                  required
+                  oninput="
+                    this.value = this.value.replace(/\\D/g, '').slice(0, 10)
+                  "
+                />
+              </div>
+              <div class="form-group">
+                <label class="form-label">Delivery Location</label>
+                <select id="regLocationZone" class="form-control" required>
+                  <option value="within_1km">
+                    Within 1 km of shop (FREE delivery on orders > Rs. 2,000)
+                  </option>
+                  <option value="1_to_5km">City Delivery (1 - 5 km)</option>
+                  <option value="beyond_5km">
+                    Extended Delivery (Beyond 5 km)
+                  </option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Address</label
+                ><input
+                  type="text"
+                  id="regAddress"
+                  class="form-control"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label class="form-label">Password</label
+                ><input
+                  type="password"
+                  id="regPassword"
+                  class="form-control"
+                  required
+                />
+              </div>
+              <button
+                type="submit"
+                class="btn-primary-green"
+                style="width: 100%"
+              >
+                Register
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==========================================
+       SITE FOOTER (Exact Image 1 Dark Theme Format)
+       ========================================== -->
+    <footer class="site-footer-dark">
+      <div class="container-custom">
+        <div class="footer-main-grid">
+          <!-- Column 1: Contact Info -->
+          <div>
+            <h4 class="footer-col-title">Contact Info</h4>
+            <div class="footer-contact-list">
+              <div class="footer-contact-item">
+                <i class="fa-solid fa-location-dot"></i>
+                <span>No. 45, Beach Road, Matara City 81000, Sri Lanka.</span>
+              </div>
+              <div class="footer-contact-item">
+                <i class="fa-solid fa-phone"></i>
+                <a
+                  href="tel:+94412224589"
+                  style="color: inherit; text-decoration: none"
+                  >+94 41-222-4589</a
+                >
+              </div>
+              <div class="footer-contact-item">
+                <i class="fa-solid fa-mobile-screen-button"></i>
+                <a
+                  href="tel:+94778958144"
+                  style="color: inherit; text-decoration: none"
+                  >+94 77-895-8144</a
+                >
+              </div>
+              <div class="footer-contact-item">
+                <i class="fa-regular fa-envelope"></i>
+                <a
+                  href="mailto:info@greenbasket.lk"
+                  style="color: inherit; text-decoration: none"
+                  >info@greenbasket.lk</a
+                >
+              </div>
+              <div class="footer-contact-item">
+                <i class="fa-solid fa-desktop"></i>
+                <a
+                  href="index.html"
+                  style="color: inherit; text-decoration: none"
+                  >greenbasket.lk</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Column 2: Info -->
+          <div>
+            <h4 class="footer-col-title">Info</h4>
+            <div class="footer-links-list">
+              <a href="contact.html" class="footer-link-item">
+                <span class="chevron-arrow">&gt;</span>
+                <span>Contact us</span>
+              </a>
+              <a href="about.html" class="footer-link-item">
+                <span class="chevron-arrow">&gt;</span>
+                <span>About us</span>
+              </a>
+              <a
+                href="javascript:void(0)"
+                onclick="openCartDrawer()"
+                class="footer-link-item"
+              >
+                <span class="chevron-arrow">&gt;</span>
+                <span>My cart</span>
+              </a>
+              <a href="checkout.html" class="footer-link-item">
+                <span class="chevron-arrow">&gt;</span>
+                <span>Checkout</span>
+              </a>
+              <a href="account.html" class="footer-link-item">
+                <span class="chevron-arrow">&gt;</span>
+                <span>My account</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Column 3: Policy -->
+          <div>
+            <h4 class="footer-col-title">Policy</h4>
+            <div class="footer-links-list">
+              <a href="about.html#policies" class="footer-link-item">
+                <span class="chevron-arrow">&gt;</span>
+                <span>Return Policy</span>
+              </a>
+              <a href="about.html#policies" class="footer-link-item">
+                <span class="chevron-arrow">&gt;</span>
+                <span>Privacy Policy</span>
+              </a>
+              <a href="about.html#careers" class="footer-link-item">
+                <span class="chevron-arrow">&gt;</span>
+                <span>Careers</span>
+              </a>
+              <a href="shop.html" class="footer-link-item">
+                <span class="chevron-arrow">&gt;</span>
+                <span>Sitemap</span>
+              </a>
+              <a href="about.html#faqs" class="footer-link-item">
+                <span class="chevron-arrow">&gt;</span>
+                <span>FAQs</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Column 4: Product -->
+          <div>
+            <h4 class="footer-col-title">Product</h4>
+            <div class="footer-links-list">
+              <a href="shop.html?filter=bestseller" class="footer-link-item">
+                <span class="chevron-arrow">&gt;</span>
+                <span>Best Seller</span>
+              </a>
+              <a href="shop.html?filter=toprated" class="footer-link-item">
+                <span class="chevron-arrow">&gt;</span>
+                <span>Top Rated</span>
+              </a>
+              <a href="shop.html?filter=special" class="footer-link-item">
+                <span class="chevron-arrow">&gt;</span>
+                <span>Special</span>
+              </a>
+              <a href="shop.html?filter=featured" class="footer-link-item">
+                <span class="chevron-arrow">&gt;</span>
+                <span>Featured</span>
+              </a>
+              <a href="shop.html?filter=new" class="footer-link-item">
+                <span class="chevron-arrow">&gt;</span>
+                <span>New Arrivals</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Footer Bottom Bar -->
+        <div class="footer-bottom-bar">
+          <div>
+            &copy; 2026 <strong>GreenBasket (Pvt) Ltd</strong>. Matara, Sri
+            Lanka. All Rights Reserved.
+          </div>
+          <div style="display: flex; align-items: center; gap: 1.5rem">
+            <span style="color: #71717a"
+              ><i class="fa-solid fa-shield-halved text-green-500 mr-1"></i>
+              100% Certified Organic Sri Lanka</span
+            >
+            <span style="color: #71717a"
+              ><i class="fa-solid fa-truck-fast text-green-500 mr-1"></i>
+              Islandwide Delivery from Matara Hub</span
+            >
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/shop.js"></script>
+    <script src="js/account.js"></script>
+  </body>
+</html>
