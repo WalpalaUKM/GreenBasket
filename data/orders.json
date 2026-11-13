@@ -1,0 +1,434 @@
+[
+  {
+    "id": "ORD-106275",
+    "createdAt": "2026-11-13T09:27:37.958Z",
+    "customer": {
+      "id": "guest",
+      "name": "Perera Test",
+      "email": "perera@test.com",
+      "phone": "0771234567",
+      "district": "Matara",
+      "city": "Matara City",
+      "postalCode": "81000",
+      "address": "No 45, Beach Road, Matara",
+      "distanceKm": 0.6,
+      "locationZone": "Matara Local Express (< 1 km)",
+      "locationLabel": "Matara City, Matara (81000) - 0.6 km from Matara Shop"
+    },
+    "items": [
+      {
+        "productId": "prod-1",
+        "name": "Keells Fresh Nuwara Eliya Carrots",
+        "price": 260,
+        "quantity": 1,
+        "itemTotal": 260,
+        "image": "https://images.unsplash.com/photo-1447175008436-054170c2e979?w=500&auto=format&fit=crop&q=80",
+        "unit": "500g pack"
+      }
+    ],
+    "subtotal": 260,
+    "shippingFee": 60,
+    "shippingDiscountNote": "Local Matara Delivery: Rs. 60. Add Rs. 1740 more to get FREE Delivery!",
+    "totalPrice": 320,
+    "paymentMethod": "Cash on Delivery",
+    "orderNotes": "",
+    "status": "Cancelled",
+    "timeline": [
+      {
+        "stage": 1,
+        "status": "Pending",
+        "label": "Order Placed",
+        "time": null,
+        "completed": false,
+        "active": false
+      },
+      {
+        "stage": 2,
+        "status": "Quality Checked",
+        "label": "Quality Checked",
+        "time": null,
+        "completed": false,
+        "active": false
+      },
+      {
+        "stage": 3,
+        "status": "Chilled Packed",
+        "label": "Chilled Packed",
+        "time": null,
+        "completed": false,
+        "active": false
+      },
+      {
+        "stage": 4,
+        "status": "Out for Delivery",
+        "label": "Out for Delivery",
+        "time": null,
+        "completed": false,
+        "active": false
+      },
+      {
+        "stage": 5,
+        "status": "Delivered",
+        "label": "Delivered",
+        "time": null,
+        "completed": false,
+        "active": false
+      }
+    ]
+  },
+  {
+    "id": "ORD-257347",
+    "createdAt": "2026-11-13T09:07:09.717Z",
+    "customer": {
+      "id": "user-1794560716027",
+      "name": "kamal",
+      "email": "kamal@gmail.com",
+      "phone": "0771234567",
+      "district": "Matara",
+      "city": "Matara City - Central (Within 1 km of Shop)",
+      "postalCode": "81000",
+      "address": "galle",
+      "distanceKm": 0.6,
+      "locationZone": "Matara Local Express (< 1 km)",
+      "locationLabel": "Matara City - Central (Within 1 km of Shop), Matara (81000) - 0.6 km from Matara Shop"
+    },
+    "items": [
+      {
+        "productId": "prod-18",
+        "name": "Pure Ceylon Alba Cinnamon Quills",
+        "price": 550,
+        "quantity": 1,
+        "itemTotal": 550,
+        "image": "https://images.unsplash.com/photo-1514733670139-4d87a1941d55?w=500&auto=format&fit=crop&q=80",
+        "unit": "100g tin"
+      },
+      {
+        "productId": "prod-1",
+        "name": "Keells Fresh Nuwara Eliya Carrots",
+        "price": 260,
+        "quantity": 13,
+        "itemTotal": 3380,
+        "image": "https://images.unsplash.com/photo-1447175008436-054170c2e979?w=500&auto=format&fit=crop&q=80",
+        "unit": "500g pack"
+      }
+    ],
+    "subtotal": 3930,
+    "shippingFee": 0,
+    "shippingDiscountNote": "🎉 FREE Shipping Applied! (Within 1 km of Matara Shop & Total >= Rs. 2,000)",
+    "totalPrice": 3930,
+    "paymentMethod": "Cash on Delivery",
+    "orderNotes": "",
+    "status": "Pending"
+  },
+  {
+    "id": "ORD-130367",
+    "createdAt": "2026-11-13T08:19:05.739Z",
+    "customer": {
+      "id": "cust-test",
+      "name": "Nimal Silva",
+      "email": "nimal@example.com",
+      "phone": "0775554321",
+      "district": "Colombo",
+      "city": "Colombo 03 - Kollupitiya",
+      "postalCode": "00300",
+      "address": "No 45, Galle Road",
+      "distanceKm": 158,
+      "locationZone": "Islandwide Delivery (Colombo, Kandy, etc.)",
+      "locationLabel": "Colombo 03 (00300)"
+    },
+    "items": [
+      {
+        "productId": "prod-1",
+        "name": "Keells Fresh Nuwara Eliya Carrots",
+        "price": 260,
+        "quantity": 1,
+        "itemTotal": 260,
+        "image": "https://images.unsplash.com/photo-1447175008436-054170c2e979?w=500&auto=format&fit=crop&q=80",
+        "unit": "500g pack"
+      }
+    ],
+    "subtotal": 260,
+    "shippingFee": 350,
+    "shippingDiscountNote": "Islandwide Safe Courier Delivery: Rs. 350",
+    "totalPrice": 610,
+    "paymentMethod": "Card / Online Payment",
+    "orderNotes": "Urgent delivery please",
+    "status": "Pending"
+  },
+  {
+    "id": "ORD-501805",
+    "createdAt": "2026-11-13T07:44:05.562Z",
+    "customer": {
+      "id": "guest",
+      "name": "kavi",
+      "email": "dfjkfdghg@gmail.com",
+      "phone": "0771234567",
+      "district": "Matara",
+      "city": "Matara City - Central (Within 1 km of Shop)",
+      "postalCode": "81000",
+      "address": "maTARA",
+      "distanceKm": 0.6,
+      "locationZone": "Matara Local Express (< 1 km)",
+      "locationLabel": "Matara City - Central (Within 1 km of Shop), Matara (81000) - 0.6 km from Matara Shop"
+    },
+    "items": [
+      {
+        "productId": "prod-1",
+        "name": "Keells Fresh Nuwara Eliya Carrots",
+        "price": 260,
+        "quantity": 4,
+        "itemTotal": 1040,
+        "image": "https://images.unsplash.com/photo-1447175008436-054170c2e979?w=500&auto=format&fit=crop&q=80",
+        "unit": "500g pack"
+      },
+      {
+        "productId": "prod-2",
+        "name": "Fresh Bandakka (Okra / Lady's Fingers)",
+        "price": 160,
+        "quantity": 4,
+        "itemTotal": 640,
+        "image": "https://images.unsplash.com/photo-1425543103986-22abb7d7e8d2?w=500&auto=format&fit=crop&q=80",
+        "unit": "500g pack"
+      },
+      {
+        "productId": "prod-3",
+        "name": "Sri Lankan Red Onions (Rathu Lunu)",
+        "price": 340,
+        "quantity": 4,
+        "itemTotal": 1360,
+        "image": "https://images.unsplash.com/photo-1618512496248-a07fe83aa8cb?w=500&auto=format&fit=crop&q=80",
+        "unit": "500g net bag"
+      }
+    ],
+    "subtotal": 3040,
+    "shippingFee": 0,
+    "shippingDiscountNote": "🎉 FREE Shipping Applied! (Within 1 km of Matara Shop & Total >= Rs. 2,000)",
+    "totalPrice": 3040,
+    "paymentMethod": "Cash on Delivery",
+    "orderNotes": "",
+    "status": "Pending"
+  },
+  {
+    "id": "ORD-763144",
+    "createdAt": "2026-11-13T07:02:30.617Z",
+    "customer": {
+      "id": "user-1794553341875",
+      "name": "Kasun Perera",
+      "email": "kasun@greenbasket.lk",
+      "phone": "0779876543",
+      "district": "Matara",
+      "city": "Matara City - Central (Within 1 km of Shop)",
+      "postalCode": "81000",
+      "address": "No. 18, Anagarika Dharmapala Mawatha, Matara",
+      "distanceKm": 0.6,
+      "locationZone": "Matara Local Express (< 1 km)",
+      "locationLabel": "Matara City - Central (Within 1 km of Shop), Matara (81000) - 0.6 km from Matara Shop"
+    },
+    "items": [
+      {
+        "productId": "prod-1",
+        "name": "Organic Suwandel Traditional Rice",
+        "price": 680,
+        "quantity": 2,
+        "itemTotal": 1360,
+        "image": "https://images.unsplash.com/photo-1586201375761-83865001e31c?w=500&auto=format&fit=crop&q=80",
+        "unit": "1 kg pack"
+      },
+      {
+        "productId": "prod-4",
+        "name": "Organic Cold-Pressed Extra Virgin Coconut Oil",
+        "price": 890,
+        "quantity": 1,
+        "itemTotal": 890,
+        "image": "https://images.unsplash.com/photo-1526947425960-945c6e72858f?w=500&auto=format&fit=crop&q=80",
+        "unit": "500ml glass jar"
+      }
+    ],
+    "subtotal": 2250,
+    "shippingFee": 0,
+    "shippingDiscountNote": "🎉 FREE Shipping Applied! (Within 1 km of Matara Shop & Total >= Rs. 2,000)",
+    "totalPrice": 2250,
+    "paymentMethod": "Cash on Delivery",
+    "orderNotes": "Please leave at the front gate.",
+    "status": "Pending"
+  },
+  {
+    "id": "ORD-776123",
+    "createdAt": "2026-11-13T06:19:56.635Z",
+    "customer": {
+      "id": "user-admin",
+      "name": "GreenBasket Admin",
+      "email": "admin@greenbasket.com",
+      "phone": "0771234567",
+      "address": "GreenBasket Central Store, Green Road, Dhaka",
+      "locationZone": "within_1km",
+      "locationLabel": "Within 1 km of shop (Local Express)"
+    },
+    "items": [
+      {
+        "productId": "prod-6",
+        "name": "Free-Range Farm Brown Eggs",
+        "price": 190,
+        "quantity": 3,
+        "itemTotal": 570,
+        "image": "https://images.unsplash.com/photo-1506976785307-8732e854ad03?w=500&auto=format&fit=crop&q=80",
+        "unit": "12 pcs"
+      },
+      {
+        "productId": "prod-7",
+        "name": "Artisan Sourdough Country Loaf",
+        "price": 220,
+        "quantity": 7,
+        "itemTotal": 1540,
+        "image": "https://images.unsplash.com/photo-1589367920969-ab8e050bbb04?w=500&auto=format&fit=crop&q=80",
+        "unit": "1 loaf"
+      }
+    ],
+    "subtotal": 2110,
+    "shippingFee": 0,
+    "shippingDiscountNote": "FREE Delivery (Within 1 km of shop & order above Rs. 2,000)",
+    "totalPrice": 2110,
+    "paymentMethod": "Card / UPI Online",
+    "orderNotes": "",
+    "status": "Pending"
+  },
+  {
+    "id": "ORD-448439",
+    "createdAt": "2026-11-13T06:07:38.958Z",
+    "customer": {
+      "id": "user-admin",
+      "name": "GreenBasket Admin",
+      "email": "admin@greenbasket.com",
+      "phone": "0771234567",
+      "address": "GreenBasket Central Store, Green Road, Dhaka",
+      "locationZone": "within_1km",
+      "locationLabel": "Within 1 km of shop (Local Express)"
+    },
+    "items": [
+      {
+        "productId": "prod-10",
+        "name": "Organic Baby Spinach",
+        "price": 85,
+        "quantity": 2,
+        "itemTotal": 170,
+        "image": "https://images.unsplash.com/photo-1576045057995-568f588f82fb?w=500&auto=format&fit=crop&q=80",
+        "unit": "250g bag"
+      }
+    ],
+    "subtotal": 170,
+    "shippingFee": 60,
+    "shippingDiscountNote": "Standard Local Delivery: Rs. 60 (Add Rs. 1830 more for FREE delivery!)",
+    "totalPrice": 230,
+    "paymentMethod": "Cash on Delivery",
+    "orderNotes": "",
+    "status": "Cancelled"
+  },
+  {
+    "id": "ORD-290767",
+    "createdAt": "2026-11-13T06:02:35.627Z",
+    "customer": {
+      "id": "guest",
+      "name": "VIP Buyer",
+      "email": "vip@example.com",
+      "phone": "0771234567",
+      "address": "Road 12, Green Road",
+      "locationZone": "within_1km",
+      "locationLabel": "Within 1 km of shop (Local Express)"
+    },
+    "items": [
+      {
+        "productId": "prod-9",
+        "name": "Extra Virgin Cold Pressed Olive Oil",
+        "price": 750,
+        "quantity": 3,
+        "itemTotal": 2250,
+        "image": "https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?w=500&auto=format&fit=crop&q=80",
+        "unit": "500ml bottle"
+      }
+    ],
+    "subtotal": 2250,
+    "shippingFee": 0,
+    "shippingDiscountNote": "FREE Delivery (Within 1 km of shop & order above Rs. 2,000)",
+    "totalPrice": 2250,
+    "paymentMethod": "Cash on Delivery",
+    "orderNotes": "",
+    "status": "Pending"
+  },
+  {
+    "id": "ORD-903504",
+    "createdAt": "2026-11-13T06:02:35.623Z",
+    "customer": {
+      "id": "guest",
+      "name": "Test Buyer",
+      "email": "buyer@example.com",
+      "phone": "0771234567",
+      "address": "Road 4, Green Road",
+      "locationZone": "within_1km",
+      "locationLabel": "Within 1 km of shop (Local Express)"
+    },
+    "items": [
+      {
+        "productId": "prod-1",
+        "name": "Fresh Organic Hass Avocados (Pack of 3)",
+        "price": 280,
+        "quantity": 2,
+        "itemTotal": 560,
+        "image": "https://images.unsplash.com/photo-1523049673857-eb18f1d7b578?w=500&auto=format&fit=crop&q=80",
+        "unit": "3 pcs"
+      }
+    ],
+    "subtotal": 560,
+    "shippingFee": 60,
+    "shippingDiscountNote": "Standard Local Delivery: Rs. 60 (Add Rs. 1440 more for FREE delivery!)",
+    "totalPrice": 620,
+    "paymentMethod": "Cash on Delivery",
+    "orderNotes": "",
+    "status": "Pending"
+  },
+  {
+    "id": "ORD-1001",
+    "createdAt": "2026-11-13T09:15:00.000Z",
+    "customer": {
+      "id": "user-customer-1",
+      "name": "Heart Coding",
+      "email": "customer@greenbasket.com",
+      "phone": "0771234567",
+      "address": "House 42, Road 7, Green Road, Dhaka",
+      "locationZone": "within_1km",
+      "locationLabel": "Within 1 km of shop (Local Express)"
+    },
+    "items": [
+      {
+        "productId": "prod-1",
+        "name": "Fresh Organic Hass Avocados (Pack of 3)",
+        "price": 280,
+        "quantity": 3,
+        "itemTotal": 840,
+        "image": "https://images.unsplash.com/photo-1523049673857-eb18f1d7b578?w=500&auto=format&fit=crop&q=80"
+      },
+      {
+        "productId": "prod-3",
+        "name": "Sweet Organic Strawberries",
+        "price": 350,
+        "quantity": 2,
+        "itemTotal": 700,
+        "image": "https://images.unsplash.com/photo-1464965911861-746a04b4bca6?w=500&auto=format&fit=crop&q=80"
+      },
+      {
+        "productId": "prod-9",
+        "name": "Extra Virgin Cold Pressed Olive Oil",
+        "price": 750,
+        "quantity": 1,
+        "itemTotal": 750,
+        "image": "https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?w=500&auto=format&fit=crop&q=80"
+      }
+    ],
+    "subtotal": 2290,
+    "shippingFee": 0,
+    "shippingDiscountNote": "Free Shipping applied (Within 1 km & Order Total >= Rs. 2,000)",
+    "totalPrice": 2290,
+    "paymentMethod": "Cash on Delivery",
+    "orderNotes": "Please deliver fresh green avocados.",
+    "status": "Confirmed"
+  }
+]

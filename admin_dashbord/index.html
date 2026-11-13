@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard - GreenBasket</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/pages.css">
+  <link rel="stylesheet" href="css/admin.css">
+</head>
+<body class="admin-body">
+
+  <!-- ==========================================
+       1. ADMIN LOGIN VIEW (If not authenticated)
+       ========================================== -->
+  <div class="admin-login-wrapper" id="adminLoginWrapper">
+    <div class="admin-login-card">
+      <div style="display: flex; align-items: center; justify-content: center; gap: 0.75rem; margin-bottom: 1.5rem;">
+        <img src="logo.png" onerror="this.onerror=null; this.src='ass/logo.png';" alt="GreenBasket" style="height: 34px; max-width: 130px; object-fit: contain;">
+        <div style="text-align: left;">
+          <div style="font-size: 1.15rem; font-weight: 800; color: #0f172a; line-height: 1.1;">Admin Portal</div>
+          <span class="admin-portal-badge">Management</span>
+        </div>
+      </div>
+
+      <h2 style="font-size: 1.4rem; font-weight: 800; color: #0f172a; margin-bottom: 0.5rem;">Admin Sign In</h2>
+      <p style="font-size: 0.85rem; color: #64748b; margin-bottom: 1.75rem;">Manage products, live stock counts, and customer orders.</p>
+
+      <form onsubmit="handleAdminLogin(event)" style="text-align: left;">
+        <div class="form-group">
+          <label class="form-label">Admin Email</label>
+          <input type="email" id="adminEmail" class="form-control" value="admin@greenbasket.com" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Password</label>
+          <input type="password" id="adminPassword" class="form-control" value="admin123" required>
+        </div>
+        <button type="submit" class="btn-primary-green" style="width: 100%; margin-top: 1rem; padding: 0.85rem;">
+          <i class="fa-solid fa-lock mr-1"></i> Access Dashboard
+        </button>
+      </form>
+
+      <div style="margin-top: 1.5rem; padding: 0.85rem; background: #f8fafc; border-radius: 8px; font-size: 0.8rem; color: #64748b; border: 1px dashed #cbd5e1; text-align: left;">
+        <strong>Default Admin Credentials:</strong><br>
+        Email: <code>admin@greenbasket.com</code><br>
+        Password: <code>admin123</code>
+      </div>
+      
+      <div style="margin-top: 1.5rem;">
+        <a href="index.html" style="font-size: 0.85rem; color: #16a34a; font-weight: 700;">
+          <i class="fa-solid fa-arrow-left mr-1"></i> Return to Storefront
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================
+       2. ADMIN DASHBOARD LAYOUT (Main Admin)
+       ========================================== -->
+  <div class="admin-layout" id="adminDashboardLayout" style="display: none;">
+    
+    <!-- Sidebar -->
+    <aside class="admin-sidebar">
+      <div class="admin-sidebar-header">
+        <a href="index.html" style="display: flex; align-items: center; gap: 0.75rem; text-decoration: none;">
+          <img src="logo.png" onerror="this.onerror=null; this.src='ass/logo.png';" alt="GreenBasket" class="admin-sidebar-logo">
+          <div>
+            <div style="font-weight: 800; font-size: 0.95rem; color: white; line-height: 1.1;">Admin</div>
+            <span class="admin-portal-badge">Panel</span>
+          </div>
+        </a>
+      </div>
+
+      <nav class="admin-nav">
+        <div class="admin-nav-item active" id="navTab-overview" onclick="switchAdminTab('overview')">
+          <i class="fa-solid fa-chart-line"></i>
+          <span>Dashboard Overview</span>
+        </div>
+        <div class="admin-nav-item" id="navTab-products" onclick="switchAdminTab('products')">
+          <i class="fa-solid fa-carrot"></i>
+          <span>Products & Stock</span>
+        </div>
+        <div class="admin-nav-item" id="navTab-orders" onclick="switchAdminTab('orders')">
+          <i class="fa-solid fa-box-open"></i>
+          <span>Customer Orders</span>
+        </div>
+        
+        <div style="margin-top: auto; padding-top: 1.5rem; border-top: 1px solid #1e293b; display: flex; flex-direction: column; gap: 0.5rem;">
+          <a href="index.html" class="admin-nav-item" style="color: #38bdf8;">
+            <i class="fa-solid fa-store"></i>
+            <span>View Storefront</span>
+          </a>
+          <div class="admin-nav-item" onclick="handleAdminLogout()" style="color: #f87171;">
+            <i class="fa-solid fa-arrow-right-from-bracket"></i>
+            <span>Log Out</span>
+          </div>
+        </div>
+      </nav>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="admin-main">
+      
+      <!-- Topbar -->
+      <header class="admin-topbar">
+        <div>
+          <span style="font-size: 0.85rem; color: #64748b; font-weight: 600;">Welcome back,</span>
+          <h2 style="font-size: 1.35rem; font-weight: 800; color: #0f172a;" id="adminNameDisplay">Administrator</h2>
+        </div>
+        <div style="display: flex; align-items: center; gap: 1rem;">
+          <button onclick="openAddProductModal()" class="btn-primary-green" style="font-size: 0.85rem; padding: 0.55rem 1.25rem;">
+            <i class="fa-solid fa-plus mr-1"></i> Add New Item
+          </button>
+          <div style="width: 38px; height: 38px; border-radius: 50%; background: #0f172a; color: white; display: flex; align-items: center; justify-content: center; font-weight: 800;">
+            A
+          </div>
+        </div>
+      </header>
+
+      <div class="admin-content-area">
+        
+        <!-- Metric Cards -->
+        <div class="admin-stats-grid">
+          <div class="admin-stat-card">
+            <div>
+              <div class="stat-number" id="statTotalSales">Rs. 0</div>
+              <div class="stat-label">Total Revenue</div>
+            </div>
+            <div class="stat-icon-box stat-icon-green"><i class="fa-solid fa-money-bill-wave"></i></div>
+          </div>
+          <div class="admin-stat-card">
+            <div>
+              <div class="stat-number" id="statTotalOrders">0</div>
+              <div class="stat-label">Total Placed Orders</div>
+            </div>
+            <div class="stat-icon-box stat-icon-blue"><i class="fa-solid fa-cart-shopping"></i></div>
+          </div>
+          <div class="admin-stat-card">
+            <div>
+              <div class="stat-number" id="statPendingOrders">0</div>
+              <div class="stat-label">Pending Orders</div>
+            </div>
+            <div class="stat-icon-box stat-icon-orange"><i class="fa-solid fa-clock"></i></div>
+          </div>
+          <div class="admin-stat-card">
+            <div>
+              <div class="stat-number" id="statTotalProducts">0</div>
+              <div class="stat-label">Active Products</div>
+            </div>
+            <div class="stat-icon-box stat-icon-blue"><i class="fa-solid fa-boxes-stacked"></i></div>
+          </div>
+          <div class="admin-stat-card">
+            <div>
+              <div class="stat-number" id="statOutOfStock">0</div>
+              <div class="stat-label">Out of Stock Items</div>
+            </div>
+            <div class="stat-icon-box stat-icon-red"><i class="fa-solid fa-ban"></i></div>
+          </div>
+        </div>
+
+        <!-- TAB 1: OVERVIEW -->
+        <div class="admin-tab-content" id="tabContent-overview">
+          <div class="admin-panel-card">
+            <div class="panel-card-header">
+              <h3 class="panel-title"><i class="fa-solid fa-bolt text-green-600 mr-2"></i> Quick Inventory Actions</h3>
+              <button onclick="openAddProductModal()" class="btn-primary-green" style="font-size: 0.85rem;">
+                <i class="fa-solid fa-plus mr-1"></i> Add Product
+              </button>
+            </div>
+            <p style="font-size: 0.9rem; color: #64748b; line-height: 1.6; margin-bottom: 1rem;">
+              • <strong>1-Click Out-of-Stock Toggle:</strong> Switch to the <em>Products & Stock</em> tab and click the status button on any product to instantly mark it Out of Stock or In Stock on the customer storefront.<br>
+              • <strong>Order Tracking:</strong> Customer orders show the buyer's name, phone, distance from shop, which items they ordered with exact count and unit price, and total price.
+            </p>
+          </div>
+        </div>
+
+        <!-- TAB 2: PRODUCTS MANAGEMENT -->
+        <div class="admin-tab-content" id="tabContent-products" style="display: none;">
+          <div class="admin-panel-card">
+            <div class="panel-card-header">
+              <div>
+                <h3 class="panel-title">Product Catalog & Inventory</h3>
+                <span style="font-size: 0.825rem; color: #64748b;">Click the stock button to instantly change stock status on customer frontend.</span>
+              </div>
+              <button onclick="openAddProductModal()" class="btn-primary-green" style="font-size: 0.85rem;">
+                <i class="fa-solid fa-plus mr-1"></i> Add New Product
+              </button>
+            </div>
+
+            <div class="admin-table-responsive">
+              <table class="admin-table">
+                <thead>
+                  <tr>
+                    <th>Image</th>
+                    <th>Product Name & Unit</th>
+                    <th>Little Description</th>
+                    <th>Rating</th>
+                    <th>Price</th>
+                    <th>Stock Count</th>
+                    <th>Status (1-Click Toggle)</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody id="adminProductsTableBody">
+                  <!-- Populated by js/admin.js -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- TAB 3: CUSTOMER ORDERS MANAGEMENT -->
+        <div class="admin-tab-content" id="tabContent-orders" style="display: none;">
+          <div class="admin-panel-card">
+            <div class="panel-card-header">
+              <div>
+                <h3 class="panel-title">Customer Placed Orders</h3>
+                <span style="font-size: 0.825rem; color: #64748b;">Review items, quantity/count of each item, customer location & distance, and total price.</span>
+              </div>
+              <button onclick="loadAdminOrders()" class="btn-secondary-outline" style="font-size: 0.825rem; padding: 0.4rem 0.85rem;">
+                <i class="fa-solid fa-arrows-rotate mr-1"></i> Refresh Orders
+              </button>
+            </div>
+
+            <div class="admin-table-responsive">
+              <table class="admin-table">
+                <thead>
+                  <tr>
+                    <th>Order ID</th>
+                    <th>Customer & Location</th>
+                    <th>Items & Count</th>
+                    <th>Subtotal & Shipping</th>
+                    <th>Total Price</th>
+                    <th>Order Status</th>
+                  </tr>
+                </thead>
+                <tbody id="adminOrdersTableBody">
+                  <!-- Populated by js/admin.js -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </main>
+
+  </div>
+
+  <!-- ==========================================
+       3. ADD NEW PRODUCT MODAL
+       ========================================== -->
+  <div class="admin-modal-overlay" id="addProductModal">
+    <div class="admin-modal-card">
+      <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #e2e8f0; padding-bottom: 1rem; margin-bottom: 1.5rem;">
+        <h3 style="font-size: 1.3rem; font-weight: 800; color: #0f172a;">Add New Item to Inventory</h3>
+        <button onclick="closeAddProductModal()" style="font-size: 1.25rem; color: #94a3b8; cursor: pointer;"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+
+      <form id="addProductForm" onsubmit="handleAddProductSubmit(event)">
+        <div class="form-group">
+          <label class="form-label">Product Name *</label>
+          <input type="text" id="newProdName" class="form-control" placeholder="E.g. Organic Seedless Watermelon" required>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+          <div class="form-group">
+            <label class="form-label">Category *</label>
+            <select id="newProdCategory" class="form-control" required>
+              <option value="Fresh Vegetables">Fresh Vegetables</option>
+              <option value="Fresh Fruits">Fresh Fruits</option>
+              <option value="Dairy & Breakfast">Dairy & Breakfast</option>
+              <option value="Rice & Staples">Rice & Staples</option>
+              <option value="Spices & Condiments">Spices & Condiments</option>
+              <option value="Tea & Biscuits">Tea & Biscuits</option>
+              <option value="Bakery & Snacks">Bakery & Snacks</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Unit / Packaging</label>
+            <input type="text" id="newProdUnit" class="form-control" placeholder="E.g. 1 kg pack / 500ml / 200g" value="1 kg pack">
+          </div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+          <div class="form-group">
+            <label class="form-label">Price in Rupees (Rs.) *</label>
+            <input type="number" id="newProdPrice" class="form-control" placeholder="680" min="1" step="0.5" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Initial Stock Count *</label>
+            <input type="number" id="newProdCount" class="form-control" placeholder="30" min="0" required>
+          </div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+          <div class="form-group">
+            <label class="form-label">Customer Rating (1.0 to 5.0) *</label>
+            <input type="number" id="newProdRating" class="form-control" value="4.9" min="1.0" max="5.0" step="0.1" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Badge Tag (Optional)</label>
+            <input type="text" id="newProdBadge" class="form-control" placeholder="E.g. Heirloom Rice / Grade Alba" value="Certified Organic">
+          </div>
+        </div>
+
+        <!-- Little Description Snippet Control -->
+        <div class="form-group">
+          <label class="form-label">Little Description (Short Snippet) *</label>
+          <textarea id="newProdShortDesc" class="form-control" rows="2" placeholder="A short 1-2 sentence description shown directly on the product card." required></textarea>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Product Image URL *</label>
+          <input type="url" id="newProdImage" class="form-control" placeholder="https://images.unsplash.com/..." required>
+          
+          <!-- Preset Image Helpers -->
+          <div style="margin-top: 0.5rem; display: flex; gap: 0.4rem; flex-wrap: wrap;">
+            <span style="font-size: 0.75rem; color: #64748b; margin-right: 4px;">Quick Presets:</span>
+            <button type="button" onclick="setPresetImage('https://images.unsplash.com/photo-1592924357228-91a4daadcfea?w=500&auto=format&fit=crop&q=80')" class="category-tab-btn" style="padding: 2px 8px; font-size: 0.7rem;">Tomatoes</button>
+            <button type="button" onclick="setPresetImage('https://images.unsplash.com/photo-1523049673857-eb18f1d7b578?w=500&auto=format&fit=crop&q=80')" class="category-tab-btn" style="padding: 2px 8px; font-size: 0.7rem;">Avocados</button>
+            <button type="button" onclick="setPresetImage('https://images.unsplash.com/photo-1464965911861-746a04b4bca6?w=500&auto=format&fit=crop&q=80')" class="category-tab-btn" style="padding: 2px 8px; font-size: 0.7rem;">Strawberries</button>
+            <button type="button" onclick="setPresetImage('https://images.unsplash.com/photo-1550583724-b2692b85b150?w=500&auto=format&fit=crop&q=80')" class="category-tab-btn" style="padding: 2px 8px; font-size: 0.7rem;">Milk</button>
+            <button type="button" onclick="setPresetImage('https://images.unsplash.com/photo-1589367920969-ab8e050bbb04?w=500&auto=format&fit=crop&q=80')" class="category-tab-btn" style="padding: 2px 8px; font-size: 0.7rem;">Bread</button>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Description</label>
+          <textarea id="newProdDesc" class="form-control" rows="2" placeholder="Freshly harvested organic produce directly from certified farms."></textarea>
+        </div>
+
+        <div style="display: flex; justify-content: flex-end; gap: 0.75rem; margin-top: 1.5rem;">
+          <button type="button" onclick="closeAddProductModal()" class="btn-secondary-outline">Cancel</button>
+          <button type="submit" class="btn-primary-green">Save & Add Item</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+  <script src="js/admin.js"></script>
+</body>
+</html>
+

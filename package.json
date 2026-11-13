@@ -2,9 +2,12 @@
   "name": "greenbasket",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "dev": "npx @tailwindcss/cli -i ./src/input.css -o ./css/tailwind.css --watch",
+    "start": "node server.js",
+    "server": "node server.js",
+    "dev": "node server.js",
+    "dev:css": "npx @tailwindcss/cli -i ./src/input.css -o ./css/tailwind.css --watch",
     "build": "npx @tailwindcss/cli -i ./src/input.css -o ./css/tailwind.css --minify"
   },
   "repository": {

@@ -16,20 +16,17 @@
   --border-color: #e2e8f0;
   --border-light: #f1f5f9;
   --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-  --shadow-md:
-    0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
-  --shadow-lg:
-    0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
   --shadow-orange: 0 10px 25px -5px rgba(249, 115, 22, 0.35);
   --radius-sm: 6px;
   --radius-md: 10px;
   --radius-lg: 16px;
   --radius-full: 9999px;
   --transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-  --font-main:
-    "Plus Jakarta Sans", system-ui, -apple-system, BlinkMacSystemFont,
-    "Segoe UI", Roboto, sans-serif;
+  --font-main: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
+
 
 *,
 *::before,
@@ -65,6 +62,7 @@ ul {
   list-style: none;
 }
 
+
 .container-custom {
   width: 100%;
   max-width: 1360px;
@@ -73,6 +71,7 @@ ul {
   padding-left: 1.25rem;
   padding-right: 1.25rem;
 }
+
 
 .site-header {
   position: sticky;
@@ -95,12 +94,14 @@ ul {
   gap: 1.5rem;
 }
 
+
 .header-left-group {
   display: flex;
   align-items: center;
   gap: 2.25rem;
   flex-shrink: 0;
 }
+
 
 .brand-logo {
   display: flex;
@@ -133,6 +134,7 @@ ul {
   align-items: center;
   justify-content: center;
 }
+
 
 .brand-name {
   font-size: 1.45rem;
@@ -393,6 +395,7 @@ ul {
   box-shadow: 0 1px 3px rgba(34, 197, 94, 0.4);
 }
 
+
 .action-cart-wrap {
   position: relative;
 }
@@ -598,6 +601,7 @@ ul {
   cursor: pointer;
 }
 
+
 .header-bottom {
   background-color: var(--bg-white);
   padding: 0.45rem 0;
@@ -734,7 +738,7 @@ ul {
 }
 
 .nav-link.active::after {
-  content: "";
+  content: '';
   position: absolute;
   bottom: 0;
   left: 0;
@@ -812,6 +816,7 @@ ul {
 .btn-gift-cards:hover i {
   transform: scale(1.15) rotate(10deg);
 }
+
 
 .mobile-overlay {
   position: fixed;
@@ -970,6 +975,7 @@ ul {
   flex-direction: column;
   gap: 0.85rem;
 }
+
 
 @media (max-width: 1180px) {
   .header-left-group {
@@ -1240,7 +1246,7 @@ ul {
 }
 
 .footer-col-title::after {
-  content: "";
+  content: '';
   position: absolute;
   bottom: 0;
   left: 0;
@@ -1294,9 +1300,7 @@ ul {
   color: #71717a;
   font-size: 0.85rem;
   font-weight: bold;
-  transition:
-    transform 0.2s ease,
-    color 0.2s ease;
+  transition: transform 0.2s ease, color 0.2s ease;
 }
 
 .footer-link-item:hover {
@@ -1347,9 +1351,7 @@ ul {
   position: relative;
   overflow: hidden;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
-  transition:
-    transform 0.35s ease,
-    box-shadow 0.35s ease;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
   min-height: 220px;
 }
 
@@ -1429,15 +1431,8 @@ ul {
   position: relative;
   display: flex;
   align-items: center;
-  background:
-    linear-gradient(
-      to right,
-      rgba(15, 23, 42, 0.9) 0%,
-      rgba(15, 23, 42, 0.72) 48%,
-      rgba(15, 23, 42, 0.38) 100%
-    ),
-    url("https://images.unsplash.com/photo-1542838132-92c53300491e?w=1920&auto=format&fit=crop&q=85")
-      center center/cover no-repeat;
+  background: linear-gradient(to right, rgba(15, 23, 42, 0.90) 0%, rgba(15, 23, 42, 0.72) 48%, rgba(15, 23, 42, 0.38) 100%),
+    url('https://images.unsplash.com/photo-1542838132-92c53300491e?w=1920&auto=format&fit=crop&q=85') center center/cover no-repeat;
   padding: 2.75rem 0;
   color: #ffffff;
 }
@@ -1633,7 +1628,7 @@ ul {
 }
 
 .order-stepper::before {
-  content: "";
+  content: '';
   position: absolute;
   top: 22px;
   left: 35px;
@@ -1694,6 +1689,7 @@ ul {
 }
 
 @keyframes pulse-step {
+
   0%,
   100% {
     transform: scale(1);
@@ -1845,7 +1841,7 @@ ul {
 
 .deals-countdown-box .timer-digits {
   color: #fbbf24;
-  font-family: "Outfit", monospace;
+  font-family: 'Outfit', monospace;
   font-size: 1rem;
   letter-spacing: 0.05em;
   font-weight: 800;
@@ -1864,10 +1860,7 @@ ul {
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease,
-    border-color 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
   position: relative;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
 }
@@ -1987,18 +1980,14 @@ ul {
 }
 
 .view-all-shop-cta-wrap::after {
-  content: "";
+  content: '';
   position: absolute;
   top: -40px;
   right: -40px;
   width: 220px;
   height: 220px;
   border-radius: 50%;
-  background: radial-gradient(
-    circle,
-    rgba(34, 197, 94, 0.25) 0%,
-    rgba(34, 197, 94, 0) 70%
-  );
+  background: radial-gradient(circle, rgba(34, 197, 94, 0.25) 0%, rgba(34, 197, 94, 0) 70%);
   pointer-events: none;
 }
 
@@ -2287,10 +2276,7 @@ ul {
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
   display: flex;
   flex-direction: column;
-  transition:
-    transform 0.35s ease,
-    box-shadow 0.35s ease,
-    border-color 0.35s ease;
+  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
 }
 
 .home-blog-card:hover {
@@ -2393,9 +2379,7 @@ ul {
    ========================================================================== */
 .scroll-reveal {
   opacity: 1;
-  transition:
-    opacity 0.55s ease,
-    transform 0.55s ease;
+  transition: opacity 0.55s ease, transform 0.55s ease;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -2414,6 +2398,8 @@ ul {
     transition-delay: 0.22s;
   }
 }
+
+
 
 /* ==========================================================================
    Image 1: Professional Dark E-Commerce Footer (LiveLife Style)
@@ -2458,7 +2444,7 @@ ul {
 }
 
 .footer-col-title::after {
-  content: "";
+  content: '';
   position: absolute;
   bottom: 0;
   left: 0;
@@ -2512,9 +2498,7 @@ ul {
   color: #71717a;
   font-size: 0.85rem;
   font-weight: bold;
-  transition:
-    transform 0.2s ease,
-    color 0.2s ease;
+  transition: transform 0.2s ease, color 0.2s ease;
 }
 
 .footer-link-item:hover {
@@ -2565,9 +2549,7 @@ ul {
   position: relative;
   overflow: hidden;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
-  transition:
-    transform 0.35s ease,
-    box-shadow 0.35s ease;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
   min-height: 220px;
 }
 
@@ -2647,15 +2629,8 @@ ul {
   position: relative;
   display: flex;
   align-items: center;
-  background:
-    linear-gradient(
-      to right,
-      rgba(15, 23, 42, 0.9) 0%,
-      rgba(15, 23, 42, 0.72) 48%,
-      rgba(15, 23, 42, 0.38) 100%
-    ),
-    url("https://images.unsplash.com/photo-1542838132-92c53300491e?w=1920&auto=format&fit=crop&q=85")
-      center center/cover no-repeat;
+  background: linear-gradient(to right, rgba(15, 23, 42, 0.90) 0%, rgba(15, 23, 42, 0.72) 48%, rgba(15, 23, 42, 0.38) 100%),
+    url('https://images.unsplash.com/photo-1542838132-92c53300491e?w=1920&auto=format&fit=crop&q=85') center center/cover no-repeat;
   padding: 2.75rem 0;
   color: #ffffff;
 }
@@ -2851,7 +2826,7 @@ ul {
 }
 
 .order-stepper::before {
-  content: "";
+  content: '';
   position: absolute;
   top: 22px;
   left: 35px;
@@ -2912,6 +2887,7 @@ ul {
 }
 
 @keyframes pulse-step {
+
   0%,
   100% {
     transform: scale(1);
@@ -3063,7 +3039,7 @@ ul {
 
 .deals-countdown-box .timer-digits {
   color: #fbbf24;
-  font-family: "Outfit", monospace;
+  font-family: 'Outfit', monospace;
   font-size: 1rem;
   letter-spacing: 0.05em;
   font-weight: 800;
@@ -3082,10 +3058,7 @@ ul {
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease,
-    border-color 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
   position: relative;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
 }
@@ -3205,18 +3178,14 @@ ul {
 }
 
 .view-all-shop-cta-wrap::after {
-  content: "";
+  content: '';
   position: absolute;
   top: -40px;
   right: -40px;
   width: 220px;
   height: 220px;
   border-radius: 50%;
-  background: radial-gradient(
-    circle,
-    rgba(34, 197, 94, 0.25) 0%,
-    rgba(34, 197, 94, 0) 70%
-  );
+  background: radial-gradient(circle, rgba(34, 197, 94, 0.25) 0%, rgba(34, 197, 94, 0) 70%);
   pointer-events: none;
 }
 
@@ -3505,10 +3474,7 @@ ul {
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
   display: flex;
   flex-direction: column;
-  transition:
-    transform 0.35s ease,
-    box-shadow 0.35s ease,
-    border-color 0.35s ease;
+  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
 }
 
 .home-blog-card:hover {
@@ -3611,9 +3577,7 @@ ul {
    ========================================================================== */
 .scroll-reveal {
   opacity: 1;
-  transition:
-    opacity 0.55s ease,
-    transform 0.55s ease;
+  transition: opacity 0.55s ease, transform 0.55s ease;
 }
 
 @media (prefers-reduced-motion: no-preference) {
